@@ -19,7 +19,7 @@ const initialState: ProfileCardSchema = {
     },
     readonly: true,
     isLoading: false,
-    inited: false,
+    authorized: false,
 };
 
 export const profileSlice = createSlice({
@@ -42,7 +42,24 @@ export const profileSlice = createSlice({
         initProfileData: (state, action: PayloadAction<Profile>) => {
             state.data = action.payload;
             state.form = action.payload;
-            state.inited = true;
+            state.authorized = true;
+        },
+        signOut: (state) => {
+            (state.data = {
+                address: "",
+                email: "",
+                firstname: "",
+                phoneNumber: "",
+                id: "",
+            }),
+                (state.form = {
+                    address: "",
+                    email: "",
+                    firstname: "",
+                    phoneNumber: "",
+                    id: "",
+                }),
+                (state.authorized = false);
         },
     },
 });

@@ -4,5 +4,6 @@ export {
     getProfileData,
     getProfileForm,
     getProfileIsLoading,
+    getProfileAuthorized,
 } from "./model/selectors/profileSelectors";
 export { initProfileData } from "./model/services/initProfileData";

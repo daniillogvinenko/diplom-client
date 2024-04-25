@@ -26,8 +26,22 @@
     }
 }
 
+.outlineDark {
+    border: 2px solid #000000;
+    background-color: transparent;
+    color: black;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
 .red {
     background-color: red;
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .fullWidth {

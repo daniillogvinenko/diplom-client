@@ -10,29 +10,36 @@ export const routerConfig = {
     main: {
         path: "/",
         element: <MainPage />,
+        authOnly: false,
     },
     "master-classes": {
         path: "/master-classes",
         element: <MasterClassesPage />,
+        authOnly: false,
     },
     "master-class-signup": {
         path: "/master-classes/:id",
         element: <MasterClassSignUpPage />,
+        authOnly: false,
     },
     profile: {
         path: "/profile",
         element: <ProfilePage />,
+        authOnly: true,
     },
     about: {
         path: "/about",
         element: <AboutPage />,
+        authOnly: false,
     },
     menu: {
         path: "/menu",
         element: <MenuPage />,
+        authOnly: false,
     },
     cart: {
         path: "/cart",
         element: <CartPage />,
+        authOnly: true,
     },
 };

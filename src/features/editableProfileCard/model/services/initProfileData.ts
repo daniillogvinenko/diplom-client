@@ -3,9 +3,9 @@ import { Profile } from "@/entities/profile";
 import axios from "axios";
 import { profileActions } from "../slice/profileSlice";
 
-export const initProfileData = (dispatch: AppDispatch) => {
+export const initProfileData = (id: string) => (dispatch: AppDispatch) => {
     dispatch(profileActions.setIsLoading(true));
-    axios.get<Profile>(`${_API_}/profiles/1`).then((response) => {
+    axios.get<Profile>(`${_API_}/profiles/${id}`).then((response) => {
         dispatch(profileActions.initProfileData(response.data));
         dispatch(profileActions.setIsLoading(false));
     });

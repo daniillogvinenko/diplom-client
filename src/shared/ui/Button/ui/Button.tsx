@@ -5,14 +5,17 @@ import { Text } from "../../Text";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
-    variant?: "outline" | "normal" | "red";
+    variant?: "outline" | "outlineDark" | "normal" | "red";
     fullWidth?: boolean;
 }
 
 export const Button = (props: ButtonProps) => {
-    const { children, fullWidth, variant = "normal", ...otherProps } = props;
+    const { children, fullWidth, variant = "normal", className, ...otherProps } = props;
     return (
-        <button className={classNames(cls.Button, { [cls.fullWidth]: fullWidth }, [cls[variant]])} {...otherProps}>
+        <button
+            className={classNames(cls.Button, { [cls.fullWidth]: fullWidth }, [cls[variant], className])}
+            {...otherProps}
+        >
             <Text tagType="span" textType="button">
                 {children}
             </Text>

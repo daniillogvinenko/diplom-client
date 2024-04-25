@@ -8,6 +8,7 @@ import { profileActions } from "../../model/slice/profileSlice";
 import { updateProfileData } from "../../model/services/updateProfileData";
 import cls from "./EditableProfileCard.module.scss";
 import { Skeleton } from "@/shared/ui/Skeleton";
+import { SignOutButton } from "@/features/signOutButton";
 
 export const EditableProfileCard = () => {
     const readonly = useSelector(getProfileReadonly);
@@ -69,7 +70,10 @@ export const EditableProfileCard = () => {
                 onChange={onChangeAddress}
             />
             {readonly ? (
-                <Button onClick={onEdit}>Редактировать</Button>
+                <div>
+                    <Button onClick={onEdit}>Редактировать</Button>
+                    <SignOutButton className={cls.signOutBtn} />
+                </div>
             ) : (
                 <div className={cls.btnWrapper}>
                     <Button onClick={onSave}>Сохранить</Button>

@@ -8,5 +8,5 @@ export interface ProfileCardSchema {
     readonly?: boolean;
     isLoading?: boolean;
 
-    inited: boolean;
+    authorized: boolean;
 }
