@@ -1,0 +1,11 @@
+@import "./variables/global";
+@import "./reset";
+
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: var(--bg-color);
+}

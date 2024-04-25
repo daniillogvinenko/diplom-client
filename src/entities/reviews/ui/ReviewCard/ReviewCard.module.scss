@@ -1,0 +1,25 @@
+.ReviewCard {
+    border: 2px var(--main-color) solid;
+    border-radius: 21px;
+    padding: 32px 16px;
+    margin-bottom: 20px;
+
+    .cardHeader {
+        display: flex;
+        gap: 18px;
+        margin-bottom: 10px;
+
+        .avatar img {
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            border: 1px solid var(--main-color);
+        }
+
+        .stars {
+            display: flex;
+            margin-top: 10px;
+
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.Button {
+    font-family: var(--main-font);
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px 40px;
+    border-radius: 50px;
+    color: white;
+
+
+}
+
+.normal {
+    background-color: var(--accent-color);
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.outline {
+    border: 2px solid #fff;
+    background-color: transparent;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.fullWidth {
+    width: 100%;
+}

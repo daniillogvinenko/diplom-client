@@ -1,0 +1,20 @@
+.Textarea {
+    textarea {
+        padding: 9px 20px;
+        border: 1px solid var(--accent-color);
+        border-radius: 14px;
+        background-color: rgba(0, 0, 0, 0.03);
+        margin-top: 6px;
+        width: 400px;
+
+        font-family: var(--main-font);
+        font-size: 16px;
+        line-height: 20px;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+
+        }
+    }
+
+}

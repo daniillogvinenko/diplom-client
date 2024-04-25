@@ -1,0 +1,48 @@
+.container {
+    height: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+.title {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 350px;
+}
+
+.bg1 {
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    background: url('../../../../shared/assets/images/main-page/bg1.png') center 0;
+}
+
+.bg2 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url('../../../../shared/assets/images/main-page/bg2.png') center 0;
+}
+
+.bg3 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url('../../../../shared/assets/images/main-page/bg3.png') center 0;
+}
+
+.bg4 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url('../../../../shared/assets/images/main-page/bg4.png') center 0;
+}
+
+.blur {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.404);
+    backdrop-filter: blur(1px);
+}

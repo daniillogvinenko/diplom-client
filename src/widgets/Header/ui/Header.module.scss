@@ -1,0 +1,46 @@
+.Header {
+    position: fixed;
+    width: 100vw;
+    z-index: 1000;
+    background-color: var(--bg-color);
+    padding: 12px 0;
+    color: var(--main-color);
+    font-family: var(--main-font);
+    font-size: 16px;
+    line-height: 26px;
+    box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.226);
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .imgWrapper {
+        width: 230px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 70px;
+    }
+
+    .cartWrapper {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 14px;
+        line-height: 16px;
+
+        .cartSeparator {
+            width: 1px;
+            height: 40px;
+            background-color: var(--main-color);
+        }
+    }
+}

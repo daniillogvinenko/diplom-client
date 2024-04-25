@@ -1,0 +1,92 @@
+import { Header } from "@/widgets/Header";
+import img1 from "@/shared/assets/images/about-page/mainImage.png";
+import { Text } from "@/shared/ui/Text";
+import cls from "./AboutPage.module.scss";
+
+export const AboutPage = () => {
+    return (
+        <div>
+            <Header />
+            <div className={cls.heroSection} style={{ background: `url(${img1}) center/cover` }}>
+                <Text tagType="span" color="white" textType="pageTitle">
+                    О НАС
+                </Text>
+            </div>
+            <div className="container">
+                <div className={cls.aboutSection}>
+                    <div>
+                        <Text tagType="h1" textType="h1">
+                            О РЕСТОРАНЕ
+                        </Text>
+                        <Text tagType="p" textType="text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                            do eiusmod tempor incididunt <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        </Text>
+                    </div>
+                    <img
+                        style={{ width: 650 }}
+                        src={"https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"}
+                        alt=""
+                    />
+                </div>
+                <div className={cls.scheduleSection}>
+                    <Text tagType="h1" textType="h1">
+                        РЕЖИМ РАБОТЫ
+                    </Text>
+                    <Text tagType="p" textType="text">
+                        Пн-Чт 12:00 - 23:00
+                    </Text>
+                    <Text tagType="p" textType="text">
+                        Пт 12:00 - 00:00
+                    </Text>
+                    <Text tagType="p" textType="text">
+                        Сб 13:00 - 00:00
+                    </Text>
+                    <Text tagType="p" textType="text">
+                        Вс 13:00 - 23:00
+                    </Text>
+                </div>
+                <div className={cls.contactInfoSection}>
+                    <div>
+                        <Text tagType="h1" textType="h1">
+                            КОНТАКТЫ
+                        </Text>
+                        <Text tagType="p" textType="text">
+                            Адрес
+                        </Text>
+                        <Text tagType="p" textType="text">
+                            Санкт-Петербург, Большая Морская ул., 18
+                        </Text>
+
+                        <Text tagType="p" textType="text">
+                            Телефон
+                        </Text>
+                        <Text tagType="p" textType="text">
+                            +7 999 999-99-99
+                        </Text>
+                        <Text tagType="p" textType="text">
+                            E-mail
+                        </Text>
+                        <Text tagType="p" textType="text">
+                            addisflavours@mail.ru
+                        </Text>
+                    </div>
+                    <div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.8533503095884!2d30.314043177388424!3d59.93457556242721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310526f0854f%3A0xdbd92a3587fa4dc4!2z0JHQvtC70YzRiNCw0Y8g0JzQvtGA0YHQutCw0Y8g0YPQuy4sIDE4LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1714036016910!5m2!1sru!2sru"
+                            width="715"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
