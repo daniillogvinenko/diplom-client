@@ -1,0 +1,26 @@
+.CartCard {
+    display: flex;
+    width: 610px;
+    border: 2px solid var(--main-color);
+    overflow: hidden;
+    border-radius: 21px;
+
+    .img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .right {
+        display: flex;
+        justify-content: space-between;
+        width: auto;
+        flex-grow: 1;
+        padding: 15px;
+
+        .counter {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+    }
+}

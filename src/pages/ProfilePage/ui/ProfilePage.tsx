@@ -1,26 +1,18 @@
-import { Button } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
+import { EditableProfileCard } from "@/features/editableProfileCard";
 import { Text } from "@/shared/ui/Text";
-import { Textarea } from "@/shared/ui/Textarea";
 import { Header } from "@/widgets/Header";
-import { useState } from "react";
+import cls from "./ProfilePage.module.scss";
 
 export const ProfilePage = () => {
-    const [value, setValue] = useState("");
-
     return (
         <div>
             <Header />
             <div className="container">
                 <div style={{ paddingTop: 210 }}>
-                    <Text tagType="h1" textType="h1">
+                    <Text className={cls.pageTitle} tagType="h1" textType="h1">
                         ПРОФИЛЬ
                     </Text>
-                    <Input label="Имя" placeholder="Имя" value={value} onChange={setValue} />
-                    <Input label="Номер телефона" placeholder="Номер телефона" value={value} onChange={setValue} />
-                    <Input label="Эл. почта" placeholder="Эл. почта" value={value} onChange={setValue} />
-                    <Textarea label="Эл. почта" placeholder="Эл. почта" value={value} onChange={setValue} />
-                    <Button>Сохранить</Button>
+                    <EditableProfileCard />
                 </div>
             </div>
         </div>

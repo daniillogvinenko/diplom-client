@@ -8,17 +8,23 @@ interface TextareaProps {
     onChange: (value: string) => void;
     placeholder: string;
     className?: string;
+    readonly?: boolean;
 }
 
 export const Textarea = (props: TextareaProps) => {
-    const { label, value, onChange, placeholder, className = "" } = props;
+    const { label, value, readonly, onChange, placeholder, className = "" } = props;
 
     return (
         <div className={classNames(cls.Textarea, {}, [className])}>
             <Text tagType="p" textType="inputLabel">
                 {label}
             </Text>
-            <textarea placeholder={placeholder} value={value} onChange={(e) => onChange(e.target.value)} />
+            <textarea
+                disabled={readonly}
+                placeholder={placeholder}
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
+            />
         </div>
     );
 };

@@ -36,10 +36,19 @@
 
     .modalRight {
         width: 360px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         .modalHeader {
             display: flex;
             justify-content: space-between;
+        }
+
+        .statsFlex {
+            display: flex;
+            gap: 30px;
         }
     }
 }

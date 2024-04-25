@@ -1,4 +1,5 @@
 import { AboutPage } from "@/pages/AboutPage";
+import { CartPage } from "@/pages/CartPage";
 import { MainPage } from "@/pages/MainPage";
 import { MasterClassSignUpPage } from "@/pages/MasterClassSignUpPage";
 import { MasterClassesPage } from "@/pages/MasterClassesPage";
@@ -29,5 +30,9 @@ export const routerConfig = {
     menu: {
         path: "/menu",
         element: <MenuPage />,
+    },
+    cart: {
+        path: "/cart",
+        element: <CartPage />,
     },
 };

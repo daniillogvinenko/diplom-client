@@ -5,7 +5,7 @@ import { Text } from "../../Text";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
-    variant?: "outline" | "normal";
+    variant?: "outline" | "normal" | "red";
     fullWidth?: boolean;
 }
 

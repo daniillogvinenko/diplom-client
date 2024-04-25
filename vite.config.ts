@@ -8,4 +8,7 @@ export default defineConfig({
     resolve: {
         alias: [{ find: "@", replacement: "/src" }],
     },
+    define: {
+        _API_: JSON.stringify("http://localhost:8000"),
+    },
 });

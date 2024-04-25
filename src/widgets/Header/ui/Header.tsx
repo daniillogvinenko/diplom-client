@@ -31,17 +31,17 @@ export const Header = () => {
                                 Мастер-классы
                             </Text>
                         </NavLink>
-                        <nav className={cls.authBtn}>
+                        <NavLink to="/profile" className={cls.authBtn}>
                             <img src={authIcon} alt="" />
-                        </nav>
-                        <nav className={cls.cartWrapper}>
+                        </NavLink>
+                        <NavLink to="/cart" className={cls.cartWrapper}>
                             <img src={cartIcon} alt="" />
                             <div className={cls.cartSeparator}></div>
                             <div>
                                 <div>1 158 Р.</div>
                                 <div>2 шт.</div>
                             </div>
-                        </nav>
+                        </NavLink>
                     </div>
                 </div>
             </div>

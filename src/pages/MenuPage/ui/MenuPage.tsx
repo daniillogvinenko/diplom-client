@@ -7,6 +7,7 @@ import { MenuCard } from "@/entities/food";
 import { Modal } from "@/shared/ui/Modal";
 import { useState } from "react";
 import ModalCloseIcon from "@/shared/assets/images/menu-page/modalClose.svg";
+import { MenuItems } from "@/shared/const/MenuItems";
 
 export const MenuPage = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -17,11 +18,59 @@ export const MenuPage = () => {
                 <div className={cls.modalWrapper}>
                     <div style={{ background: `url(${img1}) center/cover` }} className={cls.modalImage}></div>
                     <div className={cls.modalRight}>
-                        <div className={cls.modalHeader}>
-                            <Text textType="modalH1" tagType="span">
-                                Lorem ipsum
+                        <div>
+                            <div className={cls.modalHeader}>
+                                <Text textType="modalH1" tagType="span">
+                                    Lorem ipsum
+                                </Text>
+                                <img onClick={() => setModalIsOpen(false)} src={ModalCloseIcon} alt="" />
+                            </div>
+                            <Text tagType="span" textType="modalTextSecondary">
+                                500 г
                             </Text>
-                            <img src={ModalCloseIcon} alt="" />
+                            <Text tagType="p" textType="text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            </Text>
+                        </div>
+                        <div>
+                            <Text tagType="p" textType="text">
+                                Пищевая ценность на 100 г
+                            </Text>
+                            <div className={cls.statsFlex}>
+                                <div>
+                                    <Text tagType="p" textType="modalTextSecondary">
+                                        Белки
+                                    </Text>
+                                    <Text tagType="p" textType="modalText">
+                                        5г
+                                    </Text>
+                                </div>
+                                <div>
+                                    <Text tagType="p" textType="modalTextSecondary">
+                                        Белки
+                                    </Text>
+                                    <Text tagType="p" textType="modalText">
+                                        5г
+                                    </Text>
+                                </div>
+                                <div>
+                                    <Text tagType="p" textType="modalTextSecondary">
+                                        Белки
+                                    </Text>
+                                    <Text tagType="p" textType="modalText">
+                                        5г
+                                    </Text>
+                                </div>
+                                <div>
+                                    <Text tagType="p" textType="modalTextSecondary">
+                                        Белки
+                                    </Text>
+                                    <Text tagType="p" textType="modalText">
+                                        5г
+                                    </Text>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,88 +105,18 @@ export const MenuPage = () => {
             </div>
             <div>
                 <div className="container">
-                    <Text tagType="h2" textType="h2">
-                        Эфиопская кухня
-                    </Text>
-                    <div className={cls.cardsContainer}>
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={true}
-                            title="Lorem"
-                        />
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={false}
-                            title="Lorem"
-                        />
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={true}
-                            title="Lorem"
-                        />
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={false}
-                            title="Lorem"
-                        />
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={true}
-                            title="Lorem"
-                        />
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={false}
-                            title="Lorem"
-                        />
-                    </div>
-                    <Text tagType="h2" textType="h2">
-                        Эфиопская кухня
-                    </Text>
-                    <div className={cls.cardsContainer}>
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={true}
-                            title="Lorem"
-                        />
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={false}
-                            title="Lorem"
-                        />
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={true}
-                            title="Lorem"
-                        />
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={false}
-                            title="Lorem"
-                        />
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={true}
-                            title="Lorem"
-                        />
-                        <MenuCard
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                            price="790 Р."
-                            selected={false}
-                            title="Lorem"
-                        />
-                    </div>
+                    {MenuItems.map((section) => (
+                        <>
+                            <Text tagType="h2" textType="h2">
+                                {section.title}
+                            </Text>
+                            <div className={cls.cardsContainer}>
+                                {section.items.map((item) => (
+                                    <MenuCard img={item.img} price={item.price} selected={true} title={item.title} />
+                                ))}
+                            </div>
+                        </>
+                    ))}
                 </div>
             </div>
         </div>
