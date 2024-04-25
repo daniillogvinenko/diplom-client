@@ -2,6 +2,7 @@ import { AboutPage } from "@/pages/AboutPage";
 import { MainPage } from "@/pages/MainPage";
 import { MasterClassSignUpPage } from "@/pages/MasterClassSignUpPage";
 import { MasterClassesPage } from "@/pages/MasterClassesPage";
+import { MenuPage } from "@/pages/MenuPage";
 import { ProfilePage } from "@/pages/ProfilePage";
 
 export const routerConfig = {
@@ -27,6 +28,6 @@ export const routerConfig = {
     },
     menu: {
         path: "/menu",
-        element: <div>Menu Page</div>,
+        element: <MenuPage />,
     },
 };
