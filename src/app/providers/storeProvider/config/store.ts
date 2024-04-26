@@ -1,9 +1,11 @@
-import { profileReducer } from "@/features/editableProfileCard/model/slice/profileSlice";
+import { profileReducer } from "@/features/editableProfileCard";
+import { loginReducer } from "@/features/loginByEmail";
 import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
     reducer: {
         profile: profileReducer,
+        login: loginReducer,
     },
     devTools: true,
 });

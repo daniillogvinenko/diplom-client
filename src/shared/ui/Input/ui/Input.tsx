@@ -9,20 +9,22 @@ interface InputProps {
     placeholder: string;
     className?: string;
     readonly?: boolean;
+    type?: React.HTMLInputTypeAttribute;
+    fullWidth?: boolean;
 }
 
 export const Input = (props: InputProps) => {
-    const { label, value, onChange, placeholder, readonly, className = "" } = props;
+    const { label, value, onChange, fullWidth, placeholder, readonly, type, className = "" } = props;
 
     return (
-        <div className={classNames(cls.Input, {}, [className])}>
+        <div className={classNames(cls.Input, { [cls.fullWidth]: fullWidth }, [className])}>
             <Text tagType="p" textType="inputLabel">
                 {label}
             </Text>
             <input
                 disabled={readonly}
                 placeholder={placeholder}
-                type="text"
+                type={type}
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
             />

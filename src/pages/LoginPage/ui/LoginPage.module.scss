@@ -1,0 +1,32 @@
+.header {
+    text-align: center;
+
+    img {
+        width: 230px;
+        margin-top: 15px;
+    }
+}
+
+.wrapper {
+    width: 610px;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: white;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 160px;
+
+    .modalHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        .closeBtn {
+            cursor: pointer;
+        }
+    }
+
+    .input {
+        margin-bottom: 24px;
+    }
+}

@@ -1,6 +1,5 @@
-import { getProfileAuthorized } from "@/features/editableProfileCard";
+import { LOCALSTORAGE_USER } from "@/shared/const/localStorage";
 import { ReactNode } from "react";
-import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 interface RequireAuthProps {
@@ -9,10 +8,10 @@ interface RequireAuthProps {
 
 // редирект на /login если пользователь не авторизован
 export const RequireAuth = ({ children }: RequireAuthProps) => {
-    const isAuthorized = useSelector(getProfileAuthorized);
+    const isAuthorized = localStorage.getItem(LOCALSTORAGE_USER);
 
     if (!isAuthorized) {
-        return <Navigate to={"/"} />;
+        return <Navigate to={"/login"} />;
     }
 
     return children;
