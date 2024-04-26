@@ -23,7 +23,7 @@ export const SignOutButton = (props: SignOutButtonProps) => {
 
     return (
         <Button onClick={onSignOut} className={classNames(cls.SignOutButton, {}, [className])} variant="outlineDark">
-            Выйти
+            Выйти из аккаунта
         </Button>
     );
 };

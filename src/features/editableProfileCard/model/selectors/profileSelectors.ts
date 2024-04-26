@@ -5,3 +5,4 @@ export const getProfileData = (state: RootState) => state.profile.data;
 export const getProfileForm = (state: RootState) => state.profile.form;
 export const getProfileIsLoading = (state: RootState) => state.profile.isLoading;
 export const getProfileAuthorized = (state: RootState) => state.profile.authorized;
+export const getProfileCartIsLoading = (state: RootState) => state.profile.cartIsUpdating;

@@ -1,6 +1,6 @@
-import { CartCard } from "@/entities/food";
 import { Text } from "@/shared/ui/Text";
 import { Header } from "@/widgets/Header";
+import { CartList } from "./CartList/CartList";
 
 export const CartPage = () => {
     return (
@@ -14,32 +14,7 @@ export const CartPage = () => {
                     <Text tagType="h3" textType="h3">
                         Ваш заказ
                     </Text>
-                    <div>
-                        <CartCard
-                            amount={2}
-                            onDecrement={alert}
-                            onIncrement={alert}
-                            price="780 Р."
-                            title="Lorem Ipsum"
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                        />
-                        <CartCard
-                            amount={2}
-                            onDecrement={alert}
-                            onIncrement={alert}
-                            price="780 Р."
-                            title="Lorem Ipsum"
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                        />
-                        <CartCard
-                            amount={2}
-                            onDecrement={alert}
-                            onIncrement={alert}
-                            price="780 Р."
-                            title="Lorem Ipsum"
-                            img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                        />
-                    </div>
+                    <CartList />
                 </div>
             </div>
         </div>

@@ -5,8 +5,9 @@ import { Button } from "@/shared/ui/Button";
 import SelectedIcon from "@/shared/assets/images/menu-page/selectedIcon.svg";
 import { CounterButton } from "@/shared/ui/CounterButton";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { getProfileData, updateCart } from "@/features/editableProfileCard";
+import { getProfileCartIsLoading, getProfileData, updateCart } from "@/features/editableProfileCard";
 import { useSelector } from "react-redux";
+import { Skeleton } from "@/shared/ui/Skeleton";
 
 interface MenuCardProps {
     title: string;
@@ -22,6 +23,7 @@ interface MenuCardProps {
 export const MenuCard = (props: MenuCardProps) => {
     const { price, id, selected, onClick, title, selectedAmount = 1, img, className } = props;
     const dispatch = useAppDispatch();
+    const cartIsLoading = useSelector(getProfileCartIsLoading);
     const { cart } = useSelector(getProfileData);
 
     const addNewItemToCart = (id: string) => {
@@ -63,13 +65,17 @@ export const MenuCard = (props: MenuCardProps) => {
                             {price}
                         </Text>
                     </div>
-                    <CounterButton
-                        onDecrement={() => decrementCart(id)}
-                        onIncrement={() => incrementCart(id)}
-                        fullWidth
-                        selectedAmount={selectedAmount}
-                        className={cls.counter}
-                    />
+                    {cartIsLoading ? (
+                        <Skeleton border="60px" width="100%" height={44} />
+                    ) : (
+                        <CounterButton
+                            onDecrement={() => decrementCart(id)}
+                            onIncrement={() => incrementCart(id)}
+                            fullWidth
+                            selectedAmount={selectedAmount}
+                            className={cls.counter}
+                        />
+                    )}
                 </div>
             </div>
         );
@@ -86,9 +92,13 @@ export const MenuCard = (props: MenuCardProps) => {
                         {price}
                     </Text>
                 </div>
-                <Button onClick={() => addNewItemToCart(id)} fullWidth>
-                    В корзину
-                </Button>
+                {cartIsLoading ? (
+                    <Skeleton border="60px" width="100%" height={44} />
+                ) : (
+                    <Button onClick={() => addNewItemToCart(id)} fullWidth>
+                        В корзину
+                    </Button>
+                )}
             </div>
         </div>
     );

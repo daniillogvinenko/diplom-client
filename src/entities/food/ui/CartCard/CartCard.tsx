@@ -1,22 +1,51 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./CartCard.module.scss";
 import { Text } from "@/shared/ui/Text";
-import { Button } from "@/shared/ui/Button";
-import DecrementIcon from "@/shared/assets/images/menu-page/DecrementIcon.svg";
-import IncrementIcon from "@/shared/assets/images/menu-page/IncrementIcon.svg";
+import { CounterButton } from "@/shared/ui/CounterButton";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { getProfileCartIsLoading, getProfileData, updateCart } from "@/features/editableProfileCard";
+import CloseIcon from "@/shared/assets/images/cart-page/cartClose.png";
+import { useSelector } from "react-redux";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { itemByIdFromMenu } from "@/shared/lib/itemByIdFromMenu/itemByIdFromMenu";
 
 interface CartCardProps {
     className?: string;
-    title: string;
-    price: string;
     amount: number;
-    onIncrement: () => void;
-    onDecrement: () => void;
-    img: string;
+    id: string;
 }
 
 export const CartCard = (props: CartCardProps) => {
-    const { className, amount = 1, img, onDecrement, onIncrement, price, title } = props;
+    const { className, amount = 1, id } = props;
+    const { cart } = useSelector(getProfileData);
+    const cartIsLoading = useSelector(getProfileCartIsLoading);
+    const dispatch = useAppDispatch();
+
+    const incrementCart = (id: string) => {
+        const newValue = String(+cart[id] + 1);
+
+        dispatch(updateCart({ ...cart, [id]: newValue }));
+    };
+
+    const decrementCart = (id: string) => {
+        if (+cart[id] > 1) {
+            const newValue = String(+cart[id] - 1);
+
+            dispatch(updateCart({ ...cart, [id]: newValue }));
+        } else {
+            const newCartValue = { ...cart };
+            delete newCartValue[id];
+            dispatch(updateCart({ ...newCartValue }));
+        }
+    };
+
+    const removeFromCart = (id: string) => {
+        const newCartValue = { ...cart };
+        delete newCartValue[id];
+        dispatch(updateCart({ ...newCartValue }));
+    };
+
+    const { img, title, price } = itemByIdFromMenu(+id);
 
     return (
         <div className={classNames(cls.CartCard, {}, [className])}>
@@ -30,16 +59,18 @@ export const CartCard = (props: CartCardProps) => {
                         {price}
                     </Text>
                 </div>
-                <div>
-                    <Button>
-                        <div className={cls.counter}>
-                            <img src={DecrementIcon} alt="" />
-                            <Text tagType="span" textType="text">
-                                {amount}
-                            </Text>
-                            <img src={IncrementIcon} alt="" />
-                        </div>
-                    </Button>
+                <div className={cls.counter}>
+                    <img className={cls.deleteBtn} onClick={() => removeFromCart(id)} src={CloseIcon} alt="" />
+                    {cartIsLoading ? (
+                        <Skeleton border="60px" width="100%" height={44} />
+                    ) : (
+                        <CounterButton
+                            onDecrement={() => decrementCart(id)}
+                            onIncrement={() => incrementCart(id)}
+                            selectedAmount={amount}
+                            fullWidth
+                        />
+                    )}
                 </div>
             </div>
         </div>

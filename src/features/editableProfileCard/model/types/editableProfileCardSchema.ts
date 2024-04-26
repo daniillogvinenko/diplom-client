@@ -9,6 +9,6 @@ export interface ProfileCardSchema {
     form: ProfileForm;
     readonly: boolean;
     isLoading: boolean;
-
+    cartIsUpdating: boolean;
     authorized: boolean;
 }
