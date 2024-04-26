@@ -21,7 +21,6 @@ export const EditableProfileCard = () => {
     const onSave = () => dispatch(updateProfileData({ ...form }));
     const onChangeName = (value: string) => dispatch(profileActions.updateProfileForm({ firstname: value }));
     const onChangePhoneNumber = (value: string) => dispatch(profileActions.updateProfileForm({ phoneNumber: value }));
-    const onChangeEmail = (value: string) => dispatch(profileActions.updateProfileForm({ email: value }));
     const onChangeAddress = (value: string) => dispatch(profileActions.updateProfileForm({ address: value }));
 
     if (isLoading)
@@ -52,14 +51,6 @@ export const EditableProfileCard = () => {
                 placeholder="Номер телефона"
                 value={form?.phoneNumber || ""}
                 onChange={onChangePhoneNumber}
-            />
-            <Input
-                className={cls.input}
-                readonly={readonly}
-                label="Эл. почта"
-                placeholder="Эл. почта"
-                value={form?.email || ""}
-                onChange={onChangeEmail}
             />
             <Textarea
                 className={cls.input}

@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { ProfileCardSchema } from "../types/editableProfileCardSchema";
+import { ProfileCardSchema, ProfileForm } from "../types/editableProfileCardSchema";
 import { Profile } from "@/entities/profile";
 
 const initialState: ProfileCardSchema = {
@@ -9,13 +9,12 @@ const initialState: ProfileCardSchema = {
         firstname: "",
         phoneNumber: "",
         id: "",
+        cart: {},
     },
     form: {
         address: "",
-        email: "",
         firstname: "",
         phoneNumber: "",
-        id: "",
     },
     readonly: true,
     isLoading: false,
@@ -33,15 +32,27 @@ export const profileSlice = createSlice({
             state.isLoading = action.payload;
         },
         cancelEdit: (state) => {
-            state.form = state.data;
+            state.form!.address = state.data?.address;
+            state.form!.firstname = state.data?.firstname;
+            state.form!.phoneNumber = state.data?.phoneNumber;
             state.readonly = true;
         },
-        updateProfileForm: (state, action: PayloadAction<Profile>) => {
+        updateProfileForm: (state, action: PayloadAction<ProfileForm>) => {
             state.form = { ...state.form, ...action.payload };
         },
         initProfileData: (state, action: PayloadAction<Profile>) => {
-            state.data = action.payload;
-            state.form = action.payload;
+            state.data!.address = action.payload.address;
+            state.data!.cart = action.payload.cart;
+            state.data!.email = action.payload.email;
+            state.data!.firstname = action.payload.firstname;
+            state.data!.id = action.payload.id;
+            state.data!.phoneNumber = action.payload.phoneNumber;
+
+            state.form = {
+                address: action.payload.address,
+                firstname: action.payload.firstname,
+                phoneNumber: action.payload.phoneNumber,
+            };
             state.authorized = true;
         },
         signOut: (state) => {
@@ -51,15 +62,17 @@ export const profileSlice = createSlice({
                 firstname: "",
                 phoneNumber: "",
                 id: "",
+                cart: {},
             }),
                 (state.form = {
                     address: "",
-                    email: "",
                     firstname: "",
                     phoneNumber: "",
-                    id: "",
                 }),
                 (state.authorized = false);
+        },
+        updateCart: (state, action: PayloadAction<Record<string, string>>) => {
+            state.data.cart = action.payload;
         },
     },
 });

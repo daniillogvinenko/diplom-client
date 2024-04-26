@@ -7,6 +7,7 @@ import axios from "axios";
 export const loginByEmail = (email: string, password: string) => (dispatch: AppDispatch) => {
     axios.post<Profile>(`${_API_}/login`, { email, password }).then((response) => {
         dispatch(profileActions.initProfileData(response.data));
+        // @ts-expect-error 123
         localStorage.setItem(LOCALSTORAGE_USER, response.data.id);
     });
 };

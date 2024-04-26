@@ -3,8 +3,10 @@ import cls from "./MenuCard.module.scss";
 import { Text } from "@/shared/ui/Text";
 import { Button } from "@/shared/ui/Button";
 import SelectedIcon from "@/shared/assets/images/menu-page/selectedIcon.svg";
-import DecrementIcon from "@/shared/assets/images/menu-page/DecrementIcon.svg";
-import IncrementIcon from "@/shared/assets/images/menu-page/IncrementIcon.svg";
+import { CounterButton } from "@/shared/ui/CounterButton";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { getProfileData, updateCart } from "@/features/editableProfileCard";
+import { useSelector } from "react-redux";
 
 interface MenuCardProps {
     title: string;
@@ -13,21 +15,47 @@ interface MenuCardProps {
     selectedAmount?: number;
     img: string;
     className?: string;
+    onClick: () => void;
+    id: string;
 }
 
 export const MenuCard = (props: MenuCardProps) => {
-    const { price, selected, title, selectedAmount = 1, img, className } = props;
+    const { price, id, selected, onClick, title, selectedAmount = 1, img, className } = props;
+    const dispatch = useAppDispatch();
+    const { cart } = useSelector(getProfileData);
+
+    const addNewItemToCart = (id: string) => {
+        dispatch(updateCart({ ...cart, [id]: "1" }));
+    };
+
+    const incrementCart = (id: string) => {
+        const newValue = String(+cart[id] + 1);
+
+        dispatch(updateCart({ ...cart, [id]: newValue }));
+    };
+
+    const decrementCart = (id: string) => {
+        if (+cart[id] > 1) {
+            const newValue = String(+cart[id] - 1);
+
+            dispatch(updateCart({ ...cart, [id]: newValue }));
+        } else {
+            const newCartValue = { ...cart };
+            delete newCartValue[id];
+            dispatch(updateCart({ ...newCartValue }));
+        }
+    };
 
     if (selected)
         return (
             <div className={classNames(cls.MenuCard, {}, [className])}>
-                <div style={{ background: `url(${img}) center/cover` }} className={cls.img}>
+                <div onClick={onClick} style={{ background: `url(${img}) center/cover` }} className={cls.img}>
                     <div className={cls.orangeTint}>
                         <img src={SelectedIcon} alt="" />
                     </div>
                 </div>
                 <div className={cls.infoWrapper}>
-                    <Text tagType="span" textType="cardHeader">
+                    <Text pointer onClick={onClick} tagType="span" textType="cardHeader">
                         {title}
                     </Text>
                     <div className={cls.flex}>
@@ -35,24 +63,22 @@ export const MenuCard = (props: MenuCardProps) => {
                             {price}
                         </Text>
                     </div>
-                    <Button fullWidth>
-                        <div className={cls.counter}>
-                            <img src={DecrementIcon} alt="" />
-                            <Text tagType="span" textType="text">
-                                {selectedAmount}
-                            </Text>
-                            <img src={IncrementIcon} alt="" />
-                        </div>
-                    </Button>
+                    <CounterButton
+                        onDecrement={() => decrementCart(id)}
+                        onIncrement={() => incrementCart(id)}
+                        fullWidth
+                        selectedAmount={selectedAmount}
+                        className={cls.counter}
+                    />
                 </div>
             </div>
         );
 
     return (
         <div className={classNames(cls.MenuCard, {}, [className])}>
-            <div style={{ background: `url(${img}) center/cover` }} className={cls.img}></div>
+            <div onClick={onClick} style={{ background: `url(${img}) center/cover` }} className={cls.img}></div>
             <div className={cls.infoWrapper}>
-                <Text tagType="span" textType="cardHeader">
+                <Text pointer onClick={onClick} tagType="span" textType="cardHeader">
                     {title}
                 </Text>
                 <div className={cls.flex}>
@@ -60,7 +86,9 @@ export const MenuCard = (props: MenuCardProps) => {
                         {price}
                     </Text>
                 </div>
-                <Button fullWidth>В корзину</Button>
+                <Button onClick={() => addNewItemToCart(id)} fullWidth>
+                    В корзину
+                </Button>
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate } from "react-router-dom";
 import cls from "./LoginPage.module.scss";
 import LogoImg from "@/shared/assets/images/login-page/Logo.svg";
 import { Text } from "@/shared/ui/Text";
@@ -8,6 +8,7 @@ import { Button } from "@/shared/ui/Button";
 import { useSelector } from "react-redux";
 import { getLoginEmail, getLoginPassword, loginActions, loginByEmail } from "@/features/loginByEmail";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { LOCALSTORAGE_USER } from "@/shared/const/localStorage";
 
 export const LoginPage = () => {
     const dispatch = useAppDispatch();
@@ -19,6 +20,11 @@ export const LoginPage = () => {
     const onPasswordChange = (value: string) => dispatch(loginActions.setPasswordInput(value));
 
     const onLogin = () => dispatch(loginByEmail(email, password));
+
+    // не позволяем пользователю зоходить на страницу авторизации, если он уже авторизован
+    if (localStorage.getItem(LOCALSTORAGE_USER)) {
+        return <Navigate to={"/"} />;
+    }
 
     return (
         <div>
