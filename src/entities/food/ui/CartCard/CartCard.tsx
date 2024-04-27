@@ -13,10 +13,11 @@ interface CartCardProps {
     className?: string;
     amount: number;
     id: string;
+    onClick: () => void;
 }
 
 export const CartCard = (props: CartCardProps) => {
-    const { className, amount = 1, id } = props;
+    const { className, amount = 1, id, onClick } = props;
     const { cart } = useSelector(getProfileData);
     const cartIsLoading = useSelector(getProfileCartIsLoading);
     const dispatch = useAppDispatch();
@@ -49,10 +50,10 @@ export const CartCard = (props: CartCardProps) => {
 
     return (
         <div className={classNames(cls.CartCard, {}, [className])}>
-            <div style={{ background: `url(${img}) center/cover` }} className={cls.img}></div>
+            <div onClick={onClick} style={{ background: `url(${img}) center/cover` }} className={cls.img}></div>
             <div className={cls.right}>
                 <div>
-                    <Text tagType="p" textType="cardHeader">
+                    <Text pointer onClick={onClick} tagType="p" textType="cardHeader">
                         {title}
                     </Text>
                     <Text tagType="span" textType="cardPrice">

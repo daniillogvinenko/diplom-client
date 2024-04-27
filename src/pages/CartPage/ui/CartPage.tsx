@@ -1,10 +1,16 @@
 import { Text } from "@/shared/ui/Text";
 import { Header } from "@/widgets/Header";
 import { CartList } from "./CartList/CartList";
+import { MenuModal } from "@/features/menuModal";
+import { useState } from "react";
 
 export const CartPage = () => {
+    const [modalIsOpen, setModalIsOpen] = useState<number | null>(null);
+
     return (
         <div>
+            <MenuModal modalIsOpen={modalIsOpen} onClose={() => setModalIsOpen(null)} />
+
             <Header />
             <div className="container">
                 <div style={{ paddingTop: 210 }}>
@@ -14,7 +20,7 @@ export const CartPage = () => {
                     <Text tagType="h3" textType="h3">
                         Ваш заказ
                     </Text>
-                    <CartList />
+                    <CartList onOpenModal={setModalIsOpen} />
                 </div>
             </div>
         </div>
