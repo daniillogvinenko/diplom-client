@@ -1,0 +1,26 @@
+.CheckoutPageTotal {
+    width: 440px;
+    border: 2px solid var(--main-color);
+    padding: 24px 18px;
+    border-radius: 21px;
+
+    .header {
+        margin-bottom: 30px;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+    }
+
+    .separator {
+        background-color: var(--main-color);
+        height: 1px;
+        margin-bottom: 4px;
+    }
+
+    .button {
+        margin-top: 20px;
+    }
+}

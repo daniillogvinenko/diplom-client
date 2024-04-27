@@ -3,6 +3,8 @@ import { Header } from "@/widgets/Header";
 import { CartList } from "./CartList/CartList";
 import { MenuModal } from "@/features/menuModal";
 import { useState } from "react";
+import cls from "./CartPage.module.scss";
+import { CartPageTotal } from "./CartPageTotal/CartPageTotal";
 
 export const CartPage = () => {
     const [modalIsOpen, setModalIsOpen] = useState<number | null>(null);
@@ -20,7 +22,10 @@ export const CartPage = () => {
                     <Text tagType="h3" textType="h3">
                         Ваш заказ
                     </Text>
-                    <CartList onOpenModal={setModalIsOpen} />
+                    <div className={cls.contentWrapper}>
+                        <CartList onOpenModal={setModalIsOpen} />
+                        <CartPageTotal />
+                    </div>
                 </div>
             </div>
         </div>

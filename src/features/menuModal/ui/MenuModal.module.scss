@@ -22,6 +22,15 @@
         .modalHeader {
             display: flex;
             justify-content: space-between;
+
+            img {
+                cursor: pointer;
+                transition-duration: 0.3s;
+
+                &:hover {
+                    transform: rotate(90deg);
+                }
+            }
         }
 
         .statsFlex {

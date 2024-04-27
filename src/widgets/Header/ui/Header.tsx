@@ -4,8 +4,13 @@ import authIcon from "@/shared/assets/images/main-page/AuthIcon.png";
 import cartIcon from "@/shared/assets/images/main-page/cartIcon.png";
 import { Text } from "@/shared/ui/Text";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getProfileData } from "@/features/editableProfileCard";
+import { totalByCart } from "@/shared/lib/totalByCart/totalByCart";
 
 export const Header = () => {
+    const { cart } = useSelector(getProfileData);
+
     return (
         <header className={cls.Header}>
             <div className="container">
@@ -38,7 +43,7 @@ export const Header = () => {
                             <img src={cartIcon} alt="" />
                             <div className={cls.cartSeparator}></div>
                             <div>
-                                <div>1 158 Р.</div>
+                                <div>{totalByCart(cart)}</div>
                                 <div>2 шт.</div>
                             </div>
                         </NavLink>

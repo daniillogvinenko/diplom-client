@@ -1,5 +1,6 @@
 import { AboutPage } from "@/pages/AboutPage";
 import { CartPage } from "@/pages/CartPage";
+import { CheckoutPage } from "@/pages/CheckoutPage";
 import { LoginPage } from "@/pages/LoginPage";
 import { MainPage } from "@/pages/MainPage";
 import { MasterClassSignUpPage } from "@/pages/MasterClassSignUpPage";
@@ -47,5 +48,10 @@ export const routerConfig = {
         path: "/login",
         element: <LoginPage />,
         authOnly: false,
+    },
+    checkout: {
+        path: "/checkout",
+        element: <CheckoutPage />,
+        authOnly: true,
     },
 };

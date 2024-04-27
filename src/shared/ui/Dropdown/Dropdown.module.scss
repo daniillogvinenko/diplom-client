@@ -1,0 +1,44 @@
+.button {
+    border: 1px solid var(--accent-color);
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 14px;
+    padding: 9px 20px;
+    width: 400px;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.08);
+
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.optionsWrapper {
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.253);
+    border-radius: 14px;
+    width: 400px;
+    overflow: hidden;
+
+
+
+    .option {
+        padding: 9px 20px;
+        cursor: pointer;
+
+
+        &:hover {
+            background-color: #ff7f0731;
+
+        }
+    }
+
+    .unavailable {
+        opacity: 0.5;
+        cursor: auto;
+    }
+}
