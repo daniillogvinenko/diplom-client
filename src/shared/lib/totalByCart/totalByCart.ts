@@ -7,6 +7,13 @@ export const totalByCart = (cart: Record<string, string>) => {
         const item = itemByIdFromMenu(+key);
         total += +item.price!.slice(0, -3) * +cart[key];
     });
-    console.log(total);
+    return total;
+};
+
+export const itemAmountByCart = (cart: Record<string, string>) => {
+    let total = 0;
+    Object.keys(cart).map((key) => {
+        total += +cart[key];
+    });
     return total;
 };

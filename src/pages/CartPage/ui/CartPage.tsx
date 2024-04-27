@@ -16,12 +16,12 @@ export const CartPage = () => {
 
             <Header />
             <div className="container">
-                <div style={{ paddingTop: 210 }}>
+                <div>
                     <BackLink className={cls.backLink} to="/" text="Главная" />
-                    <Text tagType="h1" textType="h1">
+                    <Text className={cls.h1} tagType="h1" textType="h1">
                         КОРЗИНА
                     </Text>
-                    <Text tagType="h3" textType="h3">
+                    <Text className={cls.h3} tagType="h3" textType="h3">
                         Ваш заказ
                     </Text>
                     <div className={cls.contentWrapper}>

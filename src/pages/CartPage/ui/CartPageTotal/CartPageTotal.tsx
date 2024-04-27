@@ -19,7 +19,7 @@ export const CartPageTotal = () => {
                 </div>
                 <div>
                     <Text tagType="h3" textType="h3">
-                        {totalByCart(cart)}
+                        {totalByCart(cart)} Р.
                     </Text>
                 </div>
             </div>

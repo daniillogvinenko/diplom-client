@@ -5,6 +5,8 @@ import { Text } from "@/shared/ui/Text";
 import { MasterClassCard } from "@/entities/masterClass";
 import { BackLink } from "@/shared/ui/BackLink";
 import { useEffect } from "react";
+import { MasterClassItems } from "@/shared/const/MasterClassItems";
+import { NavLink } from "react-router-dom";
 
 export const MasterClassesPage = () => {
     useEffect(() => {
@@ -15,41 +17,27 @@ export const MasterClassesPage = () => {
         <div className={classNames(cls.MasterClassesPage, {}, [])}>
             <Header />
             <div className="container">
-                <div style={{ paddingTop: 210 }}>
+                <div>
                     <BackLink className={cls.backLink} to="/" text="Главная" />
 
-                    <Text tagType="h1" textType="h1">
+                    <Text className={cls.h1} tagType="h1" textType="h1">
                         КУЛИНАРНЫЕ МАСТЕР КЛАССЫ <br /> В ADDIS FLAVORS
                     </Text>
-                </div>
-                <Text tagType="h3" textType="h3">
-                    Расписание на апрель-май
-                </Text>
-                <div className={cls.itemsContainer}>
-                    <MasterClassCard
-                        date="14.04 Суббота 18:00"
-                        price="3500 Р."
-                        title="Мастер класс “Lorem Ipsum”"
-                        img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                    />
-                    <MasterClassCard
-                        date="14.04 Суббота 18:00"
-                        price="3500 Р."
-                        title="Мастер класс “Lorem Ipsum”"
-                        img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                    />
-                    <MasterClassCard
-                        date="14.04 Суббота 18:00"
-                        price="3500 Р."
-                        title="Мастер класс “Lorem Ipsum”"
-                        img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                    />
-                    <MasterClassCard
-                        date="14.04 Суббота 18:00"
-                        price="3500 Р."
-                        title="Мастер класс “Lorem Ipsum”"
-                        img="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"
-                    />
+                    <Text className={cls.h3} tagType="h3" textType="h3">
+                        Расписание на апрель-май
+                    </Text>
+                    <div className={cls.itemsContainer}>
+                        {MasterClassItems.map((masterClass) => (
+                            <NavLink to={`/master-classes/${masterClass.id}`}>
+                                <MasterClassCard
+                                    date={masterClass.date}
+                                    price={masterClass.price}
+                                    title={masterClass.title}
+                                    img={masterClass.img}
+                                />
+                            </NavLink>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

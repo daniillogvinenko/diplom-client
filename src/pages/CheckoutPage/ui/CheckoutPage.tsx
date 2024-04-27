@@ -16,13 +16,13 @@ const dropdownItem = [
     },
     {
         id: 2,
-        name: "variant 2",
-        unavailable: true,
+        name: "Банковской картой курьеру",
+        unavailable: false,
     },
     {
         id: 3,
-        name: "variant 3",
-        unavailable: false,
+        name: "Картой на сайте",
+        unavailable: true,
     },
 ];
 
@@ -33,26 +33,39 @@ export const CheckoutPage = () => {
         <div>
             <Header />
             <div className="container">
-                <div style={{ paddingTop: 210 }}>
+                <div>
                     <BackLink className={cls.backLink} to="/cart" text="Корзина" />
 
-                    <Text tagType="h1" textType="h1">
+                    <Text className={cls.h1} tagType="h1" textType="h1">
                         ОФОРМЛЕНИЕ ЗАКАЗА
                     </Text>
-                    <Text tagType="h3" textType="h3">
+                    <Text className={cls.h3} tagType="h3" textType="h3">
                         Контакты
                     </Text>
                     <div className={cls.contentWrapper}>
                         <div>
-                            <Input label="Имя" placeholder="Имя" value="1" onChange={console.log} />
                             <Input
+                                className={cls.input}
+                                label="Имя"
+                                placeholder="Имя"
+                                value="1"
+                                onChange={console.log}
+                            />
+                            <Input
+                                className={cls.input}
                                 label="Номер телефона"
                                 placeholder="Номер телефона"
                                 value="1"
                                 onChange={console.log}
                             />
-                            <Textarea label="Адрес" placeholder="Адрес" value="1" onChange={console.log} />
-                            <Text tagType="h3" textType="h3">
+                            <Textarea
+                                className={cls.input}
+                                label="Адрес"
+                                placeholder="Адрес"
+                                value="1"
+                                onChange={console.log}
+                            />
+                            <Text className={cls.h3} tagType="h3" textType="h3">
                                 Способ оплаты
                             </Text>
                             <Dropdown

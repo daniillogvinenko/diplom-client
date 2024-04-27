@@ -6,7 +6,7 @@ import { Text } from "@/shared/ui/Text";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getProfileAuthorized, getProfileData } from "@/features/editableProfileCard";
-import { totalByCart } from "@/shared/lib/totalByCart/totalByCart";
+import { itemAmountByCart, totalByCart } from "@/shared/lib/totalByCart/totalByCart";
 
 export const Header = () => {
     const { cart } = useSelector(getProfileData);
@@ -52,7 +52,7 @@ export const Header = () => {
                                 <div className={cls.cartSeparator}></div>
                                 <div>
                                     <div>{totalByCart(cart)} Р.</div>
-                                    <div>{Object.keys(cart).length} шт</div>
+                                    <div>{itemAmountByCart(cart)} шт</div>
                                 </div>
                             </NavLink>
                         ) : null}

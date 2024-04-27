@@ -14,5 +14,7 @@
     .flex {
         display: flex;
         justify-content: space-between;
+        align-items: end;
+        margin: 10px 0;
     }
 }

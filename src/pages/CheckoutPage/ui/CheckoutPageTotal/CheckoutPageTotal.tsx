@@ -1,6 +1,6 @@
 import { getProfileData } from "@/features/editableProfileCard";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { totalByCart } from "@/shared/lib/totalByCart/totalByCart";
+import { itemAmountByCart, totalByCart } from "@/shared/lib/totalByCart/totalByCart";
 import { Button } from "@/shared/ui/Button";
 import { Text } from "@/shared/ui/Text";
 import { useSelector } from "react-redux";
@@ -16,7 +16,7 @@ export const CheckoutPageTotal = () => {
             </Text>
             <div className={cls.flex}>
                 <Text tagType="p" textType="text">
-                    3 товара
+                    {itemAmountByCart(cart)} товара
                 </Text>
                 <Text tagType="p" textType="text">
                     {totalByCart(cart)}
