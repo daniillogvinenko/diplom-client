@@ -20,7 +20,7 @@ export const MenuList = (props: MenuListProps) => {
             <div className="container">
                 {MenuItems.map((section) => (
                     <div key={section.title}>
-                        <Text tagType="h2" textType="h2">
+                        <Text className={cls.sectionTitle} tagType="h2" textType="h2">
                             {section.title}
                         </Text>
                         <div className={cls.cardsContainer}>

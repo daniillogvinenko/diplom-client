@@ -57,14 +57,12 @@ export const MenuCard = (props: MenuCardProps) => {
                     </div>
                 </div>
                 <div className={cls.infoWrapper}>
-                    <Text pointer onClick={onClick} tagType="span" textType="cardHeader">
+                    <Text pointer onClick={onClick} tagType="p" textType="cardHeader">
                         {title}
                     </Text>
-                    <div className={cls.flex}>
-                        <Text tagType="span" textType="cardPrice">
-                            {price}
-                        </Text>
-                    </div>
+                    <Text className={cls.price} tagType="p" textType="cardPrice">
+                        {price}
+                    </Text>
                     {cartIsLoading ? (
                         <Skeleton border="60px" width="100%" height={44} />
                     ) : (
@@ -84,14 +82,12 @@ export const MenuCard = (props: MenuCardProps) => {
         <div className={classNames(cls.MenuCard, {}, [className])}>
             <div onClick={onClick} style={{ background: `url(${img}) center/cover` }} className={cls.img}></div>
             <div className={cls.infoWrapper}>
-                <Text pointer onClick={onClick} tagType="span" textType="cardHeader">
+                <Text pointer onClick={onClick} tagType="p" textType="cardHeader">
                     {title}
                 </Text>
-                <div className={cls.flex}>
-                    <Text tagType="span" textType="cardPrice">
-                        {price}
-                    </Text>
-                </div>
+                <Text className={cls.price} tagType="p" textType="cardPrice">
+                    {price}
+                </Text>
                 {cartIsLoading ? (
                     <Skeleton border="60px" width="100%" height={44} />
                 ) : (

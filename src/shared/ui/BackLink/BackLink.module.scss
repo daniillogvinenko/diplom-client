@@ -1,0 +1,16 @@
+.BackLink {
+    display: inline-block;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    .flex {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .text {
+        margin-left: 5px;
+    }
+}

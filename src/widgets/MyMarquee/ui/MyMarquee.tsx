@@ -3,15 +3,14 @@ import Marquee from "react-fast-marquee";
 // import cls from "./MyMarquee.module.scss";
 
 interface MyMarqueeProps {
-    marginTop?: number;
     className?: string;
 }
 
 export const MyMarquee = (props: MyMarqueeProps) => {
-    const { marginTop, className } = props;
+    const { className } = props;
 
     return (
-        <div style={{ marginTop }} className={className}>
+        <div className={className}>
             <Marquee style={{ marginBottom: 30, height: 130 }} speed={100}>
                 <Text tagType="span" color="main" textType="marquee">
                     ADDIS FLAVORS

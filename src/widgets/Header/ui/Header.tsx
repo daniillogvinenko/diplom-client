@@ -5,11 +5,13 @@ import cartIcon from "@/shared/assets/images/main-page/cartIcon.png";
 import { Text } from "@/shared/ui/Text";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { getProfileData } from "@/features/editableProfileCard";
+import { getProfileAuthorized, getProfileData } from "@/features/editableProfileCard";
 import { totalByCart } from "@/shared/lib/totalByCart/totalByCart";
 
 export const Header = () => {
     const { cart } = useSelector(getProfileData);
+
+    const authorized = useSelector(getProfileAuthorized);
 
     return (
         <header className={cls.Header}>
@@ -37,16 +39,23 @@ export const Header = () => {
                             </Text>
                         </NavLink>
                         <NavLink to="/profile" className={cls.authBtn}>
-                            <img src={authIcon} alt="" />
+                            <img src={authIcon} alt="" />{" "}
+                            {authorized ? null : (
+                                <Text className={cls.signUpText} tagType="span" textType="text">
+                                    Войти
+                                </Text>
+                            )}
                         </NavLink>
-                        <NavLink to="/cart" className={cls.cartWrapper}>
-                            <img src={cartIcon} alt="" />
-                            <div className={cls.cartSeparator}></div>
-                            <div>
-                                <div>{totalByCart(cart)}</div>
-                                <div>2 шт.</div>
-                            </div>
-                        </NavLink>
+                        {authorized ? (
+                            <NavLink to="/cart" className={cls.cartWrapper}>
+                                <img src={cartIcon} alt="" />
+                                <div className={cls.cartSeparator}></div>
+                                <div>
+                                    <div>{totalByCart(cart)} Р.</div>
+                                    <div>{Object.keys(cart).length} шт</div>
+                                </div>
+                            </NavLink>
+                        ) : null}
                     </div>
                 </div>
             </div>

@@ -7,14 +7,19 @@ import { HeroSection } from "./HeroSection/HeroSection";
 import { MenuSection } from "./MenuSection/MenuSection";
 import { ReviewsSection } from "./ReviewsSection/ReviewsSection";
 import { MasterClassesSection } from "./MasterClassesSection/MasterClassesSection";
+import { useEffect } from "react";
 
 export const MainPage = () => {
+    useEffect(() => {
+        window.scrollTo({ top: 0 });
+    }, []);
+
     return (
         <div className={classNames(cls.MainPage, {}, [])}>
             <Header />
             <ParallaxBg />
             <HeroSection />
-            <MyMarquee />
+            <MyMarquee className={cls.marquee} />
             <MenuSection />
             <ReviewsSection />
             <MasterClassesSection />

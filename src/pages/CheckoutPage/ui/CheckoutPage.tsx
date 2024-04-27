@@ -6,6 +6,7 @@ import { Header } from "@/widgets/Header";
 import { useState } from "react";
 import cls from "./CheckoutPage.module.scss";
 import { CheckoutPageTotal } from "./CheckoutPageTotal/CheckoutPageTotal";
+import { BackLink } from "@/shared/ui/BackLink";
 
 const dropdownItem = [
     {
@@ -33,6 +34,8 @@ export const CheckoutPage = () => {
             <Header />
             <div className="container">
                 <div style={{ paddingTop: 210 }}>
+                    <BackLink className={cls.backLink} to="/cart" text="Корзина" />
+
                     <Text tagType="h1" textType="h1">
                         ОФОРМЛЕНИЕ ЗАКАЗА
                     </Text>

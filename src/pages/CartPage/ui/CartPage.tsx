@@ -5,6 +5,7 @@ import { MenuModal } from "@/features/menuModal";
 import { useState } from "react";
 import cls from "./CartPage.module.scss";
 import { CartPageTotal } from "./CartPageTotal/CartPageTotal";
+import { BackLink } from "@/shared/ui/BackLink";
 
 export const CartPage = () => {
     const [modalIsOpen, setModalIsOpen] = useState<number | null>(null);
@@ -16,6 +17,7 @@ export const CartPage = () => {
             <Header />
             <div className="container">
                 <div style={{ paddingTop: 210 }}>
+                    <BackLink className={cls.backLink} to="/" text="Главная" />
                     <Text tagType="h1" textType="h1">
                         КОРЗИНА
                     </Text>

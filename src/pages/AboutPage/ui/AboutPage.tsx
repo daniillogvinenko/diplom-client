@@ -2,17 +2,45 @@ import { Header } from "@/widgets/Header";
 import img1 from "@/shared/assets/images/about-page/mainImage.png";
 import { Text } from "@/shared/ui/Text";
 import cls from "./AboutPage.module.scss";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { BackLink } from "@/shared/ui/BackLink";
 
 export const AboutPage = () => {
+    useEffect(() => {
+        window.scrollTo({ top: 0 });
+    }, []);
+
+    const animationVariants = {
+        initial: {
+            opacity: 0,
+        },
+
+        animate: {
+            opacity: 1,
+        },
+    };
+
     return (
-        <div>
+        <div className={cls.AboutPage}>
             <Header />
             <div className={cls.heroSection} style={{ background: `url(${img1}) center/cover` }}>
-                <Text tagType="span" color="white" textType="pageTitle">
-                    О НАС
-                </Text>
+                <motion.div
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3, duration: 2.2 }}
+                    variants={animationVariants}
+                    initial="initial"
+                    whileInView="animate"
+                >
+                    <Text tagType="span" color="white" textType="pageTitle">
+                        О НАС
+                    </Text>
+                </motion.div>
             </div>
+
             <div className="container">
+                <BackLink className={cls.backLink} to="/" text="Главная" />
+
                 <div className={cls.aboutSection}>
                     <div>
                         <Text tagType="h1" textType="h1">

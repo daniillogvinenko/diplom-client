@@ -1,15 +1,32 @@
-.heroSection {
-    padding-top: 400px;
-    height: 900px;
-    text-align: center;
-}
+.AboutPage {
 
-.aboutSection {
-    display: flex;
-    justify-content: space-between;
-}
+    h1 {
+        margin-bottom: 50px;
+    }
 
-.contactInfoSection {
-    display: flex;
-    justify-content: space-between;
+    .heroSection {
+        padding-top: 400px;
+        height: 900px;
+        text-align: center;
+    }
+
+    .aboutSection {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .scheduleSection {
+        margin-top: 120px;
+    }
+
+    .contactInfoSection {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 120px;
+    }
+
+    .backLink {
+        margin-top: 80px;
+        margin-bottom: 20px;
+    }
 }

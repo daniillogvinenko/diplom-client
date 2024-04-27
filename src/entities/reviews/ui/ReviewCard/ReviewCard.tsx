@@ -3,6 +3,7 @@ import cls from "./ReviewCard.module.scss";
 import { Text } from "@/shared/ui/Text";
 import StarImg from "@/shared/assets/images/main-page/Star.svg";
 import StarDarkImg from "@/shared/assets/images/main-page/StarGrey.png";
+import { motion } from "framer-motion";
 
 interface ReviewCardProps {
     img: string;
@@ -14,8 +15,27 @@ interface ReviewCardProps {
 export const ReviewCard = (props: ReviewCardProps) => {
     const { img, name, rating, review } = props;
 
+    const animationVariants = {
+        initial: {
+            opacity: 0,
+            y: 150,
+        },
+
+        animate: {
+            opacity: 1,
+            y: 0,
+        },
+    };
+
     return (
-        <div className={classNames(cls.ReviewCard, {}, [])}>
+        <motion.div
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            variants={animationVariants}
+            initial="initial"
+            whileInView="animate"
+            className={classNames(cls.ReviewCard, {}, [])}
+        >
             <div className={cls.cardHeader}>
                 <div className={cls.avatar}>
                     <img src={img} alt="" />
@@ -38,6 +58,6 @@ export const ReviewCard = (props: ReviewCardProps) => {
             <Text tagType="p" textType="text">
                 {review}
             </Text>
-        </div>
+        </motion.div>
     );
 };
