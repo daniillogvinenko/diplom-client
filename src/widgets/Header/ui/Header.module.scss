@@ -1,50 +1,52 @@
-.Header {
-    position: fixed;
-    width: 100vw;
-    z-index: 1000;
-    background-color: var(--bg-color);
-    padding: 12px 0;
-    color: var(--main-color);
-    font-family: var(--main-font);
-    font-size: 16px;
-    line-height: 26px;
-    box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.226);
+.MobileHeader {
+    .container {
+        position: fixed;
+        z-index: 50;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--bg-color);
+        padding: 20px 0;
+        transform-origin: top;
+        color: var(--main-color);
+    }
 
-    .flex {
+    .openBtn {
+        display: block;
+
+        @media screen and (max-width: 380px) {
+            display: block;
+        }
+    }
+
+    .flexCol {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .header {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    .imgWrapper {
-        width: 230px;
-
-        img {
-            width: 100%;
-        }
+    .links {
+        font-size: 30px;
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
     }
 
-    .right {
-        display: flex;
-        align-items: center;
-        gap: 70px;
-
-        .signUpText {
-            margin-left: 10px;
-        }
+    .linkWrapper {
+        overflow: hidden;
     }
 
-    .cartWrapper {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 14px;
-        line-height: 16px;
-
-        .cartSeparator {
-            width: 1px;
-            height: 40px;
-            background-color: var(--main-color);
-        }
+    .linkItem {
+        color: inherit;
     }
 }

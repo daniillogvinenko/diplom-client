@@ -8,6 +8,7 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { getProfileCartIsLoading, getProfileData, updateCart } from "@/features/editableProfileCard";
 import { useSelector } from "react-redux";
 import { Skeleton } from "@/shared/ui/Skeleton";
+import { motion } from "framer-motion";
 
 interface MenuCardProps {
     title: string;
@@ -25,6 +26,18 @@ export const MenuCard = (props: MenuCardProps) => {
     const dispatch = useAppDispatch();
     const cartIsLoading = useSelector(getProfileCartIsLoading);
     const { cart } = useSelector(getProfileData);
+
+    const animationVariants = {
+        initial: {
+            opacity: 0,
+            y: 50,
+        },
+
+        animate: {
+            opacity: 1,
+            y: 0,
+        },
+    };
 
     const addNewItemToCart = (id: string) => {
         dispatch(updateCart({ ...cart, [id]: "1" }));
@@ -50,7 +63,14 @@ export const MenuCard = (props: MenuCardProps) => {
 
     if (selected)
         return (
-            <div className={classNames(cls.MenuCard, {}, [className])}>
+            <motion.div
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                variants={animationVariants}
+                initial="initial"
+                whileInView="animate"
+                className={classNames(cls.MenuCard, {}, [className])}
+            >
                 <div onClick={onClick} style={{ background: `url(${img}) center/cover` }} className={cls.img}>
                     <div className={cls.orangeTint}>
                         <img src={SelectedIcon} alt="" />
@@ -75,11 +95,18 @@ export const MenuCard = (props: MenuCardProps) => {
                         />
                     )}
                 </div>
-            </div>
+            </motion.div>
         );
 
     return (
-        <div className={classNames(cls.MenuCard, {}, [className])}>
+        <motion.div
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            variants={animationVariants}
+            initial="initial"
+            whileInView="animate"
+            className={classNames(cls.MenuCard, {}, [className])}
+        >
             <div onClick={onClick} style={{ background: `url(${img}) center/cover` }} className={cls.img}></div>
             <div className={cls.infoWrapper}>
                 <Text pointer onClick={onClick} tagType="p" textType="cardHeader">
@@ -96,6 +123,6 @@ export const MenuCard = (props: MenuCardProps) => {
                     </Button>
                 )}
             </div>
-        </div>
+        </motion.div>
     );
 };

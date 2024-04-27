@@ -21,6 +21,18 @@ export const AboutPage = () => {
         },
     };
 
+    const animationVariants2 = {
+        initial: {
+            opacity: 0,
+            y: 100,
+        },
+
+        animate: {
+            opacity: 1,
+            y: 0,
+        },
+    };
+
     return (
         <div className={cls.AboutPage}>
             <Header />
@@ -42,7 +54,13 @@ export const AboutPage = () => {
                 <BackLink className={cls.backLink} to="/" text="Главная" />
 
                 <div className={cls.aboutSection}>
-                    <div>
+                    <motion.div
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                        variants={animationVariants2}
+                        initial="initial"
+                        whileInView="animate"
+                    >
                         <Text tagType="h1" textType="h1">
                             О РЕСТОРАНЕ
                         </Text>
@@ -53,14 +71,26 @@ export const AboutPage = () => {
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit
                             amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                         </Text>
-                    </div>
-                    <img
+                    </motion.div>
+                    <motion.img
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.8 }}
+                        variants={animationVariants2}
+                        initial="initial"
+                        whileInView="animate"
                         style={{ width: 650 }}
                         src={"https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"}
                         alt=""
                     />
                 </div>
-                <div className={cls.scheduleSection}>
+                <motion.div
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                    variants={animationVariants2}
+                    initial="initial"
+                    whileInView="animate"
+                    className={cls.scheduleSection}
+                >
                     <Text tagType="h1" textType="h1">
                         РЕЖИМ РАБОТЫ
                     </Text>
@@ -76,9 +106,15 @@ export const AboutPage = () => {
                     <Text tagType="p" textType="text">
                         Вс 13:00 - 23:00
                     </Text>
-                </div>
+                </motion.div>
                 <div className={cls.contactInfoSection}>
-                    <div>
+                    <motion.div
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                        variants={animationVariants2}
+                        initial="initial"
+                        whileInView="animate"
+                    >
                         <Text tagType="h1" textType="h1">
                             КОНТАКТЫ
                         </Text>
@@ -101,8 +137,14 @@ export const AboutPage = () => {
                         <Text tagType="p" textType="text">
                             addisflavours@mail.ru
                         </Text>
-                    </div>
-                    <div>
+                    </motion.div>
+                    <motion.div
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.8 }}
+                        variants={animationVariants2}
+                        initial="initial"
+                        whileInView="animate"
+                    >
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.8533503095884!2d30.314043177388424!3d59.93457556242721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310526f0854f%3A0xdbd92a3587fa4dc4!2z0JHQvtC70YzRiNCw0Y8g0JzQvtGA0YHQutCw0Y8g0YPQuy4sIDE4LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1714036016910!5m2!1sru!2sru"
                             width="715"
@@ -112,7 +154,7 @@ export const AboutPage = () => {
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>
