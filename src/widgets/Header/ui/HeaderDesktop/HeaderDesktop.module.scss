@@ -9,7 +9,10 @@
     font-size: 16px;
     line-height: 26px;
     box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.226);
-    display: none;
+
+    @media screen and (max-width: 1150px) {
+        display: none;
+    }
 
     .flex {
         display: flex;
@@ -29,6 +32,10 @@
         display: flex;
         align-items: center;
         gap: 70px;
+
+        @media screen and (max-width: 1350px) {
+            gap: 50px;
+        }
 
         .signUpText {
             margin-left: 10px;

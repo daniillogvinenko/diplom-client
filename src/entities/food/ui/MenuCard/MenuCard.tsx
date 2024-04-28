@@ -65,7 +65,7 @@ export const MenuCard = (props: MenuCardProps) => {
         return (
             <motion.div
                 viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.1 }}
                 variants={animationVariants}
                 initial="initial"
                 whileInView="animate"
@@ -101,7 +101,7 @@ export const MenuCard = (props: MenuCardProps) => {
     return (
         <motion.div
             viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.1 }}
             variants={animationVariants}
             initial="initial"
             whileInView="animate"

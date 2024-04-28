@@ -30,7 +30,7 @@ export const MenuModal = ({ modalIsOpen, onClose }: MenuModalProps) => {
                             </Text>
                             <img onClick={onClose} src={ModalCloseIcon} alt="" />
                         </div>
-                        <Text tagType="span" textType="modalTextSecondary">
+                        <Text className={cls.weight} tagType="p" textType="modalTextSecondary">
                             {item?.weight}
                         </Text>
                         <Text tagType="p" textType="text">

@@ -8,16 +8,21 @@ import { useEffect, useState } from "react";
 import { Button } from "@/shared/ui/Button";
 import { BackLink } from "@/shared/ui/BackLink";
 import { MasterClassItems } from "@/shared/const/MasterClassItems";
+import { useSelector } from "react-redux";
+import { getProfileData } from "@/features/editableProfileCard";
 
 export const MasterClassSignUpPage = () => {
     const { id } = useParams();
 
-    const [name, setName] = useState("");
-    const [amount, setAmount] = useState("");
-    const [phone, setPhone] = useState("");
-    const [additional, setAdditional] = useState("");
-
     const item = MasterClassItems.find((masterClass) => masterClass.id === id);
+
+    // значение для имени и телеофна берется из данных профиля
+    const { firstname, phoneNumber } = useSelector(getProfileData);
+
+    const [nameValue, setNameValue] = useState(firstname || "");
+    const [phoneNumberValue, setPhoneNumberValue] = useState(phoneNumber || "");
+    const [amount, setAmount] = useState("");
+    const [additional, setAdditional] = useState("");
 
     useEffect(() => {
         window.scrollTo({ top: 0 });
@@ -73,8 +78,8 @@ export const MasterClassSignUpPage = () => {
                                 className={cls.input}
                                 label="Ваше имя"
                                 placeholder="Ваше имя"
-                                value={name}
-                                onChange={setName}
+                                value={nameValue}
+                                onChange={setNameValue}
                             />
                             <Input
                                 className={cls.input}
@@ -87,8 +92,8 @@ export const MasterClassSignUpPage = () => {
                                 className={cls.input}
                                 label="Телефон"
                                 placeholder="Телефон"
-                                value={phone}
-                                onChange={setPhone}
+                                value={phoneNumberValue}
+                                onChange={setPhoneNumberValue}
                             />
                             <Input
                                 className={cls.input}

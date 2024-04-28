@@ -5,6 +5,11 @@
     line-height: 128px;
     font-family: var(--accent-font);
     font-weight: 500;
+
+    @media screen and (max-width: 1150px) {
+        font-size: 80px;
+        line-height: 80px;
+    }
 }
 
 .marquee {
@@ -12,6 +17,11 @@
     line-height: 96px;
     font-family: var(--accent-font);
     font-weight: 500;
+
+    @media screen and (max-width: 1150px) {
+        font-size: 64px;
+        line-height: 64px;
+    }
 }
 
 .h1 {
@@ -19,6 +29,11 @@
     line-height: 80px;
     font-family: var(--accent-font);
     font-weight: 500;
+
+    @media screen and (max-width: 1150px) {
+        font-size: 48px;
+        line-height: 60px;
+    }
 }
 
 .h2 {
@@ -26,36 +41,66 @@
     line-height: 50px;
     font-family: var(--accent-font);
     font-weight: 500;
+
+    @media screen and (max-width: 1150px) {
+        font-size: 36px;
+        line-height: 46px;
+    }
 }
 
 .h3 {
     font-size: 32px;
     line-height: 40px;
     font-family: var(--accent-font);
+
+    @media screen and (max-width: 1150px) {
+        font-size: 28px;
+        line-height: 30px;
+    }
 }
 
 .text {
     font-size: 16px;
     line-height: 26px;
     font-family: var(--main-font);
+
+    @media screen and (max-width: 1150px) {
+        font-size: 16px;
+        line-height: 26px;
+    }
 }
 
 .button {
     font-size: 16px;
     line-height: 24px;
     font-family: var(--main-font);
+
+    @media screen and (max-width: 1150px) {
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
 
 .inputText {
     font-size: 16px;
     line-height: 20px;
     font-family: var(--main-font);
+
+    @media screen and (max-width: 1150px) {
+        font-size: 16px;
+        line-height: 20px;
+    }
 }
 
 .inputLabel {
     font-size: 14px;
     line-height: 14px;
     font-family: var(--main-font);
+
+    @media screen and (max-width: 1150px) {
+        font-size: 14px;
+        line-height: 14px;
+    }
 }
 
 .cardHeader {
@@ -63,12 +108,22 @@
     line-height: 28px;
     font-family: var(--accent-font);
     font-weight: 500;
+
+    @media screen and (max-width: 1150px) {
+        font-size: 22px;
+        line-height: 26px;
+    }
 }
 
 .cardPrice {
     font-size: 24px;
     line-height: 28px;
     font-family: var(--accent-font);
+
+    @media screen and (max-width: 1150px) {
+        font-size: 22px;
+        line-height: 26px;
+    }
 }
 
 .modalH1 {
@@ -76,12 +131,22 @@
     line-height: 40px;
     font-family: var(--accent-font);
     font-weight: 500;
+
+    @media screen and (max-width: 1150px) {
+        font-size: 32px;
+        line-height: 38px;
+    }
 }
 
 .modalText {
     font-size: 16px;
     line-height: 22px;
     font-family: var(--main-font);
+
+    @media screen and (max-width: 1150px) {
+        font-size: 16px;
+        line-height: 22px;
+    }
 }
 
 .modalTextSecondary {
@@ -89,6 +154,11 @@
     line-height: 18px;
     font-family: var(--main-font);
     font-weight: 200;
+
+    @media screen and (max-width: 1150px) {
+        font-size: 12px;
+        line-height: 16px;
+    }
 }
 
 // ------------------ colors

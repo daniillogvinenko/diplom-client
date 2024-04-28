@@ -1,13 +1,20 @@
 .menuSection {
-    height: 650px;
     // на мобильном устройстве fixed не работает!!!
     background: url("../../../../shared/assets/images/main-page/menuSectionImage.jpg") fixed;
 
+    @media screen and (max-width: 1150px) {
+        background: url("../../../../shared/assets/images/main-page/menuSectionImage.jpg");
+    }
+
     .tint {
         text-align: center;
-        padding-top: 250px;
         background: rgba(0, 0, 0, 0.562);
         height: 100%;
+        padding: 200px 0;
+
+        @media screen and (max-width: 1150px) {
+            padding: 180px 0;
+        }
     }
 
     .text {

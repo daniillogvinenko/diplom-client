@@ -4,6 +4,18 @@
 .container {
   width: 1240px;
   margin: 0 auto;
+
+  @media screen and (max-width: 1350px) {
+    width: 1050px;
+  }
+
+  @media screen and (max-width: 1150px) {
+    width: 925px;
+  }
+
+  @media screen and (max-width: 980px) {
+    width: 750px;
+  }
 }
 
 body {

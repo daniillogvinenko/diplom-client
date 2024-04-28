@@ -15,7 +15,7 @@ export const ProfilePage = () => {
             <Header />
             <div className="container">
                 <div>
-                    <BackLink className={cls.backLink} to="/cart" text="Корзина" />
+                    <BackLink className={cls.backLink} to="/" text="Главная" />
                     <Text className={cls.pageTitle} tagType="h1" textType="h1">
                         ПРОФИЛЬ
                     </Text>

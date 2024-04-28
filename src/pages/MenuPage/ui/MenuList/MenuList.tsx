@@ -18,9 +18,13 @@ export const MenuList = (props: MenuListProps) => {
     return (
         <div className={classNames(cls.MenuList, {}, [className])}>
             <div className="container">
-                {MenuItems.map((section) => (
+                {MenuItems.map((section, i) => (
                     <div key={section.title}>
-                        <Text className={cls.sectionTitle} tagType="h2" textType="h2">
+                        <Text
+                            className={classNames(cls.sectionTitle, { [cls.firstSectionTitle]: i === 0 }, [])}
+                            tagType="h2"
+                            textType="h2"
+                        >
                             {section.title}
                         </Text>
                         <div className={cls.cardsContainer}>

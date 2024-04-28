@@ -4,6 +4,10 @@
     padding: 24px 18px;
     border-radius: 21px;
 
+    @media screen and (max-width: 1350px) {
+        width: 380px;
+    }
+
     .header {
         margin-bottom: 30px;
     }

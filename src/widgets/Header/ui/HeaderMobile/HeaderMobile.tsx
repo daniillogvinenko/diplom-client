@@ -7,6 +7,8 @@ import { itemAmountByCart, totalByCart } from "@/shared/lib/totalByCart/totalByC
 import cartIcon from "@/shared/assets/images/main-page/cartIcon.png";
 import openMenuIcon from "@/shared/assets/images/common/openMenu.svg";
 import logoImg from "@/shared/assets/images/main-page/Logo.svg";
+import { Text } from "@/shared/ui/Text";
+import authIcon from "@/shared/assets/images/main-page/AuthIcon.png";
 
 const navLinks: { title: string; href: string }[] = [
     {
@@ -20,6 +22,10 @@ const navLinks: { title: string; href: string }[] = [
     {
         title: "Мастер-классы",
         href: "/master-classes",
+    },
+    {
+        title: "Личный кабинет",
+        href: "/profile",
     },
 ];
 
@@ -95,7 +101,9 @@ export const HeaderMobile = ({ authorized, cart }: HeaderMobileProps) => {
                 <div className="container">
                     <div className={cls.flex}>
                         <img onClick={toggleMenu} className={cls.burger} src={openMenuIcon} alt="" />
-                        <img className={cls.logo} src={logoImg} alt="" />
+                        <NavLink to="/">
+                            <img className={cls.logo} src={logoImg} alt="" />
+                        </NavLink>
                         {authorized ? (
                             <NavLink to="/cart" className={cls.cartWrapper}>
                                 <img src={cartIcon} alt="" />
@@ -105,7 +113,14 @@ export const HeaderMobile = ({ authorized, cart }: HeaderMobileProps) => {
                                     <div>{itemAmountByCart(cart)} шт</div>
                                 </div>
                             </NavLink>
-                        ) : null}
+                        ) : (
+                            <NavLink to="/profile" className={cls.authBtn}>
+                                <img src={authIcon} alt="" />{" "}
+                                <Text className={cls.signUpText} tagType="span" textType="text">
+                                    Войти
+                                </Text>
+                            </NavLink>
+                        )}
                     </div>
                 </div>
             </div>

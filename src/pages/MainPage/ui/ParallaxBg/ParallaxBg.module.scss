@@ -2,6 +2,10 @@
     height: 900px;
     position: relative;
     overflow: hidden;
+
+    @media screen and (max-width: 1150px) {
+        height: 780px;
+    }
 }
 
 .title {
@@ -9,6 +13,10 @@
     text-align: center;
     width: 100%;
     top: 350px;
+
+    @media screen and (max-width: 1150px) {
+        top: 320px;
+    }
 }
 
 .text {

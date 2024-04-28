@@ -6,6 +6,7 @@
     justify-content: space-between;
     gap: 20px;
     height: 400px;
+    // width: 800px;
 
     .modalImage {
         width: 360px;
@@ -22,6 +23,7 @@
         .modalHeader {
             display: flex;
             justify-content: space-between;
+            margin-bottom: 10px;
 
             img {
                 cursor: pointer;
@@ -31,6 +33,10 @@
                     transform: rotate(90deg);
                 }
             }
+        }
+
+        .weight {
+            margin-bottom: 10px;
         }
 
         .statsFlex {

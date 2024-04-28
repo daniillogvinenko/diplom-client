@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { MenuModal } from "@/features/menuModal";
 import { MenuList } from "./MenuList/MenuList";
 import { motion } from "framer-motion";
+import { BackLink } from "@/shared/ui/BackLink";
 
 export const MenuPage = () => {
     // нулл - модальное окно закрыто, число - модалка открыта и показывает блюдо с установленным айди
@@ -64,6 +65,9 @@ export const MenuPage = () => {
                         </Text>
                     </div>
                 </div>
+            </div>
+            <div className="container">
+                <BackLink className={cls.backLink} text="Главная" to="/" />
             </div>
             <MenuList onOpenModal={setModalIsOpen} />
         </div>

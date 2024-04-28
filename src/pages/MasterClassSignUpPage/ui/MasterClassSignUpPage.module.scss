@@ -11,14 +11,22 @@
 .paragraph {
     width: 700px;
     display: block;
+
+    @media screen and (max-width: 1350px) {
+        width: 600px;
+    }
 }
 
 .title {
     margin-bottom: 50px;
+
+    @media screen and (max-width: 1350px) {
+        margin-bottom: 30px;
+    }
 }
 
 .h3title {
-    margin-bottom: 2px;
+    margin-bottom: 6px;
     margin-top: 30px;
 
     &:nth-child(1) {
@@ -29,4 +37,8 @@
 .backLink {
     margin-top: 180px;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 1350px) {
+        margin-top: 150px;
+    }
 }

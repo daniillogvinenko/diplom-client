@@ -2,6 +2,10 @@
     padding-top: 400px;
     height: 900px;
     text-align: center;
+
+    @media screen and (max-width: 1150px) {
+        height: 780px;
+    }
 }
 
 .navigation {
@@ -12,4 +16,13 @@
 
     background: var(--main-color);
     padding: 18px 0;
+}
+
+.backLink {
+    margin-top: 80px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 1150px) {
+        margin-top: 40px;
+    }
 }

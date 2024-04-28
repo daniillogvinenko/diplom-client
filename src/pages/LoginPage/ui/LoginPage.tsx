@@ -17,6 +17,7 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { LOCALSTORAGE_USER } from "@/shared/const/localStorage";
 import { getProfileAuthorized } from "@/features/editableProfileCard";
 import { Skeleton } from "@/shared/ui/Skeleton";
+import { useCallback, useEffect } from "react";
 
 export const LoginPage = () => {
     const dispatch = useAppDispatch();
@@ -28,7 +29,23 @@ export const LoginPage = () => {
     const onEmailChange = (value: string) => dispatch(loginActions.setEmailInput(value));
     const onPasswordChange = (value: string) => dispatch(loginActions.setPasswordInput(value));
 
-    const onLogin = () => dispatch(loginByEmail(email, password));
+    const onLogin = useCallback(() => dispatch(loginByEmail(email, password)), [dispatch, email, password]);
+
+    const onEnterHandler = useCallback(
+        (e: KeyboardEvent) => {
+            if (e.key === "Enter") {
+                onLogin();
+            }
+        },
+        [onLogin]
+    );
+
+    useEffect(() => {
+        window.addEventListener("keydown", onEnterHandler);
+        return () => {
+            window.removeEventListener("keydown", onEnterHandler);
+        };
+    }, [onEnterHandler]);
 
     // редирект на главную после успешной авторизации
     const authorized = useSelector(getProfileAuthorized);

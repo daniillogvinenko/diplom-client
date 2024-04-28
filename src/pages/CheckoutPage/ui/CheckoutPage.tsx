@@ -7,6 +7,8 @@ import { useState } from "react";
 import cls from "./CheckoutPage.module.scss";
 import { CheckoutPageTotal } from "./CheckoutPageTotal/CheckoutPageTotal";
 import { BackLink } from "@/shared/ui/BackLink";
+import { useSelector } from "react-redux";
+import { getProfileData } from "@/features/editableProfileCard";
 
 const dropdownItem = [
     {
@@ -29,6 +31,12 @@ const dropdownItem = [
 export const CheckoutPage = () => {
     const [selectedItem, setSelectedItem] = useState(dropdownItem[0]);
 
+    const { firstname, phoneNumber, address } = useSelector(getProfileData);
+
+    const [nameValue, setNameValue] = useState(firstname || "");
+    const [phoneNumberValue, setPhoneNumberValue] = useState(phoneNumber || "");
+    const [addressValue, setAddressValue] = useState(address || "");
+
     return (
         <div>
             <Header />
@@ -48,22 +56,22 @@ export const CheckoutPage = () => {
                                 className={cls.input}
                                 label="Имя"
                                 placeholder="Имя"
-                                value="1"
-                                onChange={console.log}
+                                value={nameValue}
+                                onChange={setNameValue}
                             />
                             <Input
                                 className={cls.input}
                                 label="Номер телефона"
                                 placeholder="Номер телефона"
-                                value="1"
-                                onChange={console.log}
+                                value={phoneNumberValue}
+                                onChange={setPhoneNumberValue}
                             />
                             <Textarea
                                 className={cls.input}
                                 label="Адрес"
                                 placeholder="Адрес"
-                                value="1"
-                                onChange={console.log}
+                                value={addressValue}
+                                onChange={setAddressValue}
                             />
                             <Text className={cls.h3} tagType="h3" textType="h3">
                                 Способ оплаты

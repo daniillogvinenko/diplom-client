@@ -30,7 +30,7 @@ export const ReviewCard = (props: ReviewCardProps) => {
     return (
         <motion.div
             viewport={{ once: true }}
-            transition={{ delay: Math.random() * 0.5 + 0.1 }}
+            transition={{ delay: Math.random() * 0.3 + 0.1 }}
             variants={animationVariants}
             initial="initial"
             whileInView="animate"

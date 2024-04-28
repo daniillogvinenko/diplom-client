@@ -1,8 +1,16 @@
 .pageTitle {
     margin-bottom: 50px;
+
+    @media screen and (max-width: 1350px) {
+        margin-bottom: 30px;
+    }
 }
 
 .backLink {
     margin-top: 180px;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 1350px) {
+        margin-top: 150px;
+    }
 }
