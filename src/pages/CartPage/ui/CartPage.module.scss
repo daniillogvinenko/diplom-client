@@ -2,7 +2,15 @@
     display: flex;
     justify-content: space-between;
 
+    @media screen and (max-width: 980px) {
+        flex-direction: column;
+        gap: 50px;
+        width: 550px;
 
+        button {
+            width: 100%;
+        }
+    }
 }
 
 .backLink {

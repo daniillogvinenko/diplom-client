@@ -5,14 +5,19 @@
         margin-top: 80px;
     }
 
-    .cardContainer {
+    .sectionDesktop {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
-        margin-top: 50px;
 
-        @media screen and (max-width: 1150px) {
-            margin-top: 40px;
+        @media screen and (max-width: 980px) {
+            display: none;
+        }
+    }
+
+    .sectionTablet {
+        display: none;
+
+        @media screen and (max-width: 980px) {
+            display: grid;
         }
     }
 }

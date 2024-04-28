@@ -73,7 +73,7 @@ export const MasterClassSignUpPage = () => {
                                 Блюдо 3
                             </Text>
                         </div>
-                        <div>
+                        <div className={cls.inputWrapper}>
                             <Input
                                 className={cls.input}
                                 label="Ваше имя"

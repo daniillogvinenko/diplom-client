@@ -56,7 +56,7 @@ export const CartCard = (props: CartCardProps) => {
                     <Text pointer onClick={onClick} tagType="p" textType="cardHeader">
                         {title}
                     </Text>
-                    <Text tagType="span" textType="cardPrice">
+                    <Text className={cls.price} tagType="p" textType="cardPrice">
                         {price}
                     </Text>
                 </div>

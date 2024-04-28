@@ -12,6 +12,12 @@
     .navigatinWrapper {
         display: flex;
         gap: 30px;
+
+        white-space: nowrap;
+
+        @media screen and (max-width: 980px) {
+            overflow-x: scroll;
+        }
     }
 
     background: var(--main-color);
