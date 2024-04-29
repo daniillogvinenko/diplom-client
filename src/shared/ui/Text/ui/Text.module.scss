@@ -10,6 +10,11 @@
         font-size: 80px;
         line-height: 80px;
     }
+
+    @media screen and (max-width: 767px) {
+        font-size: 48px;
+        line-height: 48px;
+    }
 }
 
 .marquee {
@@ -21,6 +26,11 @@
     @media screen and (max-width: 1150px) {
         font-size: 64px;
         line-height: 64px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 44px;
+        line-height: 44px;
     }
 }
 
@@ -34,6 +44,11 @@
         font-size: 48px;
         line-height: 60px;
     }
+
+    @media screen and (max-width: 767px) {
+        font-size: 32px;
+        line-height: 42px;
+    }
 }
 
 .h2 {
@@ -46,6 +61,11 @@
         font-size: 36px;
         line-height: 46px;
     }
+
+    @media screen and (max-width: 767px) {
+        font-size: 26px;
+        line-height: 34px;
+    }
 }
 
 .h3 {
@@ -56,6 +76,11 @@
     @media screen and (max-width: 1150px) {
         font-size: 28px;
         line-height: 30px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 20px;
+        line-height: 24px;
     }
 }
 
@@ -68,6 +93,11 @@
         font-size: 16px;
         line-height: 26px;
     }
+
+    @media screen and (max-width: 767px) {
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
 
 .button {
@@ -78,6 +108,11 @@
     @media screen and (max-width: 1150px) {
         font-size: 16px;
         line-height: 24px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 14px;
+        line-height: 20px;
     }
 }
 
@@ -90,6 +125,11 @@
         font-size: 16px;
         line-height: 20px;
     }
+
+    @media screen and (max-width: 767px) {
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
 
 .inputLabel {
@@ -98,6 +138,11 @@
     font-family: var(--main-font);
 
     @media screen and (max-width: 1150px) {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    @media screen and (max-width: 767px) {
         font-size: 14px;
         line-height: 14px;
     }
@@ -113,6 +158,11 @@
         font-size: 22px;
         line-height: 26px;
     }
+
+    @media screen and (max-width: 767px) {
+        font-size: 20px;
+        line-height: 24px;
+    }
 }
 
 .cardPrice {
@@ -123,6 +173,11 @@
     @media screen and (max-width: 1150px) {
         font-size: 22px;
         line-height: 26px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 20px;
+        line-height: 24px;
     }
 }
 
@@ -136,6 +191,11 @@
         font-size: 32px;
         line-height: 38px;
     }
+
+    @media screen and (max-width: 767px) {
+        font-size: 28px;
+        line-height: 34px;
+    }
 }
 
 .modalText {
@@ -144,6 +204,11 @@
     font-family: var(--main-font);
 
     @media screen and (max-width: 1150px) {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    @media screen and (max-width: 767px) {
         font-size: 16px;
         line-height: 22px;
     }
@@ -158,6 +223,11 @@
     @media screen and (max-width: 1150px) {
         font-size: 12px;
         line-height: 16px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 12px;
+        line-height: 26px;
     }
 }
 

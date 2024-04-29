@@ -2,6 +2,7 @@ import { Text } from "@/shared/ui/Text";
 import cls from "./MenuSection.module.scss";
 import { Button } from "@/shared/ui/Button";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 export const MenuSection = () => {
     const animationVariants = {
@@ -30,7 +31,9 @@ export const MenuSection = () => {
                         <Text className={cls.text} tagType="h1" color="white" textType="h1">
                             ОЗНАКОМЬТЕСЬ С МЕНЮ
                         </Text>
-                        <Button variant="outline">ПОДРОБНЕЕ</Button>
+                        <NavLink to="/menu">
+                            <Button variant="outline">ПОДРОБНЕЕ</Button>
+                        </NavLink>
                     </motion.div>
                 </div>
             </div>

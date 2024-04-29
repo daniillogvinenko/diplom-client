@@ -16,18 +16,16 @@ export const CartPage = () => {
 
             <Header />
             <div className="container">
-                <div>
-                    <BackLink className={cls.backLink} to="/" text="Главная" />
-                    <Text className={cls.h1} tagType="h1" textType="h1">
-                        КОРЗИНА
-                    </Text>
-                    <Text className={cls.h3} tagType="h3" textType="h3">
-                        Ваш заказ
-                    </Text>
-                    <div className={cls.contentWrapper}>
-                        <CartList onOpenModal={setModalIsOpen} />
-                        <CartPageTotal />
-                    </div>
+                <BackLink className={cls.backLink} to="/" text="Главная" />
+                <Text className={cls.h1} tagType="h1" textType="h1">
+                    КОРЗИНА
+                </Text>
+                <Text className={cls.h3} tagType="h3" textType="h3">
+                    Ваш заказ
+                </Text>
+                <div className={cls.contentWrapper}>
+                    <CartList onOpenModal={setModalIsOpen} />
+                    <CartPageTotal />
                 </div>
             </div>
         </div>

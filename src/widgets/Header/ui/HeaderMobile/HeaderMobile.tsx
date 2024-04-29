@@ -150,7 +150,9 @@ export const HeaderMobile = ({ authorized, cart }: HeaderMobileProps) => {
                                     <div onClick={toggleMenu} key={index} className={cls.linkWrapper}>
                                         <motion.div variants={linkVariants}>
                                             <NavLink className={cls.linkItem} to={link.href}>
-                                                {link.title}
+                                                <Text tagType="h3" textType="h3">
+                                                    {link.title}
+                                                </Text>
                                             </NavLink>
                                         </motion.div>
                                     </div>
