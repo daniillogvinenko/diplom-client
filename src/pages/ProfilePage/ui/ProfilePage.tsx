@@ -4,6 +4,7 @@ import { Header } from "@/widgets/Header";
 import cls from "./ProfilePage.module.scss";
 import { BackLink } from "@/shared/ui/BackLink";
 import { useEffect } from "react";
+import { Footer } from "@/widgets/Footer";
 
 export const ProfilePage = () => {
     useEffect(() => {
@@ -11,10 +12,10 @@ export const ProfilePage = () => {
     }, []);
 
     return (
-        <div>
+        <div className={cls.ProfilePage}>
             <Header />
-            <div className="container">
-                <div>
+            <div className={cls.pageContent}>
+                <div className="container">
                     <BackLink className={cls.backLink} to="/" text="Главная" />
                     <Text className={cls.pageTitle} tagType="h1" textType="h1">
                         ПРОФИЛЬ
@@ -22,6 +23,7 @@ export const ProfilePage = () => {
                     <EditableProfileCard />
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

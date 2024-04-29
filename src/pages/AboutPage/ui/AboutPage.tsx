@@ -5,6 +5,7 @@ import cls from "./AboutPage.module.scss";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { BackLink } from "@/shared/ui/BackLink";
+import { Footer } from "@/widgets/Footer";
 
 export const AboutPage = () => {
     useEffect(() => {
@@ -157,6 +158,7 @@ export const AboutPage = () => {
                     </motion.div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

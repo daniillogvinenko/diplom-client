@@ -18,6 +18,7 @@ import { LOCALSTORAGE_USER } from "@/shared/const/localStorage";
 import { getProfileAuthorized } from "@/features/editableProfileCard";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { useCallback, useEffect } from "react";
+import { Footer } from "@/widgets/Footer";
 
 export const LoginPage = () => {
     const dispatch = useAppDispatch();
@@ -56,69 +57,63 @@ export const LoginPage = () => {
         return <Navigate to={"/"} />;
     }
 
-    if (isLoading) {
-        return (
-            <div>
-                <header className={cls.header}>
-                    <NavLink to="/">
-                        <img src={LogoImg} alt="" />
-                    </NavLink>
-                </header>
-                <div className={cls.wrapper}>
-                    <div className={cls.modalHeader}>
-                        <Text textType="modalH1" tagType="h1">
-                            Вход в личный кабинет
-                        </Text>
-                        <NavLink to="/">
-                            <img className={cls.closeBtn} src={ModalCloseIcon} alt="" />
-                        </NavLink>
-                    </div>
-                    <Skeleton className={cls.input} border="21px" height={60} width="100%" />
-                    <Skeleton className={cls.input} border="21px" height={60} width="100%" />
-
-                    <Skeleton border="60px" width="100%" height={44} />
-                </div>
-            </div>
-        );
-    }
-
     return (
-        <div>
+        <div className={cls.LoginPage}>
             <header className={cls.header}>
                 <NavLink to="/">
                     <img src={LogoImg} alt="" />
                 </NavLink>
             </header>
             <div className={cls.wrapper}>
-                <div className={cls.modalHeader}>
-                    <Text textType="modalH1" tagType="h1">
-                        Вход в личный кабинет
-                    </Text>
-                    <NavLink to="/">
-                        <img className={cls.closeBtn} src={ModalCloseIcon} alt="" />
-                    </NavLink>
-                </div>
-                <Input
-                    className={cls.input}
-                    fullWidth
-                    value={email}
-                    onChange={onEmailChange}
-                    label="Логин"
-                    placeholder="Логин"
-                />
-                <Input
-                    className={cls.input}
-                    fullWidth
-                    type="password"
-                    value={password}
-                    onChange={onPasswordChange}
-                    label="Пароль"
-                    placeholder="Пароль"
-                />
-                <Button onClick={onLogin} fullWidth>
-                    Продолжить
-                </Button>
+                {isLoading ? (
+                    <>
+                        <div className={cls.modalHeader}>
+                            <Text textType="modalH1" tagType="h1">
+                                Вход в личный кабинет
+                            </Text>
+                            <NavLink to="/">
+                                <img className={cls.closeBtn} src={ModalCloseIcon} alt="" />
+                            </NavLink>
+                        </div>
+                        <Skeleton className={cls.input} border="21px" height={60} width="100%" />
+                        <Skeleton className={cls.input} border="21px" height={60} width="100%" />
+
+                        <Skeleton border="60px" width="100%" height={44} />
+                    </>
+                ) : (
+                    <>
+                        <div className={cls.modalHeader}>
+                            <Text textType="modalH1" tagType="h1">
+                                Вход в личный кабинет
+                            </Text>
+                            <NavLink to="/">
+                                <img className={cls.closeBtn} src={ModalCloseIcon} alt="" />
+                            </NavLink>
+                        </div>
+                        <Input
+                            className={cls.input}
+                            fullWidth
+                            value={email}
+                            onChange={onEmailChange}
+                            label="Логин"
+                            placeholder="Логин"
+                        />
+                        <Input
+                            className={cls.input}
+                            fullWidth
+                            type="password"
+                            value={password}
+                            onChange={onPasswordChange}
+                            label="Пароль"
+                            placeholder="Пароль"
+                        />
+                        <Button onClick={onLogin} fullWidth>
+                            Продолжить
+                        </Button>
+                    </>
+                )}
             </div>
+            <Footer />
         </div>
     );
 };

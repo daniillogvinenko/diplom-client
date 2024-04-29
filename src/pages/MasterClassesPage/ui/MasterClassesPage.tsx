@@ -7,6 +7,7 @@ import { BackLink } from "@/shared/ui/BackLink";
 import { useEffect } from "react";
 import { MasterClassItems } from "@/shared/const/MasterClassItems";
 import { NavLink } from "react-router-dom";
+import { Footer } from "@/widgets/Footer";
 
 export const MasterClassesPage = () => {
     useEffect(() => {
@@ -16,8 +17,8 @@ export const MasterClassesPage = () => {
     return (
         <div className={classNames(cls.MasterClassesPage, {}, [])}>
             <Header />
-            <div className="container">
-                <div>
+            <div className={cls.pageContent}>
+                <div className="container">
                     <BackLink className={cls.backLink} to="/" text="Главная" />
 
                     <Text className={cls.h1} tagType="h1" textType="h1">
@@ -40,6 +41,7 @@ export const MasterClassesPage = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

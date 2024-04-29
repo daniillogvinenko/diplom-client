@@ -1,0 +1,16 @@
+.Footer {
+    background-color: var(--main-color);
+    padding: 20px 0;
+    margin-top: 150px;
+
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.noMargin {
+    margin-top: 0;
+}

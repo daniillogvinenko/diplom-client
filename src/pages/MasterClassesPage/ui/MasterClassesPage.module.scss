@@ -1,3 +1,14 @@
+.MasterClassesPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .pageContent {
+        flex: 1 1 auto;
+    }
+}
+
 .itemsContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -5,6 +16,10 @@
 
     @media screen and (max-width: 980px) {
         grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
     }
 }
 

@@ -10,6 +10,7 @@ import { BackLink } from "@/shared/ui/BackLink";
 import { MasterClassItems } from "@/shared/const/MasterClassItems";
 import { useSelector } from "react-redux";
 import { getProfileData } from "@/features/editableProfileCard";
+import { Footer } from "@/widgets/Footer";
 
 export const MasterClassSignUpPage = () => {
     const { id } = useParams();
@@ -31,82 +32,81 @@ export const MasterClassSignUpPage = () => {
     return (
         <div className={classNames(cls.MasterClassSignUpPage, {}, [])}>
             <Header />
-            <div className="container">
-                <div>
-                    <BackLink className={cls.backLink} to="/master-classes" text="Все мастер-классы" />
-                    <Text tagType="h1" className={cls.title} textType="h1">
-                        ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС
-                    </Text>
-                    <Text tagType="p" className={cls.paragraph} textType="text">
-                        {item?.description}
-                    </Text>
-                    <div className={cls.flex}>
-                        <div>
-                            <Text tagType="h3" className={cls.h3title} textType="h3">
-                                Цена за персону
-                            </Text>
-                            <Text tagType="p" textType="text">
-                                {item?.price}
-                            </Text>
-                            <Text tagType="h3" className={cls.h3title} textType="h3">
-                                Дата
-                            </Text>
-                            <Text tagType="p" textType="text">
-                                {item?.date}
-                            </Text>
-                            <Text tagType="h3" className={cls.h3title} textType="h3">
-                                Продолжительность
-                            </Text>
-                            <Text tagType="p" textType="text">
-                                {item?.duration}
-                            </Text>
-                            <Text tagType="h3" className={cls.h3title} textType="h3">
-                                Будем готовить
-                            </Text>
-                            <Text tagType="p" textType="text">
-                                Блюдо 1
-                            </Text>
-                            <Text tagType="p" textType="text">
-                                Блюдо 2
-                            </Text>
-                            <Text tagType="p" textType="text">
-                                Блюдо 3
-                            </Text>
-                        </div>
-                        <div className={cls.inputWrapper}>
-                            <Input
-                                className={cls.input}
-                                label="Ваше имя"
-                                placeholder="Ваше имя"
-                                value={nameValue}
-                                onChange={setNameValue}
-                            />
-                            <Input
-                                className={cls.input}
-                                label="Количество гостей"
-                                placeholder="Количество гостей"
-                                value={amount}
-                                onChange={setAmount}
-                            />
-                            <Input
-                                className={cls.input}
-                                label="Телефон"
-                                placeholder="Телефон"
-                                value={phoneNumberValue}
-                                onChange={setPhoneNumberValue}
-                            />
-                            <Input
-                                className={cls.input}
-                                label="Пожелания к бронированию"
-                                placeholder="Пожелания к бронированию"
-                                value={additional}
-                                onChange={setAdditional}
-                            />
-                            <Button>Подтвердить</Button>
+            <div className={cls.pageContent}>
+                <div className="container">
+                    <div>
+                        <BackLink className={cls.backLink} to="/master-classes" text="Все мастер-классы" />
+                        <Text tagType="h1" className={cls.title} textType="h1">
+                            ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС
+                        </Text>
+                        <Text tagType="p" className={cls.paragraph} textType="text">
+                            {item?.description}
+                        </Text>
+                        <div className={cls.flex}>
+                            <div>
+                                <Text tagType="h3" className={cls.h3title} textType="h3">
+                                    Цена за персону
+                                </Text>
+                                <Text tagType="p" textType="text">
+                                    {item?.price}
+                                </Text>
+                                <Text tagType="h3" className={cls.h3title} textType="h3">
+                                    Дата
+                                </Text>
+                                <Text tagType="p" textType="text">
+                                    {item?.date}
+                                </Text>
+                                <Text tagType="h3" className={cls.h3title} textType="h3">
+                                    Продолжительность
+                                </Text>
+                                <Text tagType="p" textType="text">
+                                    {item?.duration}
+                                </Text>
+                                <Text tagType="h3" className={cls.h3title} textType="h3">
+                                    Будем готовить
+                                </Text>
+                                {item?.dishes.map((dish) => (
+                                    <Text tagType="p" textType="text">
+                                        {dish}
+                                    </Text>
+                                ))}
+                            </div>
+                            <div className={cls.inputWrapper}>
+                                <Input
+                                    className={cls.input}
+                                    label="Ваше имя"
+                                    placeholder="Ваше имя"
+                                    value={nameValue}
+                                    onChange={setNameValue}
+                                />
+                                <Input
+                                    className={cls.input}
+                                    label="Количество гостей"
+                                    placeholder="Количество гостей"
+                                    value={amount}
+                                    onChange={setAmount}
+                                />
+                                <Input
+                                    className={cls.input}
+                                    label="Телефон"
+                                    placeholder="Телефон"
+                                    value={phoneNumberValue}
+                                    onChange={setPhoneNumberValue}
+                                />
+                                <Input
+                                    className={cls.input}
+                                    label="Пожелания к бронированию"
+                                    placeholder="Пожелания к бронированию"
+                                    value={additional}
+                                    onChange={setAdditional}
+                                />
+                                <Button>Подтвердить</Button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

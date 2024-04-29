@@ -8,6 +8,7 @@ import { MenuSection } from "./MenuSection/MenuSection";
 import { ReviewsSection } from "./ReviewsSection/ReviewsSection";
 import { MasterClassesSection } from "./MasterClassesSection/MasterClassesSection";
 import { useEffect } from "react";
+import { Footer } from "@/widgets/Footer";
 
 export const MainPage = () => {
     useEffect(() => {
@@ -23,6 +24,7 @@ export const MainPage = () => {
             <MenuSection />
             <ReviewsSection />
             <MasterClassesSection />
+            <Footer noMargin />
         </div>
     );
 };

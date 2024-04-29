@@ -40,19 +40,30 @@
 
     .openBtn {
         display: block;
-
-        @media screen and (max-width: 380px) {
-            display: block;
-        }
     }
 
-    .flex {
-        display: flex;
-        justify-content: space-between;
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 250px 1fr;
         align-items: center;
+
+        .logoLink {
+            display: flex;
+            justify-content: center;
+        }
 
         .logo {
             width: 230px;
+
+
+            @media screen and (max-width: 767px) {
+                width: 200px;
+            }
+        }
+
+        .gridRight {
+            display: flex;
+            justify-content: right;
         }
     }
 

@@ -9,6 +9,7 @@ import { CheckoutPageTotal } from "./CheckoutPageTotal/CheckoutPageTotal";
 import { BackLink } from "@/shared/ui/BackLink";
 import { useSelector } from "react-redux";
 import { getProfileData } from "@/features/editableProfileCard";
+import { Footer } from "@/widgets/Footer";
 
 const dropdownItem = [
     {
@@ -88,6 +89,7 @@ export const CheckoutPage = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

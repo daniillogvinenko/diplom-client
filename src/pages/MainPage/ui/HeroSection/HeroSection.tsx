@@ -9,11 +9,11 @@ export const HeroSection = () => {
             <div className="container">
                 <div className={cls.flex}>
                     <div>
-                        <Text tagType="h1" textType="h1">
+                        <Text className={cls.title} tagType="h1" textType="h1">
                             LOREM IPSUM
                         </Text>
                         <div>
-                            <Text tagType="p" textType="text">
+                            <Text className={cls.text} tagType="p" textType="text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua
                             </Text>

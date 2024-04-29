@@ -1,3 +1,14 @@
+.CartPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .pageContent {
+        flex: 1 1 auto;
+    }
+}
+
 .contentWrapper {
     display: flex;
     justify-content: space-between;

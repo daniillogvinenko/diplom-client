@@ -8,6 +8,7 @@ import { MenuModal } from "@/features/menuModal";
 import { MenuList } from "./MenuList/MenuList";
 import { motion } from "framer-motion";
 import { BackLink } from "@/shared/ui/BackLink";
+import { Footer } from "@/widgets/Footer";
 
 export const MenuPage = () => {
     // нулл - модальное окно закрыто, число - модалка открыта и показывает блюдо с установленным айди
@@ -70,6 +71,7 @@ export const MenuPage = () => {
                 <BackLink className={cls.backLink} text="Главная" to="/" />
             </div>
             <MenuList onOpenModal={setModalIsOpen} />
+            <Footer />
         </div>
     );
 };

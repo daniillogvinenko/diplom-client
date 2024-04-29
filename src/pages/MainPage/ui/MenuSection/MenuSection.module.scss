@@ -3,7 +3,7 @@
     background: url("../../../../shared/assets/images/main-page/menuSectionImage.jpg") fixed;
 
     @media screen and (max-width: 1150px) {
-        background: url("../../../../shared/assets/images/main-page/menuSectionImage.jpg");
+        background: url("../../../../shared/assets/images/main-page/menuSectionImage.jpg") center/cover;
     }
 
     .tint {

@@ -6,6 +6,11 @@
     @media screen and (max-width: 1150px) {
         height: 780px;
     }
+
+    @media screen and (max-width: 767px) {
+        height: 520px;
+        padding-top: 270px;
+    }
 }
 
 .navigation {

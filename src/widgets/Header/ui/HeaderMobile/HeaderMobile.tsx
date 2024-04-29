@@ -99,27 +99,31 @@ export const HeaderMobile = ({ authorized, cart }: HeaderMobileProps) => {
         <header className={cls.HeaderMobile}>
             <div className={cls.openBtn}>
                 <div className="container">
-                    <div className={cls.flex}>
+                    <div className={cls.grid}>
                         <img onClick={toggleMenu} className={cls.burger} src={openMenuIcon} alt="" />
-                        <NavLink to="/">
+                        <NavLink className={cls.logoLink} to="/">
                             <img className={cls.logo} src={logoImg} alt="" />
                         </NavLink>
                         {authorized ? (
-                            <NavLink to="/cart" className={cls.cartWrapper}>
-                                <img src={cartIcon} alt="" />
-                                <div className={cls.cartSeparator}></div>
-                                <div>
-                                    <div>{totalByCart(cart)} Р.</div>
-                                    <div>{itemAmountByCart(cart)} шт</div>
-                                </div>
-                            </NavLink>
+                            <div className={cls.gridRight}>
+                                <NavLink to="/cart" className={cls.cartWrapper}>
+                                    <img src={cartIcon} alt="" />
+                                    <div className={cls.cartSeparator}></div>
+                                    <div>
+                                        <div>{totalByCart(cart)} Р.</div>
+                                        <div>{itemAmountByCart(cart)} шт</div>
+                                    </div>
+                                </NavLink>
+                            </div>
                         ) : (
-                            <NavLink to="/profile" className={cls.authBtn}>
-                                <img src={authIcon} alt="" />{" "}
-                                <Text className={cls.signUpText} tagType="span" textType="text">
-                                    Войти
-                                </Text>
-                            </NavLink>
+                            <div className={cls.gridRight}>
+                                <NavLink to="/profile" className={cls.authBtn}>
+                                    <img src={authIcon} alt="" />{" "}
+                                    <Text className={cls.signUpText} tagType="span" textType="text">
+                                        Войти
+                                    </Text>
+                                </NavLink>
+                            </div>
                         )}
                     </div>
                 </div>

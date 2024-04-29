@@ -1,3 +1,14 @@
+.MasterClassSignUpPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .pageContent {
+        flex: 1 1 auto;
+    }
+}
+
 .flex {
     display: flex;
     gap: 200px;

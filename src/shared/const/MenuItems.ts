@@ -87,7 +87,7 @@ export const MenuItems: MenuSection[] = [
                 description:
                     "Ассорти из мясных эфиопских блюд - Аллича, Дуллет, Доро Вот, Китфо, Кейвот, салат. Подается с инджерой",
                 img: "https://images.squarespace-cdn.com/content/v1/5b7ceb273c3a53d72c1e987b/1535065224414-6W8NGLW6LGMBABPBKCYK/_H1A0172.jpg?format=1500w",
-                price: "1590 Р..",
+                price: "1590 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
                 fats: "XYZ",
@@ -100,7 +100,7 @@ export const MenuItems: MenuSection[] = [
                 description:
                     "Ассорти из овощных эфиопских блюд - картофель Аддис, Шировот, Месирвот, Кык Вот, Шимбра Вот, салат. Подается с инджерой",
                 img: "https://images.squarespace-cdn.com/content/v1/5b7ceb273c3a53d72c1e987b/1556172611026-WG383PBQF339WB8CFIZV/WOTS3.jpg?format=1500w",
-                price: "990 Р..",
+                price: "990 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
                 fats: "XYZ",
@@ -113,7 +113,7 @@ export const MenuItems: MenuSection[] = [
                 description:
                     "Кусочки баранины/говядины, обжаренные с луком, болгарским и острым перцем и среднеострыми специями. Подается на глиняной жаровне",
                 img: "https://lowcarbafrica.com/wp-content/uploads/2022/07/Awaze-Tibe-Egyptian-Beef-Tibs-Recipe-IG-1.jpg",
-                price: "1600 Р..",
+                price: "1600 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
                 fats: "XYZ",
@@ -130,7 +130,7 @@ export const MenuItems: MenuSection[] = [
                 title: "Чай с пряностями",
                 description: "Черный чай с гвоздикой, имбирем и бадьяном",
                 img: "https://itsmorethantea.wordpress.com/wp-content/uploads/2022/02/cropped-pot-with-cup.jpg?w=584",
-                price: "300 Р..",
+                price: "300 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
                 fats: "XYZ",
@@ -142,7 +142,7 @@ export const MenuItems: MenuSection[] = [
                 title: "Зобо",
                 description: "Напиток из гибискуса с апельсином, имбирем и гвоздикой",
                 img: "https://mediavine-res.cloudinary.com/image/upload/s--ZB_J3mx7--/ar_4:3,c_fill,f_auto,fl_lossy,q_auto/v1501296080/cwuzyrwnrpbbwlbqxqjq.jpg",
-                price: "250 Р..",
+                price: "250 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
                 fats: "XYZ",
@@ -159,7 +159,7 @@ export const MenuItems: MenuSection[] = [
                 title: "Пеппер суп",
                 description: "Острый наваристый суп из говядины, перца и шпината",
                 img: "https://recipes.net/wp-content/uploads/2023/05/african-fish-pepper-soup-recipe_f13ec7d4251d4389628a4551e7e95421.jpeg",
-                price: "450 Р..",
+                price: "450 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
                 fats: "XYZ",
@@ -171,7 +171,7 @@ export const MenuItems: MenuSection[] = [
                 title: "Эгусси суп",
                 description: "Густой суп из шпината, арахисовой пасты, тыквенных семечек, говядины и сушеной рыбы",
                 img: "https://www.chilipeppermadness.com/wp-content/uploads/2024/01/Egusi-Soup-Recipe-SQ.jpg",
-                price: "450 Р..",
+                price: "450 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
                 fats: "XYZ",
@@ -180,21 +180,55 @@ export const MenuItems: MenuSection[] = [
             },
         ],
     },
+    {
+        title: "Салаты",
+        items: [
+            {
+                id: 13,
+                title: "Греческий",
+                description:
+                    "Свежие помидоры, огурцы, перец болгарский, красный лук, маслины, сыр 'фета' с заправкой из оливкового масла с базиликом",
+                img: "https://www.vsegdavkusno.ru/assets/images/recipes/2360/grecheskij-salat-low2.jpg",
+                price: "320 Р.",
+                calories: "XYZ",
+                carbs: "XYZ",
+                fats: "XYZ",
+                proteins: "XYZ",
+                weight: "200 г",
+            },
+            {
+                id: 14,
+                title: "Цезарь",
+                description:
+                    "Салат айсберг, пшеничные гренки, помидоры черри, сыр пармезан, соус цезарь с обжаренной куриной грудкой",
+                img: "https://cdn.lifehacker.ru/wp-content/uploads/2021/10/2_1634551409-scaled-e1634551464449-1280x640.jpg",
+                price: "320 Р.",
+                calories: "XYZ",
+                carbs: "XYZ",
+                fats: "XYZ",
+                proteins: "XYZ",
+                weight: "200 г",
+            },
+            {
+                id: 15,
+                title: "Оливье",
+                description: "Оливье с ветчиной из огурца, моркови, картофеля, яиц",
+                img: "https://cookhelp.ru/upload/recipes/salat_olivye_s_kolbasoy_i_goroshkom.jpg",
+                price: "320 Р.",
+                calories: "XYZ",
+                carbs: "XYZ",
+                fats: "XYZ",
+                proteins: "XYZ",
+                weight: "200 г",
+            },
+        ],
+    },
     // {
-    //     title: "Салаты",
+    //     title: "Напитки",
     //     items: [
     //         {
-    //             id: 13,
-    //             title: "Эгусси суп",
-    //             description: "Густой суп из шпината, арахисовой пасты, тыквенных семечек, говядины и сушеной рыбы",
-    //             img: "https://www.chilipeppermadness.com/wp-content/uploads/2024/01/Egusi-Soup-Recipe-SQ.jpg",
-    //             price: "450 Р..",
-    //             calories: "XYZ",
-    //             carbs: "XYZ",
-    //             fats: "XYZ",
-    //             proteins: "XYZ",
-    //             weight: "370 г",
-    //         },
+
+    //         }
     //     ]
     // }
 ];
