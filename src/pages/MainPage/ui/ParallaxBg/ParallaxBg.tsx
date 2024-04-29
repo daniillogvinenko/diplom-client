@@ -37,7 +37,7 @@ export const ParallaxBg = () => {
                 className={classes.title}
             >
                 <Text className={classes.text} tagType="h1" color="white" textType="h1">
-                    ADDIS FLAVORS - ЭФИОПСКАЯ КУХНЯ <br /> В САНКТ-ПЕТЕРБУРГЕ
+                    ADDIS FLAVORS - РЕСТОРАН ЭФИОПСКОЙ КУХНИ <br /> В САНКТ-ПЕТЕРБУРГЕ
                 </Text>
                 <NavLink to="/menu">
                     <Button variant="outline">ПОСМОТРЕТЬ МЕНЮ</Button>

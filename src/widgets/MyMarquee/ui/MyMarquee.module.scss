@@ -1,1 +1,25 @@
-.MyMarquee {}
+.MyMarquee {
+    .marquee1 {
+        height: 130px;
+
+        @media screen and (max-width: 1150px) {
+            height: 90px;
+        }
+
+        @media screen and (max-width: 767px) {
+            height: 60px;
+        }
+    }
+
+    .marquee2 {
+        height: 130px;
+
+        @media screen and (max-width: 1150px) {
+            height: 90px;
+        }
+
+        @media screen and (max-width: 767px) {
+            height: 60px;
+        }
+    }
+}

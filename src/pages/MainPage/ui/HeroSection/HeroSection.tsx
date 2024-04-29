@@ -18,11 +18,14 @@ export const HeroSection = () => {
                                 incididunt ut labore et dolore magna aliqua
                             </Text>
                         </div>
-                        <NavLink to="/about">
+                        <NavLink className={cls.btn1} to="/about">
                             <Button>Подробнее</Button>
                         </NavLink>
                     </div>
                     <div className={cls.img1}></div>
+                    <NavLink className={cls.btn2} to="/about">
+                        <Button>Подробнее</Button>
+                    </NavLink>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import { Text } from "@/shared/ui/Text";
 import Marquee from "react-fast-marquee";
-// import cls from "./MyMarquee.module.scss";
+import cls from "./MyMarquee.module.scss";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface MyMarqueeProps {
     className?: string;
@@ -10,8 +11,8 @@ export const MyMarquee = (props: MyMarqueeProps) => {
     const { className } = props;
 
     return (
-        <div className={className}>
-            <Marquee style={{ marginBottom: 30, height: 130 }} speed={100}>
+        <div className={classNames(cls.MyMarquee, {}, [className])}>
+            <Marquee className={cls.marquee1} speed={100}>
                 <Text tagType="span" color="main" textType="marquee">
                     ADDIS FLAVORS
                 </Text>
@@ -25,7 +26,7 @@ export const MyMarquee = (props: MyMarqueeProps) => {
                     ADDIS FLAVORS
                 </Text>
             </Marquee>
-            <Marquee style={{ height: 130, marginTop: -40 }} direction="right" speed={100}>
+            <Marquee className={cls.marquee2} direction="right" speed={100}>
                 <Text tagType="span" color="main" textType="marquee">
                     ADDIS FLAVORS
                 </Text>

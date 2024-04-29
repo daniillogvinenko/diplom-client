@@ -8,6 +8,14 @@
     .text {
         width: 500px;
         margin-bottom: 30px;
+
+        @media screen and (max-width: 1150px) {
+            width: 400px;
+        }
+
+        @media screen and (max-width: 980px) {
+            width: 100%;
+        }
     }
 
     @media screen and (max-width: 1150px) {
@@ -18,6 +26,7 @@
         min-width: 610px;
         height: 500px;
         background: url('../../../../shared/assets/images/main-page/heroImage.jpg') center/cover;
+        border-radius: 21px;
 
         @media screen and (max-width: 1350px) {
             min-width: 500px;
@@ -25,7 +34,7 @@
         }
 
         @media screen and (max-width: 1150px) {
-            min-width: 430px;
+            min-width: 350px;
             height: 300px;
         }
     }
@@ -36,8 +45,28 @@
         align-items: center;
         gap: 50px;
 
-        @media screen and (max-width: 767px) {
+        .btn1 {
+            @media screen and (max-width: 980px) {
+                display: none;
+            }
+        }
+
+        .btn2 {
+            display: none;
+
+            @media screen and (max-width: 980px) {
+                display: block;
+                margin-top: 20px;
+            }
+        }
+
+        @media screen and (max-width: 980px) {
             display: block;
+
+            button {
+                width: 100%;
+                margin-bottom: 40px;
+            }
         }
     }
 }

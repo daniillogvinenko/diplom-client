@@ -80,7 +80,9 @@ export const AboutPage = () => {
                             variants={animationVariants2}
                             initial="initial"
                             whileInView="animate"
-                            src={"https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg"}
+                            src={
+                                "https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/abstract-blue-light-background_SvZPryOnfl_thumb.jpg"
+                            }
                             alt=""
                         />
                     </div>
