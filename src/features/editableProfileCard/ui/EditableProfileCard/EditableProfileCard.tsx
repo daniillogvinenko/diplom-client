@@ -2,19 +2,26 @@ import { Button } from "@/shared/ui/Button";
 import { Input } from "@/shared/ui/Input";
 import { Textarea } from "@/shared/ui/Textarea";
 import { useSelector } from "react-redux";
-import { getProfileForm, getProfileIsLoading, getProfileReadonly } from "../../model/selectors/profileSelectors";
+import {
+    getProfileError,
+    getProfileForm,
+    getProfileIsLoading,
+    getProfileReadonly,
+} from "../../model/selectors/profileSelectors";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { profileActions } from "../../model/slice/profileSlice";
 import { updateProfileData } from "../../model/services/updateProfileData";
 import cls from "./EditableProfileCard.module.scss";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { SignOutButton } from "@/features/signOutButton";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 export const EditableProfileCard = () => {
     const readonly = useSelector(getProfileReadonly);
     const form = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const dispatch = useAppDispatch();
+    const error = useSelector(getProfileError);
 
     const onEdit = () => dispatch(profileActions.setReadonly(false));
     const onCancel = () => dispatch(profileActions.cancelEdit());
@@ -36,6 +43,7 @@ export const EditableProfileCard = () => {
 
     return (
         <div>
+            {error}
             <Input
                 className={cls.input}
                 readonly={readonly}
@@ -53,7 +61,7 @@ export const EditableProfileCard = () => {
                 onChange={onChangePhoneNumber}
             />
             <Textarea
-                className={cls.input}
+                className={classNames(cls.input, {}, [cls.lastInput])}
                 readonly={readonly}
                 label="Адрес"
                 placeholder="Адрес"

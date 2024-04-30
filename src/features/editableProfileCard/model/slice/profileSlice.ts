@@ -18,6 +18,8 @@ const initialState: ProfileCardSchema = {
     },
     readonly: true,
     isLoading: false,
+    error: "",
+
     cartIsUpdating: false,
     authorized: false,
 };
@@ -31,6 +33,9 @@ export const profileSlice = createSlice({
         },
         setIsLoading: (state, action: PayloadAction<boolean>) => {
             state.isLoading = action.payload;
+        },
+        setError: (state, action: PayloadAction<string>) => {
+            state.error = action.payload;
         },
         setCartIsUpdating: (state, action: PayloadAction<boolean>) => {
             state.cartIsUpdating = action.payload;

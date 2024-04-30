@@ -5,6 +5,7 @@ const initialState: LoginSchema = {
     email: "",
     password: "",
     isLoading: false,
+    error: "",
 };
 
 export const loginSlice = createSlice({
@@ -19,6 +20,9 @@ export const loginSlice = createSlice({
         },
         setIsLoading: (state, action: PayloadAction<boolean>) => {
             state.isLoading = action.payload;
+        },
+        setError: (state, action: PayloadAction<string>) => {
+            state.error = action.payload;
         },
     },
 });

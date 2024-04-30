@@ -7,10 +7,17 @@ import { loginActions } from "../slices/loginSlice";
 
 export const loginByEmail = (email: string, password: string) => (dispatch: AppDispatch) => {
     dispatch(loginActions.setIsLoading(true));
-    axios.post<Profile>(`${_API_}/login`, { email, password }).then((response) => {
-        dispatch(loginActions.setIsLoading(false));
-        dispatch(profileActions.initProfileData(response.data));
-        // @ts-expect-error 123
-        localStorage.setItem(LOCALSTORAGE_USER, response.data.id);
-    });
+    dispatch(loginActions.setError(""));
+    axios
+        .post<Profile>(`${_API_}/login`, { email, password })
+        .then((response) => {
+            dispatch(loginActions.setIsLoading(false));
+            dispatch(profileActions.initProfileData(response.data));
+            // @ts-expect-error 123
+            localStorage.setItem(LOCALSTORAGE_USER, response.data.id);
+        })
+        .catch(() => {
+            dispatch(loginActions.setIsLoading(false));
+            dispatch(loginActions.setError("Произошла ошибка"));
+        });
 };

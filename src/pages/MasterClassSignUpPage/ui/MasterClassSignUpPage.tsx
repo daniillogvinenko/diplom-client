@@ -11,6 +11,8 @@ import { MasterClassItems } from "@/shared/const/MasterClassItems";
 import { useSelector } from "react-redux";
 import { getProfileData } from "@/features/editableProfileCard";
 import { Footer } from "@/widgets/Footer";
+import { Modal } from "@/shared/ui/Modal";
+import ModalCloseIcon from "@/shared/assets/images/menu-page/modalClose.svg";
 
 export const MasterClassSignUpPage = () => {
     const { id } = useParams();
@@ -25,6 +27,8 @@ export const MasterClassSignUpPage = () => {
     const [amount, setAmount] = useState("");
     const [additional, setAdditional] = useState("");
 
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
     useEffect(() => {
         window.scrollTo({ top: 0 });
     }, []);
@@ -33,14 +37,34 @@ export const MasterClassSignUpPage = () => {
         <div className={classNames(cls.MasterClassSignUpPage, {}, [])}>
             <Header />
             <div className={cls.pageContent}>
+                <Modal onClose={() => setModalIsOpen(false)} isOpen={modalIsOpen}>
+                    <div className={cls.modalContent}>
+                        <div className={cls.modalHeader}>
+                            <Text className={cls.modalTitle} tagType="p" textType="modalH1">
+                                Запись прошла успешно!
+                            </Text>
+                            <img onClick={() => setModalIsOpen(false)} src={ModalCloseIcon} alt="" />
+                        </div>
+                        <Text className={cls.modalText} tagType="p" textType="modalText">
+                            Мастер класс "{item?.title}"
+                        </Text>
+                        <Text className={cls.modalText} tagType="p" textType="modalText">
+                            {item?.date}
+                        </Text>
+                        <Text className={cls.modalText} tagType="p" textType="modalText">
+                            {/* todo Написать полноценную функцию */}
+                            {amount} персон{+amount % 10 === 1 ? "а" : +amount % 10 < 5 ? "ы" : ""}
+                        </Text>
+                        <Button onClick={() => setModalIsOpen(false)} variant="outlineDark">
+                            Готово
+                        </Button>
+                    </div>
+                </Modal>
                 <div className="container">
                     <div>
                         <BackLink className={cls.backLink} to="/master-classes" text="Все мастер-классы" />
                         <Text tagType="h1" className={cls.title} textType="h1">
                             ЗАПИСАТЬСЯ НА МАСТЕР-КЛАСС
-                        </Text>
-                        <Text tagType="p" className={cls.paragraph} textType="text">
-                            {item?.description}
                         </Text>
                         <div className={cls.flex}>
                             <div>
@@ -70,6 +94,21 @@ export const MasterClassSignUpPage = () => {
                                         {dish}
                                     </Text>
                                 ))}
+                                <Text tagType="h3" className={cls.h3title} textType="h3">
+                                    В стоимость входит
+                                </Text>
+                                <Text tagType="p" textType="text">
+                                    Продукты и инвентарь для приготовления
+                                </Text>
+                                <Text tagType="p" textType="text">
+                                    Приготовление блюд
+                                </Text>
+                                <Text tagType="p" textType="text">
+                                    Электронные рецепты приготовления блюд
+                                </Text>
+                                <Text tagType="p" textType="text">
+                                    Безлимитные безалкогольные напитки
+                                </Text>
                             </div>
                             <div className={cls.inputWrapper}>
                                 <Input
@@ -100,7 +139,7 @@ export const MasterClassSignUpPage = () => {
                                     value={additional}
                                     onChange={setAdditional}
                                 />
-                                <Button>Подтвердить</Button>
+                                <Button onClick={() => setModalIsOpen(true)}>Подтвердить</Button>
                             </div>
                         </div>
                     </div>

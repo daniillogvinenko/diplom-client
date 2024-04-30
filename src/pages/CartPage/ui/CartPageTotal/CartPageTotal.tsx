@@ -9,6 +9,8 @@ import { NavLink } from "react-router-dom";
 export const CartPageTotal = () => {
     const { cart } = useSelector(getProfileData);
 
+    if (Object.entries(cart).length === 0) return null;
+
     return (
         <div className={cls.totalWrapper}>
             <div className={cls.totalHeader}>

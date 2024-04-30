@@ -7,7 +7,7 @@
 
     .text {
         width: 500px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
 
         @media screen and (max-width: 1150px) {
             width: 400px;
@@ -26,7 +26,7 @@
         min-width: 610px;
         height: 500px;
         background: url('../../../../shared/assets/images/main-page/heroImage.jpg') center/cover;
-        border-radius: 21px;
+        border-radius: 50px;
 
         @media screen and (max-width: 1350px) {
             min-width: 500px;
@@ -34,7 +34,7 @@
         }
 
         @media screen and (max-width: 1150px) {
-            min-width: 350px;
+            min-width: 450px;
             height: 300px;
         }
     }

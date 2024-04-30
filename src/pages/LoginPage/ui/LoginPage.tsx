@@ -1,6 +1,6 @@
 import { NavLink, Navigate } from "react-router-dom";
 import cls from "./LoginPage.module.scss";
-import LogoImg from "@/shared/assets/images/login-page/Logo.svg";
+import LogoImg from "@/shared/assets/images/main-page/Logo.svg";
 import { Text } from "@/shared/ui/Text";
 import ModalCloseIcon from "@/shared/assets/images/menu-page/modalClose.svg";
 import { Input } from "@/shared/ui/Input";
@@ -8,6 +8,7 @@ import { Button } from "@/shared/ui/Button";
 import { useSelector } from "react-redux";
 import {
     getLoginEmail,
+    getLoginError,
     getLoginIsLoading,
     getLoginPassword,
     loginActions,
@@ -26,6 +27,7 @@ export const LoginPage = () => {
     const email = useSelector(getLoginEmail);
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginIsLoading);
+    const error = useSelector(getLoginError);
 
     const onEmailChange = (value: string) => dispatch(loginActions.setEmailInput(value));
     const onPasswordChange = (value: string) => dispatch(loginActions.setPasswordInput(value));
@@ -90,6 +92,9 @@ export const LoginPage = () => {
                                 <img className={cls.closeBtn} src={ModalCloseIcon} alt="" />
                             </NavLink>
                         </div>
+                        <Text color="red" className={cls.error} tagType="p" textType="modalText">
+                            {error}
+                        </Text>
                         <Input
                             className={cls.input}
                             fullWidth

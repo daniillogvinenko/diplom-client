@@ -31,7 +31,7 @@ export const ReviewsSectionTablet = ({ className }: ReviewsSectionTabletProps) =
             </div>
             <div>
                 <ReviewCard
-                    review="Изумительное заведение! Все очень вкусно, ожидание совсем небольшое даже при полной посадке, дружелюбный персонал !"
+                    review="Изумительное заведение! Все очень вкусно, ожидание совсем небольшое даже при полной посадке, дружелюбный персонал!"
                     name="Ирина"
                     rating={5}
                     img="https://static.vecteezy.com/system/resources/previews/004/607/791/non_2x/man-face-emotive-icon-smiling-male-character-in-blue-shirt-flat-illustration-isolated-on-white-happy-human-psychological-portrait-positive-emotions-user-avatar-for-app-web-design-vector.jpg"

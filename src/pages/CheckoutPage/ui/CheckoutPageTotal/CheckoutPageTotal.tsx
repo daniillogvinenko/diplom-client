@@ -6,7 +6,11 @@ import { Text } from "@/shared/ui/Text";
 import { useSelector } from "react-redux";
 import cls from "./CheckoutPageTotal.module.scss";
 
-export const CheckoutPageTotal = () => {
+interface CheckoutPageTotalProps {
+    onClick: () => void;
+}
+
+export const CheckoutPageTotal = ({ onClick }: CheckoutPageTotalProps) => {
     const { cart } = useSelector(getProfileData);
 
     return (
@@ -39,7 +43,7 @@ export const CheckoutPageTotal = () => {
                     {totalByCart(cart)}
                 </Text>
             </div>
-            <Button fullWidth className={cls.button}>
+            <Button onClick={onClick} fullWidth className={cls.button}>
                 Подтвердить заказ
             </Button>
         </div>

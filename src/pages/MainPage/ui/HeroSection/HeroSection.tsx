@@ -10,12 +10,13 @@ export const HeroSection = () => {
                 <div className={cls.flex}>
                     <div>
                         <Text className={cls.title} tagType="h1" textType="h1">
-                            LOREM IPSUM
+                            О РЕСТОРАНЕ
                         </Text>
                         <div>
                             <Text className={cls.text} tagType="p" textType="text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua
+                                Addis Flavors - удивительное место, где вы сможете погрузиться в атмосферу Эфиопии и
+                                насладиться разнообразными вкусами и ароматами подлинных блюд этой удивительной
+                                культуры.
                             </Text>
                         </div>
                         <NavLink className={cls.btn1} to="/about">

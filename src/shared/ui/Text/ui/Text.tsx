@@ -19,7 +19,7 @@ interface TextProps {
         | "modalH1"
         | "modalText"
         | "modalTextSecondary";
-    color?: "black" | "white" | "main" | "accent";
+    color?: "black" | "white" | "main" | "accent" | "red";
     fillNone?: boolean;
     className?: string;
     tagType: "h1" | "h2" | "h3" | "p" | "span";

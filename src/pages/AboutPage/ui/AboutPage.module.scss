@@ -14,7 +14,8 @@
         text-align: center;
 
         @media screen and (max-width: 1150px) {
-            height: 780px;
+            height: 550px;
+            padding-top: 280px;
         }
 
         @media screen and (max-width: 767px) {
@@ -86,7 +87,6 @@
     }
 
     .map {
-        border: 3px solid var(--main-color);
         border-radius: 21px;
         overflow: hidden;
 
@@ -99,7 +99,7 @@
             height: 100%;
 
             @media screen and (max-width: 1350px) {
-                width: 500px;
+                width: 580px;
             }
 
             @media screen and (max-width: 980px) {

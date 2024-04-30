@@ -36,3 +36,29 @@
 .input {
     margin-bottom: 24px;
 }
+
+.modalContent {
+    padding: 30px;
+    background-color: white;
+    border-radius: 30px;
+    text-align: center;
+
+    .modalHeader {
+        display: flex;
+        align-items: start;
+        gap: 90px;
+
+        .modalTitle {
+            margin-bottom: 20px;
+        }
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    .modalText {
+        text-align: left;
+        margin-bottom: 40px;
+    }
+}

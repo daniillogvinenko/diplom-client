@@ -8,8 +8,14 @@ import cls from "./CheckoutPage.module.scss";
 import { CheckoutPageTotal } from "./CheckoutPageTotal/CheckoutPageTotal";
 import { BackLink } from "@/shared/ui/BackLink";
 import { useSelector } from "react-redux";
-import { getProfileData } from "@/features/editableProfileCard";
+import { getProfileData, profileActions } from "@/features/editableProfileCard";
 import { Footer } from "@/widgets/Footer";
+import ModalCloseIcon from "@/shared/assets/images/menu-page/modalClose.svg";
+import { Modal } from "@/shared/ui/Modal";
+import { Button } from "@/shared/ui/Button";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+// import { Navigate } from "react-router-dom";
 
 const dropdownItem = [
     {
@@ -31,6 +37,7 @@ const dropdownItem = [
 
 export const CheckoutPage = () => {
     const [selectedItem, setSelectedItem] = useState(dropdownItem[0]);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const { firstname, phoneNumber, address } = useSelector(getProfileData);
 
@@ -38,10 +45,39 @@ export const CheckoutPage = () => {
     const [phoneNumberValue, setPhoneNumberValue] = useState(phoneNumber || "");
     const [addressValue, setAddressValue] = useState(address || "");
 
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
+    // const { cart } = useSelector(getProfileData);
+
+    // if (Object.entries(cart).length === 0) return <Navigate to="/menu" />;
+
+    // при подтверждении заказа корзина отчищается и происходит редирект на главную
+    const handleCloseModal = () => {
+        dispatch(profileActions.updateCart({}));
+        navigate("/");
+    };
+
     return (
         <div>
             <Header />
             <div className="container">
+                <Modal onClose={handleCloseModal} isOpen={modalIsOpen}>
+                    <div className={cls.modalContent}>
+                        <div className={cls.modalHeader}>
+                            <Text className={cls.modalTitle} tagType="p" textType="modalH1">
+                                Ваш заказ принят!
+                            </Text>
+                            <img onClick={handleCloseModal} src={ModalCloseIcon} alt="" />
+                        </div>
+                        <Text className={cls.modalText} tagType="p" textType="modalText">
+                            Ожидайте доставку в ближайшее время.{" "}
+                        </Text>
+                        <Button onClick={handleCloseModal} variant="outlineDark">
+                            Готово
+                        </Button>
+                    </div>
+                </Modal>
                 <div>
                     <BackLink className={cls.backLink} to="/cart" text="Корзина" />
 
@@ -84,7 +120,7 @@ export const CheckoutPage = () => {
                             />
                         </div>
                         <div>
-                            <CheckoutPageTotal />
+                            <CheckoutPageTotal onClick={() => setModalIsOpen(true)} />
                         </div>
                     </div>
                 </div>

@@ -66,11 +66,12 @@ export const AboutPage = () => {
                             О РЕСТОРАНЕ
                         </Text>
                         <Text tagType="p" textType="text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            do eiusmod tempor incididunt <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit
-                            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            В Addis Flavors вас встретит уютный интерьер, напоминающий обстановку традиционных эфиопских
+                            ресторанов, а мягкое освещение создаст атмосферу уюта и гостеприимства. <br />
+                            <br /> Эфиопия – загадочная страна с богатой культурой, колоритными обычаями и
+                            разнообразными вкусами. Этот древний край, расположенный на высотах Восточной Африки,
+                            известен своими уникальными традициями и ароматными блюдами, которые завоевывают сердца
+                            гурманов со всего мира.
                         </Text>
                     </motion.div>
                     <div>

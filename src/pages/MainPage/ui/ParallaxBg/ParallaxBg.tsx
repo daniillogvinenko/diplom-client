@@ -36,9 +36,11 @@ export const ParallaxBg = () => {
                 whileInView="animate"
                 className={classes.title}
             >
-                <Text className={classes.text} tagType="h1" color="white" textType="h1">
-                    ADDIS FLAVORS - РЕСТОРАН ЭФИОПСКОЙ КУХНИ <br /> В САНКТ-ПЕТЕРБУРГЕ
-                </Text>
+                <div className="container">
+                    <Text className={classes.text} tagType="h1" color="white" textType="h1">
+                        ADDIS FLAVORS - РЕСТОРАН ЭФИОПСКОЙ КУХНИ В САНКТ-ПЕТЕРБУРГЕ
+                    </Text>
+                </div>
                 <NavLink to="/menu">
                     <Button variant="outline">ПОСМОТРЕТЬ МЕНЮ</Button>
                 </NavLink>

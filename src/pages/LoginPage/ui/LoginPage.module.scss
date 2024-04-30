@@ -22,9 +22,10 @@
     background-color: white;
     margin-left: 50%;
     transform: translateX(-50%);
-    margin-top: 160px;
 
-    flex: 1 1 auto;
+    @media screen and (max-width: 1150px) {
+        margin-top: 50px;
+    }
 
     .modalHeader {
         display: flex;
@@ -36,7 +37,13 @@
         }
     }
 
+
+
     .input {
         margin-bottom: 24px;
     }
+}
+
+.error {
+    margin-bottom: 20px;
 }
