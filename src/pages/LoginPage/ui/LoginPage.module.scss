@@ -27,6 +27,17 @@
         margin-top: 50px;
     }
 
+    @media screen and (max-width: 767px) {
+        background-color: transparent;
+        width: 100%;
+        margin-top: 0;
+        padding: 0;
+
+        input {
+            width: 100%;
+        }
+    }
+
     .modalHeader {
         display: flex;
         justify-content: space-between;
@@ -34,6 +45,10 @@
 
         .closeBtn {
             cursor: pointer;
+
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
         }
     }
 

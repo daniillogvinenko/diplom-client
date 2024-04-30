@@ -2,7 +2,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Header } from "@/widgets/Header";
 import cls from "./MasterClassSignUpPage.module.scss";
 import { Text } from "@/shared/ui/Text";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Input } from "@/shared/ui/Input";
 import { useEffect, useState } from "react";
 import { Button } from "@/shared/ui/Button";
@@ -13,6 +13,8 @@ import { getProfileData } from "@/features/editableProfileCard";
 import { Footer } from "@/widgets/Footer";
 import { Modal } from "@/shared/ui/Modal";
 import ModalCloseIcon from "@/shared/assets/images/menu-page/modalClose.svg";
+import { Drawer } from "@/shared/ui/Drawer";
+import DrawerCloseIcon from "@/shared/assets/images/common/drawerClose.svg";
 
 export const MasterClassSignUpPage = () => {
     const { id } = useParams();
@@ -29,6 +31,11 @@ export const MasterClassSignUpPage = () => {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
+    const navigate = useNavigate();
+    const handleModalClose = () => {
+        navigate("/");
+    };
+
     useEffect(() => {
         window.scrollTo({ top: 0 });
     }, []);
@@ -37,13 +44,13 @@ export const MasterClassSignUpPage = () => {
         <div className={classNames(cls.MasterClassSignUpPage, {}, [])}>
             <Header />
             <div className={cls.pageContent}>
-                <Modal onClose={() => setModalIsOpen(false)} isOpen={modalIsOpen}>
+                <Modal className={cls.Modal} onClose={handleModalClose} isOpen={modalIsOpen}>
                     <div className={cls.modalContent}>
                         <div className={cls.modalHeader}>
                             <Text className={cls.modalTitle} tagType="p" textType="modalH1">
                                 Запись прошла успешно!
                             </Text>
-                            <img onClick={() => setModalIsOpen(false)} src={ModalCloseIcon} alt="" />
+                            <img onClick={handleModalClose} src={ModalCloseIcon} alt="" />
                         </div>
                         <Text className={cls.modalText} tagType="p" textType="modalText">
                             Мастер класс "{item?.title}"
@@ -55,11 +62,36 @@ export const MasterClassSignUpPage = () => {
                             {/* todo Написать полноценную функцию */}
                             {amount} персон{+amount % 10 === 1 ? "а" : +amount % 10 < 5 ? "ы" : ""}
                         </Text>
-                        <Button onClick={() => setModalIsOpen(false)} variant="outlineDark">
+                        <Button onClick={handleModalClose} variant="outlineDark">
                             Готово
                         </Button>
                     </div>
                 </Modal>
+                <Drawer className={cls.Drawer} onClose={handleModalClose} isOpen={modalIsOpen}>
+                    <div className={cls.modalContent}>
+                        <div className={cls.closeWrapper}>
+                            <img onClick={handleModalClose} src={DrawerCloseIcon} alt="" />
+                        </div>
+                        <div className={cls.modalHeader}>
+                            <Text className={cls.modalTitle} tagType="p" textType="modalH1">
+                                Запись прошла успешно!
+                            </Text>
+                        </div>
+                        <Text className={cls.modalText} tagType="p" textType="modalText">
+                            Мастер класс "{item?.title}"
+                        </Text>
+                        <Text className={cls.modalText} tagType="p" textType="modalText">
+                            {item?.date}
+                        </Text>
+                        <Text className={cls.modalText} tagType="p" textType="modalText">
+                            {/* todo Написать полноценную функцию */}
+                            {amount} персон{+amount % 10 === 1 ? "а" : +amount % 10 < 5 ? "ы" : ""}
+                        </Text>
+                        <Button fullWidth onClick={handleModalClose} variant="outlineDark">
+                            Готово
+                        </Button>
+                    </div>
+                </Drawer>
                 <div className="container">
                     <div>
                         <BackLink className={cls.backLink} to="/master-classes" text="Все мастер-классы" />

@@ -10,6 +10,14 @@
     @media screen and (max-width: 767px) {
         height: 520px;
     }
+
+    @media screen and (max-width: 530px) {
+        height: 440px;
+
+        button {
+            width: 100%;
+        }
+    }
 }
 
 .title {
@@ -24,6 +32,15 @@
 
     @media screen and (max-width: 767px) {
         top: 220px;
+    }
+
+    @media screen and (max-width: 530px) {
+        top: 150px;
+        text-align: left;
+    }
+
+    @media screen and (max-width: 450px) {
+        top: 120px;
     }
 }
 

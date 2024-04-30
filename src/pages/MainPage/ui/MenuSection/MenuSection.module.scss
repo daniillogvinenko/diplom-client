@@ -19,6 +19,18 @@
         @media screen and (max-width: 767px) {
             padding: 100px 0;
         }
+
+        @media screen and (max-width: 530px) {
+            padding: 85px 0;
+
+            button {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            text-align: left;
+        }
     }
 
     .text {

@@ -40,10 +40,11 @@ export const ParallaxBg = () => {
                     <Text className={classes.text} tagType="h1" color="white" textType="h1">
                         ADDIS FLAVORS - РЕСТОРАН ЭФИОПСКОЙ КУХНИ В САНКТ-ПЕТЕРБУРГЕ
                     </Text>
+
+                    <NavLink to="/menu">
+                        <Button variant="outline">ПОСМОТРЕТЬ МЕНЮ</Button>
+                    </NavLink>
                 </div>
-                <NavLink to="/menu">
-                    <Button variant="outline">ПОСМОТРЕТЬ МЕНЮ</Button>
-                </NavLink>
             </motion.div>
         </div>
     );

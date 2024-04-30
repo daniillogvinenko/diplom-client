@@ -25,6 +25,10 @@
     overflow: hidden;
     position: absolute;
 
+    @media screen and (max-width: 450px) {
+        width: 335px;
+    }
+
 
     .option {
         padding: 9px 20px;

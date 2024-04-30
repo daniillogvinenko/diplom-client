@@ -109,7 +109,7 @@ export const HeaderMobile = ({ authorized, cart }: HeaderMobileProps) => {
                                 <NavLink to="/cart" className={cls.cartWrapper}>
                                     <img src={cartIcon} alt="" />
                                     <div className={cls.cartSeparator}></div>
-                                    <div>
+                                    <div className={cls.cartInfo}>
                                         <div>{totalByCart(cart)} Р.</div>
                                         <div>{itemAmountByCart(cart)} шт</div>
                                     </div>
@@ -118,7 +118,7 @@ export const HeaderMobile = ({ authorized, cart }: HeaderMobileProps) => {
                         ) : (
                             <div className={cls.gridRight}>
                                 <NavLink to="/profile" className={cls.authBtn}>
-                                    <img src={authIcon} alt="" />{" "}
+                                    <img className={cls.authIcon} src={authIcon} alt="" />{" "}
                                     <Text className={cls.signUpText} tagType="span" textType="text">
                                         Войти
                                     </Text>

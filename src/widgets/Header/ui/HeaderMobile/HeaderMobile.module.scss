@@ -59,11 +59,21 @@
             @media screen and (max-width: 767px) {
                 width: 200px;
             }
+
+            @media screen and (max-width: 530px) {
+                width: 180px;
+            }
         }
 
         .gridRight {
             display: flex;
             justify-content: right;
+
+            .cartInfo {
+                @media screen and (max-width: 767px) {
+                    display: none;
+                }
+            }
         }
     }
 
@@ -115,10 +125,21 @@
             width: 1px;
             height: 40px;
             background-color: var(--main-color);
+
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
         }
     }
 
+
     .signUpText {
         margin-left: 10px;
+    }
+
+    .authIcon {
+        @media screen and (max-width: 530px) {
+            display: none;
+        }
     }
 }

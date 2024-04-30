@@ -1,3 +1,46 @@
+.CheckoutPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .pageContent {
+        flex: 1 1 auto;
+    }
+
+    @media screen and (max-width: 450px) {
+
+        input,
+        textarea,
+        button {
+            width: 100%;
+        }
+    }
+}
+
+.Modal {
+    @media screen and (max-width: 767px) {
+        display: none !important;
+    }
+}
+
+.Drawer {
+    display: none !important;
+
+    .modalContent {
+        padding-top: 10px;
+
+    }
+
+    .closeWrapper {
+        margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 767px) {
+        display: block !important;
+    }
+}
+
 .contentWrapper {
     display: flex;
     justify-content: space-between;
@@ -13,6 +56,10 @@
 
     @media screen and (max-width: 1350px) {
         margin-top: 150px;
+    }
+
+    @media screen and (max-width: 450px) {
+        margin-top: 120px;
     }
 }
 

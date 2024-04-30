@@ -15,6 +15,8 @@ import { Modal } from "@/shared/ui/Modal";
 import { Button } from "@/shared/ui/Button";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import DrawerCloseIcon from "@/shared/assets/images/common/drawerClose.svg";
+import { Drawer } from "@/shared/ui/Drawer";
 // import { Navigate } from "react-router-dom";
 
 const dropdownItem = [
@@ -59,68 +61,88 @@ export const CheckoutPage = () => {
     };
 
     return (
-        <div>
+        <div className={cls.CheckoutPage}>
             <Header />
-            <div className="container">
-                <Modal onClose={handleCloseModal} isOpen={modalIsOpen}>
-                    <div className={cls.modalContent}>
-                        <div className={cls.modalHeader}>
-                            <Text className={cls.modalTitle} tagType="p" textType="modalH1">
-                                Ваш заказ принят!
+            <div className={cls.pageContent}>
+                <div className="container">
+                    <Modal className={cls.Modal} onClose={handleCloseModal} isOpen={modalIsOpen}>
+                        <div className={cls.modalContent}>
+                            <div className={cls.modalHeader}>
+                                <Text className={cls.modalTitle} tagType="p" textType="modalH1">
+                                    Ваш заказ принят!
+                                </Text>
+                                <img onClick={handleCloseModal} src={ModalCloseIcon} alt="" />
+                            </div>
+                            <Text className={cls.modalText} tagType="p" textType="modalText">
+                                Ожидайте доставку в ближайшее время.{" "}
                             </Text>
-                            <img onClick={handleCloseModal} src={ModalCloseIcon} alt="" />
+                            <Button onClick={handleCloseModal} variant="outlineDark">
+                                Готово
+                            </Button>
                         </div>
-                        <Text className={cls.modalText} tagType="p" textType="modalText">
-                            Ожидайте доставку в ближайшее время.{" "}
-                        </Text>
-                        <Button onClick={handleCloseModal} variant="outlineDark">
-                            Готово
-                        </Button>
-                    </div>
-                </Modal>
-                <div>
-                    <BackLink className={cls.backLink} to="/cart" text="Корзина" />
+                    </Modal>
+                    <Drawer className={cls.Drawer} onClose={handleCloseModal} isOpen={modalIsOpen}>
+                        <div className={cls.modalContent}>
+                            <div className={cls.closeWrapper}>
+                                <img onClick={handleCloseModal} src={DrawerCloseIcon} alt="" />
+                            </div>
+                            <div className={cls.modalHeader}>
+                                <Text className={cls.modalTitle} tagType="p" textType="modalH1">
+                                    Ваш заказ принят!
+                                </Text>
+                            </div>
+                            <Text className={cls.modalText} tagType="p" textType="modalText">
+                                Ожидайте доставку в ближайшее время.{" "}
+                            </Text>
+                            <Button fullWidth onClick={handleCloseModal} variant="outlineDark">
+                                Готово
+                            </Button>
+                        </div>
+                    </Drawer>
+                    <div>
+                        <BackLink className={cls.backLink} to="/cart" text="Корзина" />
 
-                    <Text className={cls.h1} tagType="h1" textType="h1">
-                        ОФОРМЛЕНИЕ ЗАКАЗА
-                    </Text>
-                    <Text className={cls.h3} tagType="h3" textType="h3">
-                        Контакты
-                    </Text>
-                    <div className={cls.contentWrapper}>
-                        <div>
-                            <Input
-                                className={cls.input}
-                                label="Имя"
-                                placeholder="Имя"
-                                value={nameValue}
-                                onChange={setNameValue}
-                            />
-                            <Input
-                                className={cls.input}
-                                label="Номер телефона"
-                                placeholder="Номер телефона"
-                                value={phoneNumberValue}
-                                onChange={setPhoneNumberValue}
-                            />
-                            <Textarea
-                                className={cls.input}
-                                label="Адрес"
-                                placeholder="Адрес"
-                                value={addressValue}
-                                onChange={setAddressValue}
-                            />
-                            <Text className={cls.h3} tagType="h3" textType="h3">
-                                Способ оплаты
-                            </Text>
-                            <Dropdown
-                                items={dropdownItem}
-                                selectedItem={selectedItem}
-                                onSetSelected={setSelectedItem}
-                            />
-                        </div>
-                        <div>
-                            <CheckoutPageTotal onClick={() => setModalIsOpen(true)} />
+                        <Text className={cls.h1} tagType="h1" textType="h1">
+                            ОФОРМЛЕНИЕ ЗАКАЗА
+                        </Text>
+                        <Text className={cls.h3} tagType="h3" textType="h3">
+                            Контакты
+                        </Text>
+                        <div className={cls.contentWrapper}>
+                            <div>
+                                <Input
+                                    className={cls.input}
+                                    label="Имя"
+                                    placeholder="Имя"
+                                    value={nameValue}
+                                    onChange={setNameValue}
+                                />
+                                <Input
+                                    className={cls.input}
+                                    label="Номер телефона"
+                                    placeholder="Номер телефона"
+                                    value={phoneNumberValue}
+                                    onChange={setPhoneNumberValue}
+                                />
+                                <Textarea
+                                    className={cls.input}
+                                    label="Адрес"
+                                    placeholder="Адрес"
+                                    value={addressValue}
+                                    onChange={setAddressValue}
+                                />
+                                <Text className={cls.h3} tagType="h3" textType="h3">
+                                    Способ оплаты
+                                </Text>
+                                <Dropdown
+                                    items={dropdownItem}
+                                    selectedItem={selectedItem}
+                                    onSetSelected={setSelectedItem}
+                                />
+                            </div>
+                            <div>
+                                <CheckoutPageTotal onClick={() => setModalIsOpen(true)} />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -2,23 +2,38 @@
 @import "./reset";
 
 .container {
+  // большой пк
   width: 1240px;
   margin: 0 auto;
 
+  // пк
   @media screen and (max-width: 1350px) {
     width: 1050px;
   }
 
+  // большой планшет
   @media screen and (max-width: 1150px) {
     width: 925px;
   }
 
+  // планшет
   @media screen and (max-width: 980px) {
     width: 720px;
   }
 
+  // большой смартфон
   @media screen and (max-width: 767px) {
     width: 500px;
+  }
+
+  // телефон
+  @media screen and (max-width: 530px) {
+    width: 400px;
+  }
+
+  // 
+  @media screen and (max-width: 450px) {
+    width: 335px;
   }
 }
 

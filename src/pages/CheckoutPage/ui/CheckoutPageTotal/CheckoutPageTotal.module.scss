@@ -15,6 +15,10 @@
         width: 400px;
     }
 
+    @media screen and (max-width: 450px) {
+        width: 335px;
+    }
+
     .header {
         margin-bottom: 30px;
     }
@@ -33,5 +37,9 @@
 
     .button {
         margin-top: 20px;
+
+
     }
+
+
 }

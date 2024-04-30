@@ -31,7 +31,7 @@ export const MasterClassesSection = () => {
                         МЫ РЕГУЛЯРНО ПРОВОДИМ МАСТЕР-КЛАССЫ ПО ПРИГОТОВЛЕНИЮ БЛЮД ЭФИОПСКОЙ КУХНИ
                     </Text>
                     <NavLink to="/master-classes">
-                        <Button variant="outline">ОЗНАКОМИТЬСЯ</Button>
+                        <Button variant="outline">Подробнее</Button>
                     </NavLink>
                 </motion.div>
             </div>
