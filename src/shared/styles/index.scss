@@ -39,4 +39,16 @@
 
 body {
   background-color: var(--bg-color);
+
+  @font-face {
+    font-family: 'Ramona';
+    font-weight: 500;
+    src: url('../assets/fonts/Ramona/Ramona-Bold.ttf');
+  }
+
+  @font-face {
+    font-family: 'Ramona';
+    font-weight: 300;
+    src: url('../assets/fonts/Ramona/Ramona-Light.ttf');
+  }
 }
