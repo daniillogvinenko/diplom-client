@@ -5,10 +5,16 @@ import { Button } from "@/shared/ui/Button";
 import SelectedIcon from "@/shared/assets/images/menu-page/selectedIcon.svg";
 import { CounterButton } from "@/shared/ui/CounterButton";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { getProfileCartIsLoading, getProfileData, updateCart } from "@/features/editableProfileCard";
+import {
+    getProfileAuthorized,
+    getProfileCartIsLoading,
+    getProfileData,
+    updateCart,
+} from "@/features/editableProfileCard";
 import { useSelector } from "react-redux";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 interface MenuCardProps {
     title: string;
@@ -26,6 +32,8 @@ export const MenuCard = (props: MenuCardProps) => {
     const dispatch = useAppDispatch();
     const cartIsLoading = useSelector(getProfileCartIsLoading);
     const { cart } = useSelector(getProfileData);
+    const authorized = useSelector(getProfileAuthorized);
+    const navigate = useNavigate();
 
     const animationVariants = {
         initial: {
@@ -40,7 +48,11 @@ export const MenuCard = (props: MenuCardProps) => {
     };
 
     const addNewItemToCart = (id: string) => {
-        dispatch(updateCart({ ...cart, [id]: "1" }));
+        if (!authorized) {
+            navigate("/login");
+        } else {
+            dispatch(updateCart({ ...cart, [id]: "1" }));
+        }
     };
 
     const incrementCart = (id: string) => {

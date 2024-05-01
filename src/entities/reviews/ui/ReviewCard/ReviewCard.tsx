@@ -18,7 +18,7 @@ export const ReviewCard = (props: ReviewCardProps) => {
     const animationVariants = {
         initial: {
             opacity: 0,
-            y: 150,
+            y: 60,
         },
 
         animate: {

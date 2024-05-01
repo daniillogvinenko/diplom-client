@@ -4,11 +4,12 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface FooterProps {
     noMargin?: boolean;
+    className?: string;
 }
 
-export const Footer = ({ noMargin }: FooterProps) => {
+export const Footer = ({ noMargin, className }: FooterProps) => {
     return (
-        <div className={classNames(cls.Footer, { [cls.noMargin]: noMargin }, [])}>
+        <div className={classNames(cls.Footer, { [cls.noMargin]: noMargin }, [className])}>
             <div className="container">
                 <div className={cls.flex}>
                     <Text color="white" tagType="h2" textType="h2">

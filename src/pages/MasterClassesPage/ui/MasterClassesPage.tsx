@@ -29,7 +29,7 @@ export const MasterClassesPage = () => {
                     </Text>
                     <div className={cls.itemsContainer}>
                         {MasterClassItems.map((masterClass) => (
-                            <NavLink to={`/master-classes/${masterClass.id}`}>
+                            <NavLink key={masterClass.id} to={`/master-classes/${masterClass.id}`}>
                                 <MasterClassCard
                                     date={masterClass.date}
                                     price={masterClass.price}

@@ -8,7 +8,7 @@ export const MasterClassesSection = () => {
     const animationVariants = {
         initial: {
             opacity: 0,
-            y: 150,
+            y: 70,
         },
 
         animate: {
@@ -30,9 +30,11 @@ export const MasterClassesSection = () => {
                     <Text className={cls.text} tagType="h1" color="white" textType="h1">
                         МЫ РЕГУЛЯРНО ПРОВОДИМ МАСТЕР-КЛАССЫ ПО ПРИГОТОВЛЕНИЮ БЛЮД ЭФИОПСКОЙ КУХНИ
                     </Text>
-                    <NavLink to="/master-classes">
-                        <Button variant="outline">Подробнее</Button>
-                    </NavLink>
+                    <div className={cls.btnWrapper}>
+                        <NavLink to="/master-classes">
+                            <Button variant="outline">Подробнее</Button>
+                        </NavLink>
+                    </div>
                 </motion.div>
             </div>
         </div>

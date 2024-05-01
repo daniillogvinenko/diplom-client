@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, forwardRef } from "react";
 import cls from "./Text.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
@@ -27,12 +27,13 @@ interface TextProps {
     pointer?: boolean;
 }
 
-export const Text = (props: TextProps) => {
+export const Text = forwardRef<HTMLHeadingElement, TextProps>((props: TextProps, ref) => {
     const { children, textType, onClick, fillNone, pointer, className, tagType, color = "" } = props;
 
     if (tagType === "h1")
         return (
             <h1
+                ref={ref}
                 onClick={onClick}
                 className={classNames(cls.Text, { [cls.fillNone]: fillNone, [cls.pointer]: pointer }, [
                     cls[textType],
@@ -47,6 +48,7 @@ export const Text = (props: TextProps) => {
     if (tagType === "h2")
         return (
             <h2
+                ref={ref}
                 onClick={onClick}
                 className={classNames(cls.Text, { [cls.fillNone]: fillNone, [cls.pointer]: pointer }, [
                     cls[textType],
@@ -61,6 +63,7 @@ export const Text = (props: TextProps) => {
     if (tagType === "h3")
         return (
             <h3
+                ref={ref}
                 onClick={onClick}
                 className={classNames(cls.Text, { [cls.fillNone]: fillNone, [cls.pointer]: pointer }, [
                     cls[textType],
@@ -99,4 +102,4 @@ export const Text = (props: TextProps) => {
                 {children}
             </span>
         );
-};
+});

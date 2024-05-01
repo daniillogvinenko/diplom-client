@@ -1,3 +1,21 @@
+import img1 from "@/shared/assets/images/menu-page/foodImages/doro wat.jpg";
+import img2 from "@/shared/assets/images/menu-page/foodImages/kitfo.jpg";
+import img3 from "@/shared/assets/images/menu-page/foodImages/dullet.jpg";
+import img4 from "@/shared/assets/images/menu-page/foodImages/allicha.webp";
+import img5 from "@/shared/assets/images/menu-page/foodImages/key wat.jpg";
+import img6 from "@/shared/assets/images/menu-page/foodImages/beyanety wat.jpg";
+import img7 from "@/shared/assets/images/menu-page/foodImages/beyanety esom.jpg";
+import img8 from "@/shared/assets/images/menu-page/foodImages/tibs.jpg";
+import img9 from "@/shared/assets/images/menu-page/foodImages/teaWithSpices.webp";
+import img10 from "@/shared/assets/images/menu-page/foodImages/zobo.webp";
+import img11 from "@/shared/assets/images/menu-page/foodImages/pepperSoup.jpeg";
+import img12 from "@/shared/assets/images/menu-page/foodImages/egussiSoup.jpg";
+import img13 from "@/shared/assets/images/menu-page/foodImages/greekSalad.jpg";
+import img14 from "@/shared/assets/images/menu-page/foodImages/cezar.jpg";
+import img15 from "@/shared/assets/images/menu-page/foodImages/olivie.jpg";
+import img16 from "@/shared/assets/images/menu-page/foodImages/mohito.jpg";
+import img17 from "@/shared/assets/images/menu-page/foodImages/oblepihovyi.jpg";
+
 interface MenuSection {
     title: string;
     items: MenuItem[];
@@ -24,7 +42,7 @@ export const MenuItems: MenuSection[] = [
                 id: 1,
                 title: "Доро Вот",
                 description: "Курица, тушеная в соусе из лука и острых специй Бэрбэре",
-                img: "https://www.diversivore.com/wp-content/uploads/2023/05/Doro-Wat-mobile-banner-1.jpg",
+                img: img1,
                 price: "500 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -36,7 +54,7 @@ export const MenuItems: MenuSection[] = [
                 id: 2,
                 title: "Китфо",
                 description: "Мелко рубленная говядина, заправленная топленным с эфиопскими специями сливочным маслом",
-                img: "https://img.atlasobscura.com/PJuTa4zUuPS_s41G0Hl93BXD8gKxQMKJ63Ry06kBDk0/rs:fill:580:580:1/g:ce/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL3RoaW5n/X2ltYWdlcy9hODJk/ZDgzYi1mMzczLTQ5/ZjctOGIzYy1jNWRl/NmNkZjQ3ZTZmYmVi/ZmU1MGRmY2M3MDJh/NzJfS2l0Zm9fU2Vy/Z2lpIEtvdmFsIDog/QWxhbXkgU3RvY2sg/UGhvdG8uanBn.jpg",
+                img: img2,
                 price: "690 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -48,7 +66,7 @@ export const MenuItems: MenuSection[] = [
                 id: 3,
                 title: "Дуллет",
                 description: "Мелко рубленные говядина и рубец, обжаренные с луком и среднеострыми специями",
-                img: "https://media-cdn.tripadvisor.com/media/photo-s/1b/5e/94/bc/yedoro-wot-traditional.jpg",
+                img: img3,
                 price: "590 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -61,7 +79,7 @@ export const MenuItems: MenuSection[] = [
                 title: "Аллича",
                 description:
                     "Кусочки баранины/говядины, ображенные с луком, болгарским и острым перцем и среднеострыми специями",
-                img: "https://assets.bonappetit.com/photos/60493bb23b0236be8081d752/master/pass/Passover-Alicha-Denich.jpg",
+                img: img4,
                 price: "590 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -73,7 +91,7 @@ export const MenuItems: MenuSection[] = [
                 id: 5,
                 title: "Кей Вот",
                 description: "Кусочки говядины, тушеные в соусе из лука и острых специй",
-                img: "https://demandafrica.com/wp-content/uploads/2017/08/Ethiopian-Beef-Stew.jpg",
+                img: img5,
                 price: "590 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -86,7 +104,7 @@ export const MenuItems: MenuSection[] = [
                 title: "Беяянету Вот",
                 description:
                     "Ассорти из мясных эфиопских блюд - Аллича, Дуллет, Доро Вот, Китфо, Кейвот, салат. Подается с инджерой",
-                img: "https://images.squarespace-cdn.com/content/v1/5b7ceb273c3a53d72c1e987b/1535065224414-6W8NGLW6LGMBABPBKCYK/_H1A0172.jpg?format=1500w",
+                img: img6,
                 price: "1590 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -99,7 +117,7 @@ export const MenuItems: MenuSection[] = [
                 title: "Беяянету Есом",
                 description:
                     "Ассорти из овощных эфиопских блюд - картофель Аддис, Шировот, Месирвот, Кык Вот, Шимбра Вот, салат. Подается с инджерой",
-                img: "https://images.squarespace-cdn.com/content/v1/5b7ceb273c3a53d72c1e987b/1556172611026-WG383PBQF339WB8CFIZV/WOTS3.jpg?format=1500w",
+                img: img7,
                 price: "990 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -112,7 +130,7 @@ export const MenuItems: MenuSection[] = [
                 title: "Тибс",
                 description:
                     "Кусочки баранины/говядины, обжаренные с луком, болгарским и острым перцем и среднеострыми специями. Подается на глиняной жаровне",
-                img: "https://lowcarbafrica.com/wp-content/uploads/2022/07/Awaze-Tibe-Egyptian-Beef-Tibs-Recipe-IG-1.jpg",
+                img: img8,
                 price: "1600 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -129,7 +147,7 @@ export const MenuItems: MenuSection[] = [
                 id: 9,
                 title: "Чай с пряностями",
                 description: "Черный чай с гвоздикой, имбирем и бадьяном",
-                img: "https://itsmorethantea.wordpress.com/wp-content/uploads/2022/02/cropped-pot-with-cup.jpg?w=584",
+                img: img9,
                 price: "300 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -141,7 +159,7 @@ export const MenuItems: MenuSection[] = [
                 id: 10,
                 title: "Зобо",
                 description: "Напиток из гибискуса с апельсином, имбирем и гвоздикой",
-                img: "https://mediavine-res.cloudinary.com/image/upload/s--ZB_J3mx7--/ar_4:3,c_fill,f_auto,fl_lossy,q_auto/v1501296080/cwuzyrwnrpbbwlbqxqjq.jpg",
+                img: img10,
                 price: "250 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -158,7 +176,7 @@ export const MenuItems: MenuSection[] = [
                 id: 11,
                 title: "Пеппер суп",
                 description: "Острый наваристый суп из говядины, перца и шпината",
-                img: "https://recipes.net/wp-content/uploads/2023/05/african-fish-pepper-soup-recipe_f13ec7d4251d4389628a4551e7e95421.jpeg",
+                img: img11,
                 price: "450 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -170,7 +188,7 @@ export const MenuItems: MenuSection[] = [
                 id: 12,
                 title: "Эгусси суп",
                 description: "Густой суп из шпината, арахисовой пасты, тыквенных семечек, говядины и сушеной рыбы",
-                img: "https://www.chilipeppermadness.com/wp-content/uploads/2024/01/Egusi-Soup-Recipe-SQ.jpg",
+                img: img12,
                 price: "450 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -188,7 +206,7 @@ export const MenuItems: MenuSection[] = [
                 title: "Греческий",
                 description:
                     "Свежие помидоры, огурцы, перец болгарский, красный лук, маслины, сыр 'фета' с заправкой из оливкового масла с базиликом",
-                img: "https://www.vsegdavkusno.ru/assets/images/recipes/2360/grecheskij-salat-low2.jpg",
+                img: img13,
                 price: "320 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -201,7 +219,7 @@ export const MenuItems: MenuSection[] = [
                 title: "Цезарь",
                 description:
                     "Салат айсберг, пшеничные гренки, помидоры черри, сыр пармезан, соус цезарь с обжаренной куриной грудкой",
-                img: "https://cdn.lifehacker.ru/wp-content/uploads/2021/10/2_1634551409-scaled-e1634551464449-1280x640.jpg",
+                img: img14,
                 price: "320 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -213,7 +231,7 @@ export const MenuItems: MenuSection[] = [
                 id: 15,
                 title: "Оливье",
                 description: "Оливье с ветчиной из огурца, моркови, картофеля, яиц",
-                img: "https://cookhelp.ru/upload/recipes/salat_olivye_s_kolbasoy_i_goroshkom.jpg",
+                img: img15,
                 price: "320 Р.",
                 calories: "XYZ",
                 carbs: "XYZ",
@@ -223,12 +241,33 @@ export const MenuItems: MenuSection[] = [
             },
         ],
     },
-    // {
-    //     title: "Напитки",
-    //     items: [
-    //         {
-
-    //         }
-    //     ]
-    // }
+    {
+        title: "Напитки",
+        items: [
+            {
+                id: 16,
+                title: "Лимонад Мохито",
+                description: "С лимоном, свежей мятой и мятным сиропом",
+                img: img16,
+                price: "490 Р.",
+                calories: "XYZ",
+                carbs: "XYZ",
+                fats: "XYZ",
+                proteins: "XYZ",
+                weight: "1000 мл",
+            },
+            {
+                id: 17,
+                title: "Лимонад Облепиховый",
+                description: "С апельсином, мятой и облепихой",
+                img: img17,
+                price: "490 Р.",
+                calories: "XYZ",
+                carbs: "XYZ",
+                fats: "XYZ",
+                proteins: "XYZ",
+                weight: "1000 мл",
+            },
+        ],
+    },
 ];

@@ -5,6 +5,8 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Text } from "@/shared/ui/Text";
 import { useSelector } from "react-redux";
 import cls from "./MenuList.module.scss";
+import { BackLink } from "@/shared/ui/BackLink";
+import { useRef } from "react";
 
 interface MenuListProps {
     className?: string;
@@ -15,15 +17,52 @@ export const MenuList = (props: MenuListProps) => {
     const { className, onOpenModal } = props;
     const { cart } = useSelector(getProfileData);
 
+    const ref1 = useRef<HTMLHeadingElement>(null);
+    const ref2 = useRef<HTMLHeadingElement>(null);
+    const ref3 = useRef<HTMLHeadingElement>(null);
+    const ref4 = useRef<HTMLHeadingElement>(null);
+    const ref5 = useRef<HTMLHeadingElement>(null);
+
+    const refs = [ref1, ref2, ref3, ref4, ref5];
+
+    const handleScroll1 = () => ref1.current?.scrollIntoView({ behavior: "smooth" });
+    const handleScroll2 = () => ref2.current?.scrollIntoView({ behavior: "smooth" });
+    const handleScroll3 = () => ref3.current?.scrollIntoView({ behavior: "smooth" });
+    const handleScroll4 = () => ref4.current?.scrollIntoView({ behavior: "smooth" });
+    const handleScroll5 = () => ref5.current?.scrollIntoView({ behavior: "smooth" });
+
     return (
         <div className={classNames(cls.MenuList, {}, [className])}>
+            <div className={cls.navigation}>
+                <div className="container">
+                    <div className={cls.navigatinWrapper}>
+                        <Text pointer onClick={handleScroll1} color="white" textType="text" tagType="span">
+                            Эфиопская кухня
+                        </Text>
+                        <Text pointer onClick={handleScroll2} color="white" textType="text" tagType="span">
+                            Эфиопские напитки
+                        </Text>
+                        <Text pointer onClick={handleScroll3} color="white" textType="text" tagType="span">
+                            Африканская кухня
+                        </Text>
+                        <Text pointer onClick={handleScroll4} color="white" textType="text" tagType="span">
+                            Салаты
+                        </Text>
+                        <Text pointer onClick={handleScroll5} color="white" textType="text" tagType="span">
+                            Напитки
+                        </Text>
+                    </div>
+                </div>
+            </div>
             <div className="container">
+                <BackLink className={cls.backLink} text="Главная" to="/" />
                 {MenuItems.map((section, i) => (
                     <div key={section.title}>
                         <Text
                             className={classNames(cls.sectionTitle, { [cls.firstSectionTitle]: i === 0 }, [])}
                             tagType="h2"
                             textType="h2"
+                            ref={refs[i]}
                         >
                             {section.title}
                         </Text>

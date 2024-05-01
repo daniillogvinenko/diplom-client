@@ -25,7 +25,7 @@ export const AboutPage = () => {
     const animationVariants2 = {
         initial: {
             opacity: 0,
-            y: 100,
+            y: 60,
         },
 
         animate: {

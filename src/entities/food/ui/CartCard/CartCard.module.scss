@@ -23,6 +23,10 @@
             width: 100px;
             min-width: 100px;
         }
+
+        @media screen and (max-width: 450px) {
+            height: auto;
+        }
     }
 
     .price {
@@ -36,12 +40,22 @@
         flex-grow: 1;
         padding: 15px;
 
+        @media screen and (max-width: 450px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+
         .counter {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: end;
             width: 150px;
+
+            @media screen and (max-width: 450px) {
+                align-self: flex-end;
+
+            }
 
             .deleteBtn {
                 width: 14px;
@@ -50,6 +64,10 @@
 
                 &:hover {
                     transform: rotate(90deg);
+                }
+
+                @media screen and (max-width: 450px) {
+                    display: none;
                 }
             }
         }

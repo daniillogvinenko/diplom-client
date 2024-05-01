@@ -97,6 +97,7 @@
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        flex: 1 1 auto;
 
         @media screen and (max-width: 767px) {
             gap: 20px;

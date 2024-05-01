@@ -25,4 +25,29 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
+
+    .navigation {
+        .navigatinWrapper {
+            display: flex;
+            gap: 30px;
+
+            white-space: nowrap;
+
+            @media screen and (max-width: 980px) {
+                overflow-x: scroll;
+            }
+        }
+
+        background: var(--main-color);
+        padding: 18px 0;
+    }
+
+    .backLink {
+        margin-top: 80px;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: 1150px) {
+            margin-top: 40px;
+        }
+    }
 }

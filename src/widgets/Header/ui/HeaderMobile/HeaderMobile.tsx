@@ -9,6 +9,7 @@ import openMenuIcon from "@/shared/assets/images/common/openMenu.svg";
 import logoImg from "@/shared/assets/images/main-page/Logo.svg";
 import { Text } from "@/shared/ui/Text";
 import authIcon from "@/shared/assets/images/main-page/AuthIcon.png";
+import { Footer } from "@/widgets/Footer";
 
 const navLinks: { title: string; href: string }[] = [
     {
@@ -162,6 +163,9 @@ export const HeaderMobile = ({ authorized, cart }: HeaderMobileProps) => {
                                     </div>
                                 ))}
                             </motion.div>
+                            <div className="container">
+                                <Footer className={cls.footer} />
+                            </div>
                         </div>
                     </motion.div>
                 )}

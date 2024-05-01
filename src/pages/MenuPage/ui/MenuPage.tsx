@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { MenuModal } from "@/features/menuModal";
 import { MenuList } from "./MenuList/MenuList";
 import { motion } from "framer-motion";
-import { BackLink } from "@/shared/ui/BackLink";
 import { Footer } from "@/widgets/Footer";
 
 export const MenuPage = () => {
@@ -32,7 +31,7 @@ export const MenuPage = () => {
         <div>
             <MenuModal modalIsOpen={modalIsOpen} onClose={() => setModalIsOpen(null)} />
             <Header />
-            <div className={cls.heroSection} style={{ background: `url(${img1})` }}>
+            <div className={cls.heroSection} style={{ background: `url(${img1}) center/cover` }}>
                 <motion.div
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, duration: 2.2 }}
@@ -46,30 +45,7 @@ export const MenuPage = () => {
                 </motion.div>
             </div>
             <MyMarquee />
-            <div className={cls.navigation}>
-                <div className="container">
-                    <div className={cls.navigatinWrapper}>
-                        <Text color="white" textType="text" tagType="span">
-                            Эфиопская кухня
-                        </Text>
-                        <Text color="white" textType="text" tagType="span">
-                            Эфиопская кухня
-                        </Text>
-                        <Text color="white" textType="text" tagType="span">
-                            Эфиопская кухня
-                        </Text>
-                        <Text color="white" textType="text" tagType="span">
-                            Эфиопская кухня
-                        </Text>
-                        <Text color="white" textType="text" tagType="span">
-                            Эфиопская кухня
-                        </Text>
-                    </div>
-                </div>
-            </div>
-            <div className="container">
-                <BackLink className={cls.backLink} text="Главная" to="/" />
-            </div>
+
             <MenuList onOpenModal={setModalIsOpen} />
             <Footer />
         </div>
