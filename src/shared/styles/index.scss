@@ -50,4 +50,42 @@ body {
     font-family: 'Ramona';
     src: url('../assets/fonts/Ramona/Ramona-Light.ttf');
   }
+
+  // ----------
+
+  @font-face {
+    font-weight: 100;
+    font-family: 'Masiva';
+    src: url('../assets/fonts/Masiva/Masiva-Thin.ttf');
+  }
+
+  @font-face {
+    font-weight: 300;
+    font-family: 'Masiva';
+    src: url('../assets/fonts/Masiva/Masiva-Light.ttf');
+  }
+
+  @font-face {
+    font-weight: 400;
+    font-family: 'Masiva';
+    src: url('../assets/fonts/Masiva/Masiva-Regular.ttf');
+  }
+
+  @font-face {
+    font-weight: 500;
+    font-family: 'Masiva';
+    src: url('../assets/fonts/Masiva/Masiva-Medium.ttf');
+  }
+
+  @font-face {
+    font-weight: 700;
+    font-family: 'Masiva';
+    src: url('../assets/fonts/Masiva/Masiva-Bold.ttf');
+  }
+
+  @font-face {
+    font-weight: 900;
+    font-family: 'Masiva';
+    src: url('../assets/fonts/Masiva/Masiva-Black.ttf');
+  }
 }
