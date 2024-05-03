@@ -9,7 +9,6 @@ import { useSelector } from "react-redux";
 import {
     getRegistrationConfirmPassword,
     getRegistrationError,
-    getRegistrationIsLoading,
     getRegistrationPassword,
     getRegistrationUsername,
     registrNewUser,
@@ -26,7 +25,7 @@ export const RegistrationPage = () => {
     const username = useSelector(getRegistrationUsername);
     const password = useSelector(getRegistrationPassword);
     const confirmPassword = useSelector(getRegistrationConfirmPassword);
-    const isLoading = useSelector(getRegistrationIsLoading);
+    // const isLoading = useSelector(getRegistrationIsLoading);
     const error = useSelector(getRegistrationError);
 
     const dispatch = useAppDispatch();
