@@ -7,6 +7,7 @@ import { MasterClassSignUpPage } from "@/pages/MasterClassSignUpPage";
 import { MasterClassesPage } from "@/pages/MasterClassesPage";
 import { MenuPage } from "@/pages/MenuPage";
 import { ProfilePage } from "@/pages/ProfilePage";
+import { RegistrationPage } from "@/pages/RegistrationPage";
 
 export const routerConfig = {
     main: {
@@ -47,6 +48,11 @@ export const routerConfig = {
     login: {
         path: "/login",
         element: <LoginPage />,
+        authOnly: false,
+    },
+    registration: {
+        path: "/registration",
+        element: <RegistrationPage />,
         authOnly: false,
     },
     checkout: {

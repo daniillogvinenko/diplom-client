@@ -20,6 +20,7 @@ import { getProfileAuthorized } from "@/features/editableProfileCard";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { useCallback, useEffect } from "react";
 import { Footer } from "@/widgets/Footer";
+import { validateAuthorization } from "@/shared/lib/validation/validation";
 
 export const LoginPage = () => {
     const dispatch = useAppDispatch();
@@ -32,7 +33,14 @@ export const LoginPage = () => {
     const onEmailChange = (value: string) => dispatch(loginActions.setEmailInput(value));
     const onPasswordChange = (value: string) => dispatch(loginActions.setPasswordInput(value));
 
-    const onLogin = useCallback(() => dispatch(loginByEmail(email, password)), [dispatch, email, password]);
+    const onLogin = useCallback(() => {
+        if (validateAuthorization(email, password) !== undefined) {
+            // @ts-expect-error 123
+            dispatch(loginActions.setError(validateAuthorization(email, password)));
+        } else {
+            dispatch(loginByEmail(email, password));
+        }
+    }, [dispatch, email, password]);
 
     const onEnterHandler = useCallback(
         (e: KeyboardEvent) => {
@@ -45,10 +53,17 @@ export const LoginPage = () => {
 
     useEffect(() => {
         window.addEventListener("keydown", onEnterHandler);
+
         return () => {
             window.removeEventListener("keydown", onEnterHandler);
         };
     }, [onEnterHandler]);
+
+    useEffect(() => {
+        dispatch(loginActions.setEmailInput(""));
+        dispatch(loginActions.setPasswordInput(""));
+        dispatch(loginActions.setError(""));
+    }, []);
 
     // редирект на главную после успешной авторизации
     const authorized = useSelector(getProfileAuthorized);
@@ -113,9 +128,17 @@ export const LoginPage = () => {
                                 label="Пароль"
                                 placeholder="Пароль"
                             />
-                            <Button onClick={onLogin} fullWidth>
+                            <Button className={cls.button} onClick={onLogin} fullWidth>
                                 Продолжить
                             </Button>
+                            <Text tagType="span" textType="text">
+                                Нет аккаунта?{" "}
+                                <NavLink to="/registration">
+                                    <Text color="accent" tagType="span" textType="text">
+                                        Зарегистрироваться
+                                    </Text>
+                                </NavLink>
+                            </Text>
                         </>
                     )}
                 </div>

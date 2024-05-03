@@ -16,8 +16,8 @@ export const loginByEmail = (email: string, password: string) => (dispatch: AppD
             // @ts-expect-error 123
             localStorage.setItem(LOCALSTORAGE_USER, response.data.id);
         })
-        .catch(() => {
+        .catch((error) => {
             dispatch(loginActions.setIsLoading(false));
-            dispatch(loginActions.setError("Произошла ошибка"));
+            dispatch(loginActions.setError(error.response.data.message));
         });
 };
