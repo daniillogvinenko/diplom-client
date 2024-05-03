@@ -9,7 +9,7 @@ export default defineConfig({
         alias: [{ find: "@", replacement: "/src" }],
     },
     define: {
-        _API_: JSON.stringify("https://diplom-backend-eight.vercel.app"),
-        // _API_: JSON.stringify("http://localhost:8000"),
+        // _API_: JSON.stringify("https://diplom-backend-eight.vercel.app"),
+        _API_: JSON.stringify("http://localhost:8000"),
     },
 });
