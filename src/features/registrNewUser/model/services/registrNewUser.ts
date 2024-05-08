@@ -6,14 +6,17 @@ import { registrationActions } from "../slice/registrationSlice";
 import { LOCALSTORAGE_USER } from "@/shared/const/localStorage";
 
 export const registrNewUser = (username: string, password: string) => (dispatch: AppDispatch) => {
+    dispatch(registrationActions.setIsLoading(true));
     axios
         .post<Profile>(`${_API_}/registration`, { username, password })
         .then((response) => {
+            dispatch(registrationActions.setIsLoading(false));
             dispatch(profileActions.initProfileData(response.data));
             // @ts-expect-error 123
             localStorage.setItem(LOCALSTORAGE_USER, response.data.id);
         })
         .catch((error) => {
             dispatch(registrationActions.setError(error.response.data.message));
+            dispatch(registrationActions.setIsLoading(false));
         });
 };

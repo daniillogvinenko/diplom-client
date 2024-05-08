@@ -53,6 +53,7 @@ export const EditableProfileCard = () => {
                 onChange={onChangeName}
             />
             <Input
+                mask="phone"
                 className={cls.input}
                 readonly={readonly}
                 label="Номер телефона"

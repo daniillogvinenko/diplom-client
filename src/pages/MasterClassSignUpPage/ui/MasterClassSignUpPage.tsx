@@ -29,6 +29,8 @@ export const MasterClassSignUpPage = () => {
     const [amount, setAmount] = useState("");
     const [additional, setAdditional] = useState("");
 
+    const [error, setError] = useState("");
+
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const navigate = useNavigate();
@@ -39,6 +41,14 @@ export const MasterClassSignUpPage = () => {
     useEffect(() => {
         window.scrollTo({ top: 0 });
     }, []);
+
+    const handleConfirm = () => {
+        if (nameValue === "" || phoneNumberValue === "" || amount === "") {
+            setError("Заполните обязательные поля");
+        } else {
+            setModalIsOpen(true);
+        }
+    };
 
     return (
         <div className={classNames(cls.MasterClassSignUpPage, {}, [])}>
@@ -143,6 +153,9 @@ export const MasterClassSignUpPage = () => {
                                 </Text>
                             </div>
                             <div className={cls.inputWrapper}>
+                                <Text className={cls.errorText} textType="text" tagType="p" color="red">
+                                    {error}
+                                </Text>
                                 <Input
                                     className={cls.input}
                                     label="Ваше имя"
@@ -158,6 +171,7 @@ export const MasterClassSignUpPage = () => {
                                     onChange={setAmount}
                                 />
                                 <Input
+                                    mask="phone"
                                     className={cls.input}
                                     label="Телефон"
                                     placeholder="Телефон"
@@ -171,7 +185,7 @@ export const MasterClassSignUpPage = () => {
                                     value={additional}
                                     onChange={setAdditional}
                                 />
-                                <Button onClick={() => setModalIsOpen(true)}>Подтвердить</Button>
+                                <Button onClick={handleConfirm}>Подтвердить</Button>
                             </div>
                         </div>
                     </div>

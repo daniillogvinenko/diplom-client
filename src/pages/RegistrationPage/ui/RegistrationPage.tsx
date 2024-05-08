@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import {
     getRegistrationConfirmPassword,
     getRegistrationError,
+    getRegistrationIsLoading,
     getRegistrationPassword,
     getRegistrationUsername,
     registrNewUser,
@@ -20,12 +21,13 @@ import { validateRegistration } from "@/shared/lib/validation/validation";
 import { useCallback, useEffect } from "react";
 import { LOCALSTORAGE_USER } from "@/shared/const/localStorage";
 import { getProfileAuthorized } from "@/features/editableProfileCard";
+import { Skeleton } from "@/shared/ui/Skeleton";
 
 export const RegistrationPage = () => {
     const username = useSelector(getRegistrationUsername);
     const password = useSelector(getRegistrationPassword);
     const confirmPassword = useSelector(getRegistrationConfirmPassword);
-    // const isLoading = useSelector(getRegistrationIsLoading);
+    const isLoading = useSelector(getRegistrationIsLoading);
     const error = useSelector(getRegistrationError);
 
     const dispatch = useAppDispatch();
@@ -91,54 +93,74 @@ export const RegistrationPage = () => {
             </header>
             <div className="container">
                 <div className={cls.wrapper}>
-                    <div className={cls.modalHeader}>
-                        <Text textType="modalH1" tagType="h1">
-                            Регистрация
-                        </Text>
-                        <NavLink to="/">
-                            <img className={cls.closeBtn} src={ModalCloseIcon} alt="" />
-                        </NavLink>
-                    </div>
-                    <Text color="red" className={cls.error} tagType="p" textType="modalText">
-                        {error}
-                    </Text>
-                    <Input
-                        className={cls.input}
-                        fullWidth
-                        value={username}
-                        onChange={onUsernameChange}
-                        label="Логин"
-                        placeholder="Логин"
-                    />
-                    <Input
-                        className={cls.input}
-                        fullWidth
-                        type="password"
-                        value={password}
-                        onChange={onPasswordChange}
-                        label="Пароль"
-                        placeholder="Пароль"
-                    />
-                    <Input
-                        className={cls.input}
-                        fullWidth
-                        type="password"
-                        value={confirmPassword}
-                        onChange={onConfirmPasswordChange}
-                        label="Подтвердите пароль"
-                        placeholder="Подтвердите пароль"
-                    />
-                    <Button className={cls.button} onClick={onRegistrate} fullWidth>
-                        Зарегистрироваться
-                    </Button>
-                    <Text tagType="span" textType="text">
-                        Есть аккаунт?{" "}
-                        <NavLink to="/login">
-                            <Text color="accent" tagType="span" textType="text">
-                                Войти
+                    {isLoading ? (
+                        <>
+                            <div className={cls.modalHeader}>
+                                <Text textType="modalH1" tagType="h1">
+                                    Зарегистрироваться
+                                </Text>
+                                <NavLink to="/">
+                                    <img className={cls.closeBtn} src={ModalCloseIcon} alt="" />
+                                </NavLink>
+                            </div>
+                            <Skeleton className={cls.input} border="21px" height={60} width="100%" />
+                            <Skeleton className={cls.input} border="21px" height={60} width="100%" />
+                            <Skeleton className={cls.input} border="21px" height={60} width="100%" />
+
+                            <Skeleton border="60px" width="100%" height={44} />
+                        </>
+                    ) : (
+                        <>
+                            <div className={cls.modalHeader}>
+                                <Text textType="modalH1" tagType="h1">
+                                    Регистрация
+                                </Text>
+                                <NavLink to="/">
+                                    <img className={cls.closeBtn} src={ModalCloseIcon} alt="" />
+                                </NavLink>
+                            </div>
+                            <Text color="red" className={cls.error} tagType="p" textType="modalText">
+                                {error}
                             </Text>
-                        </NavLink>
-                    </Text>
+                            <Input
+                                className={cls.input}
+                                fullWidth
+                                value={username}
+                                onChange={onUsernameChange}
+                                label="Логин"
+                                placeholder="Логин"
+                            />
+                            <Input
+                                className={cls.input}
+                                fullWidth
+                                type="password"
+                                value={password}
+                                onChange={onPasswordChange}
+                                label="Пароль"
+                                placeholder="Пароль"
+                            />
+                            <Input
+                                className={cls.input}
+                                fullWidth
+                                type="password"
+                                value={confirmPassword}
+                                onChange={onConfirmPasswordChange}
+                                label="Подтвердите пароль"
+                                placeholder="Подтвердите пароль"
+                            />
+                            <Button className={cls.button} onClick={onRegistrate} fullWidth>
+                                Зарегистрироваться
+                            </Button>
+                            <Text tagType="span" textType="text">
+                                Есть аккаунт?{" "}
+                                <NavLink to="/login">
+                                    <Text color="accent" tagType="span" textType="text">
+                                        Войти
+                                    </Text>
+                                </NavLink>
+                            </Text>
+                        </>
+                    )}
                 </div>
             </div>
             <Footer />

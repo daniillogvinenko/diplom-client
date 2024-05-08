@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { BackLink } from "@/shared/ui/BackLink";
 import { Footer } from "@/widgets/Footer";
+import img2 from "@/shared/assets/images/main-page/heroImage.jpg";
 
 export const AboutPage = () => {
     useEffect(() => {
@@ -81,9 +82,7 @@ export const AboutPage = () => {
                             variants={animationVariants2}
                             initial="initial"
                             whileInView="animate"
-                            src={
-                                "https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/abstract-blue-light-background_SvZPryOnfl_thumb.jpg"
-                            }
+                            src={img2}
                             alt=""
                         />
                     </div>
@@ -152,7 +151,7 @@ export const AboutPage = () => {
                         className={cls.map}
                     >
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.8533503095884!2d30.314043177388424!3d59.93457556242721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310526f0854f%3A0xdbd92a3587fa4dc4!2z0JHQvtC70YzRiNCw0Y8g0JzQvtGA0YHQutCw0Y8g0YPQuy4sIDE4LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1714036016910!5m2!1sru!2sru"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.1072286693793!2d30.30001197738816!3d59.930362862766415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696311d09ce1f41%3A0x9b580745f7e11bd1!2z0L3QsNCxLiDRgNC10LrQuCDQnNC-0LnQutC4LCA4NC04Miwg0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LMsIDE5MDAwMA!5e0!3m2!1sru!2sru!4v1714996485683!5m2!1sru!2sru"
                             style={{ border: 0 }}
                             allowFullScreen
                             loading="lazy"
