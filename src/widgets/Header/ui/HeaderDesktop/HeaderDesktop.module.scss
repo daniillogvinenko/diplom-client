@@ -28,6 +28,11 @@
         }
     }
 
+    .middle {
+        display: flex;
+        gap: 70px;
+    }
+
     .right {
         display: flex;
         align-items: center;

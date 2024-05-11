@@ -21,6 +21,9 @@ export const Footer = ({ noMargin, className }: FooterProps) => {
                             +7 999 999 99 99
                         </Text>
                         <Text color="white" textType="text" tagType="p">
+                            наб. реки Мойки 84
+                        </Text>
+                        <Text color="white" textType="text" tagType="p">
                             addisflavorsfeedback@gmail.com
                         </Text>
                     </div>

@@ -21,7 +21,7 @@ export const HeaderDesktop = ({ authorized, cart }: HeaderDesktopProps) => {
                             <img src={appLogo} alt="" />
                         </div>
                     </NavLink>
-                    <div className={cls.right}>
+                    <div className={cls.middle}>
                         <NavLink to="/menu">
                             <Text tagType="span" textType="text">
                                 Меню
@@ -37,6 +37,8 @@ export const HeaderDesktop = ({ authorized, cart }: HeaderDesktopProps) => {
                                 Мастер-классы
                             </Text>
                         </NavLink>
+                    </div>
+                    <div className={cls.right}>
                         <NavLink to="/profile" className={cls.authBtn}>
                             <img src={authIcon} alt="" />{" "}
                             {authorized ? null : (
