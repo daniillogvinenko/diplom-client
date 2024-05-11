@@ -8,7 +8,7 @@ export const MasterClassItems = [
         date: "14.04 Суббота 18:00",
         img: img1,
         duration: "2 часа 30 минут",
-        dishes: ["Блюдо 1", "Блюдо 2", "Блюдо 3"],
+        dishes: ["Китфо", "Аллича", "Зобо"],
     },
     {
         id: "2",
@@ -17,6 +17,6 @@ export const MasterClassItems = [
         date: "14.04 Суббота 18:00",
         img: img1,
         duration: "2 часа 36 минут",
-        dishes: ["Блюдо 1", "Блюдо 2", "Блюдо 3", "Блюдо 4"],
+        dishes: ["Китфо", "Аллича", "Зобо"],
     },
 ];
