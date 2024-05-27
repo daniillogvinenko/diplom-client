@@ -1,6 +1,7 @@
 import { AboutPage } from "@/pages/AboutPage";
 import { CartPage } from "@/pages/CartPage";
 import { CheckoutPage } from "@/pages/CheckoutPage";
+import { DeliveryInfoPage } from "@/pages/DeliveryInfoPage";
 import { LoginPage } from "@/pages/LoginPage";
 import { MainPage } from "@/pages/MainPage";
 import { MasterClassSignUpPage } from "@/pages/MasterClassSignUpPage";
@@ -8,8 +9,15 @@ import { MasterClassesPage } from "@/pages/MasterClassesPage";
 import { MenuPage } from "@/pages/MenuPage";
 import { ProfilePage } from "@/pages/ProfilePage";
 import { RegistrationPage } from "@/pages/RegistrationPage";
+import { ReactNode } from "react";
 
-export const routerConfig = {
+interface Route {
+    path: string;
+    element: ReactNode;
+    authOnly: boolean;
+}
+
+export const routerConfig: Record<string, Route> = {
     main: {
         path: "/",
         element: <MainPage />,
@@ -59,5 +67,10 @@ export const routerConfig = {
         path: "/checkout",
         element: <CheckoutPage />,
         authOnly: true,
+    },
+    delivery: {
+        path: "/delivery-info",
+        element: <DeliveryInfoPage />,
+        authOnly: false,
     },
 };

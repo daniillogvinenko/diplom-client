@@ -151,8 +151,7 @@ export const AboutPage = () => {
                         className={cls.map}
                     >
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.1072286693793!2d30.30001197738816!3d59.930362862766415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696311d09ce1f41%3A0x9b580745f7e11bd1!2z0L3QsNCxLiDRgNC10LrQuCDQnNC-0LnQutC4LCA4NC04Miwg0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LMsIDE5MDAwMA!5e0!3m2!1sru!2sru!4v1714996485683!5m2!1sru!2sru"
-                            style={{ border: 0 }}
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Ada798c3ed1c23aca45a695db567236ece2f18693c178223ea218d972abc2920a&amp;source=constructor"
                             allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
