@@ -5,11 +5,18 @@ import ModalCloseIcon from "@/shared/assets/images/menu-page/modalClose.svg";
 import { MenuItems } from "@/shared/const/MenuItems";
 import { Drawer } from "@/shared/ui/Drawer";
 import DrawerCloseIcon from "@/shared/assets/images/common/drawerClose.svg";
+import { SmallTab } from "@/shared/ui/SmallTab";
 
 interface MenuModalProps {
     modalIsOpen: number | null;
     onClose: () => void;
 }
+
+const mapFiltersToRussian = {
+    spicy: "острое",
+    hit: "хит",
+    new: "новинка",
+};
 
 export const MenuModal = ({ modalIsOpen, onClose }: MenuModalProps) => {
     let section;
@@ -39,7 +46,13 @@ export const MenuModal = ({ modalIsOpen, onClose }: MenuModalProps) => {
                             <Text tagType="p" textType="text">
                                 {item?.description}
                             </Text>
+                            <div>
+                                {item?.tabs.map((tab) => (
+                                    <SmallTab>{mapFiltersToRussian[tab]}</SmallTab>
+                                ))}
+                            </div>
                         </div>
+
                         <div>
                             <Text className={cls.statsTitle} tagType="p" textType="text">
                                 Пищевая ценность на 100 г
@@ -99,7 +112,13 @@ export const MenuModal = ({ modalIsOpen, onClose }: MenuModalProps) => {
                             <Text tagType="p" textType="text">
                                 {item?.description}
                             </Text>
+                            <div>
+                                {item?.tabs.map((tab) => (
+                                    <SmallTab>{mapFiltersToRussian[tab]}</SmallTab>
+                                ))}
+                            </div>
                         </div>
+
                         <div>
                             <Text tagType="p" textType="text">
                                 Пищевая ценность на 100 г

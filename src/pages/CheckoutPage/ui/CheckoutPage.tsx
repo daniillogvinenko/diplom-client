@@ -8,7 +8,7 @@ import cls from "./CheckoutPage.module.scss";
 import { CheckoutPageTotal } from "./CheckoutPageTotal/CheckoutPageTotal";
 import { BackLink } from "@/shared/ui/BackLink";
 import { useSelector } from "react-redux";
-import { getProfileData, profileActions } from "@/features/editableProfileCard";
+import { getProfileData, profileActions, updateCart } from "@/features/editableProfileCard";
 import { Footer } from "@/widgets/Footer";
 import ModalCloseIcon from "@/shared/assets/images/menu-page/modalClose.svg";
 import { Modal } from "@/shared/ui/Modal";
@@ -57,6 +57,7 @@ export const CheckoutPage = () => {
     // при подтверждении заказа корзина отчищается и происходит редирект на главную
     const handleCloseModal = () => {
         dispatch(profileActions.updateCart({}));
+        dispatch(updateCart({}));
         navigate("/");
     };
 

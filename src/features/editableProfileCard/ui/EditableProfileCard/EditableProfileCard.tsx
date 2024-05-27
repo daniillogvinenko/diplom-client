@@ -42,7 +42,7 @@ export const EditableProfileCard = () => {
         );
 
     return (
-        <div>
+        <div className={cls.EditableProfileCard}>
             {error}
             <Input
                 className={cls.input}

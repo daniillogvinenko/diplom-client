@@ -7,10 +7,11 @@ import { useEffect } from "react";
 import { Footer } from "@/widgets/Footer";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
+import { OrderCard } from "./OrderCard/OrderCard";
 
 export const ProfilePage = () => {
     const dispatch = useAppDispatch();
-    const { email } = useSelector(getProfileData);
+    const { email, orders } = useSelector(getProfileData);
 
     useEffect(() => {
         window.scrollTo({ top: 0 });
@@ -29,7 +30,17 @@ export const ProfilePage = () => {
                     <Text className={cls.username} tagType="p" textType="text">
                         {email}
                     </Text>
-                    <EditableProfileCard />
+                    <div className={cls.flex}>
+                        <EditableProfileCard />
+                        <div className={cls.right}>
+                            <Text className={cls.historyTitle} tagType="h3" textType="h3">
+                                История заказов
+                            </Text>
+                            {orders.map((order) => (
+                                <OrderCard key={order.id} className={cls.orderCard} order={order} />
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer />

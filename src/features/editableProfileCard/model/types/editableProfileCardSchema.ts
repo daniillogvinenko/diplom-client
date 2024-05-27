@@ -1,6 +1,6 @@
 import { Profile } from "@/entities/profile";
 
-export type ProfileForm = Omit<Profile, "id" | "email" | "cart">;
+export type ProfileForm = Omit<Profile, "id" | "email" | "cart" | "orders">;
 
 export interface ProfileCardSchema {
     // "настоящее" значение

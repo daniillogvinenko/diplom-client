@@ -10,6 +10,7 @@ const initialState: ProfileCardSchema = {
         phoneNumber: "",
         id: "",
         cart: {},
+        orders: [],
     },
     form: {
         address: "",
@@ -56,6 +57,7 @@ export const profileSlice = createSlice({
             state.data!.firstname = action.payload.firstname;
             state.data!.id = action.payload.id;
             state.data!.phoneNumber = action.payload.phoneNumber;
+            state.data!.orders = action.payload.orders;
 
             state.form = {
                 address: action.payload.address,
@@ -72,6 +74,7 @@ export const profileSlice = createSlice({
                 phoneNumber: "",
                 id: "",
                 cart: {},
+                orders: [],
             }),
                 (state.form = {
                     address: "",

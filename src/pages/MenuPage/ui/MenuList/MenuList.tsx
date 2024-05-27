@@ -6,7 +6,9 @@ import { Text } from "@/shared/ui/Text";
 import { useSelector } from "react-redux";
 import cls from "./MenuList.module.scss";
 import { BackLink } from "@/shared/ui/BackLink";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { Tab } from "@/shared/ui/Tab";
+import { menuCardHelper } from "@/shared/lib/menuFilters/menuFilters";
 
 interface MenuListProps {
     className?: string;
@@ -30,6 +32,10 @@ export const MenuList = (props: MenuListProps) => {
     const handleScroll3 = () => ref3.current?.scrollIntoView({ behavior: "smooth" });
     const handleScroll4 = () => ref4.current?.scrollIntoView({ behavior: "smooth" });
     const handleScroll5 = () => ref5.current?.scrollIntoView({ behavior: "smooth" });
+
+    const [newTabSelected, setNewTabSelected] = useState(false);
+    const [hitTabSelected, setHitTabSelected] = useState(false);
+    const [spicyTabSelected, setSpicyTabSelected] = useState(false);
 
     return (
         <div className={classNames(cls.MenuList, {}, [className])}>
@@ -56,29 +62,51 @@ export const MenuList = (props: MenuListProps) => {
             </div>
             <div className="container">
                 <BackLink className={cls.backLink} text="Главная" to="/" />
+
+                <div className={cls.tabWrapper}>
+                    <Tab onClick={() => setNewTabSelected((prev) => !prev)} selected={newTabSelected}>
+                        Новинки
+                    </Tab>
+                    <Tab onClick={() => setHitTabSelected((prev) => !prev)} selected={hitTabSelected}>
+                        Хит
+                    </Tab>
+                    <Tab onClick={() => setSpicyTabSelected((prev) => !prev)} selected={spicyTabSelected}>
+                        Острое
+                    </Tab>
+                </div>
                 {MenuItems.map((section, i) => (
                     <div key={section.title}>
-                        <Text
-                            className={classNames(cls.sectionTitle, { [cls.firstSectionTitle]: i === 0 }, [])}
-                            tagType="h2"
-                            textType="h2"
-                            ref={refs[i]}
-                        >
-                            {section.title}
-                        </Text>
+                        {/* отрисовываем заголовок только если в секции существует блюдо, подходящее под фильтры */}
+                        {section.items.some((item) =>
+                            menuCardHelper(newTabSelected, hitTabSelected, spicyTabSelected, item.tabs)
+                        ) ? (
+                            <Text
+                                className={classNames(cls.sectionTitle, { [cls.firstSectionTitle]: i === 0 }, [])}
+                                tagType="h2"
+                                textType="h2"
+                                ref={refs[i]}
+                            >
+                                {section.title}
+                            </Text>
+                        ) : null}
                         <div className={cls.cardsContainer}>
                             {section.items.map((item) => (
-                                <MenuCard
-                                    id={String(item.id)}
-                                    key={item.id}
-                                    onClick={() => onOpenModal(item.id)}
-                                    img={item.img}
-                                    price={item.price}
-                                    // если айди итема есть в массиве cart, то selected
-                                    selected={Object.keys(cart).includes(String(item.id))}
-                                    title={item.title}
-                                    selectedAmount={+cart[item.id]}
-                                />
+                                <>
+                                    {/* отрисовываем карточку, только если блюдо подходит под фильтры */}
+                                    {menuCardHelper(newTabSelected, hitTabSelected, spicyTabSelected, item.tabs) ? (
+                                        <MenuCard
+                                            id={String(item.id)}
+                                            key={item.id}
+                                            onClick={() => onOpenModal(item.id)}
+                                            img={item.img}
+                                            price={item.price}
+                                            // если айди итема есть в массиве cart, то selected
+                                            selected={Object.keys(cart).includes(String(item.id))}
+                                            title={item.title}
+                                            selectedAmount={+cart[item.id]}
+                                        />
+                                    ) : null}
+                                </>
                             ))}
                         </div>
                     </div>

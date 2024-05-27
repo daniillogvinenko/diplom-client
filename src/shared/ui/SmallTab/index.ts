@@ -1,0 +1,1 @@
+export { SmallTab } from "./SmallTab";

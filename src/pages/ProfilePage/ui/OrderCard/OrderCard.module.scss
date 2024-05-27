@@ -1,0 +1,30 @@
+.OrderCard {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.295);
+    border-radius: 21px;
+    padding: 21px 21px 11px;
+    width: 500px;
+
+    @media screen and (max-width: 530px) {
+        width: 400px;
+    }
+
+    @media screen and (max-width: 1150px) {
+        width: 100%;
+    }
+
+
+    &>* {
+        margin-bottom: 10px;
+    }
+
+    .separation {
+        height: 1px;
+        background-color: var(--main-color);
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
