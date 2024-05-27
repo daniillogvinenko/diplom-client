@@ -50,6 +50,13 @@ export const MasterClassSignUpPage = () => {
         }
     };
 
+    // позволяет установить только положительное значение гостей
+    const handleSetAmountOfGuests = (value: string) => {
+        if (+value > 0) {
+            setAmount(value);
+        }
+    };
+
     return (
         <div className={classNames(cls.MasterClassSignUpPage, {}, [])}>
             <Header />
@@ -72,7 +79,7 @@ export const MasterClassSignUpPage = () => {
                             {/* todo Написать полноценную функцию */}
                             {amount} персон{+amount % 10 === 1 ? "а" : +amount % 10 < 5 ? "ы" : ""}
                         </Text>
-                        <Button onClick={handleModalClose} variant="outlineDark">
+                        <Button fullWidth onClick={handleModalClose}>
                             Готово
                         </Button>
                     </div>
@@ -97,7 +104,7 @@ export const MasterClassSignUpPage = () => {
                             {/* todo Написать полноценную функцию */}
                             {amount} персон{+amount % 10 === 1 ? "а" : +amount % 10 < 5 ? "ы" : ""}
                         </Text>
-                        <Button fullWidth onClick={handleModalClose} variant="outlineDark">
+                        <Button fullWidth onClick={handleModalClose}>
                             Готово
                         </Button>
                     </div>
@@ -132,7 +139,7 @@ export const MasterClassSignUpPage = () => {
                                     Будем готовить
                                 </Text>
                                 {item?.dishes.map((dish) => (
-                                    <Text tagType="p" textType="text">
+                                    <Text key={dish} tagType="p" textType="text">
                                         {dish}
                                     </Text>
                                 ))}
@@ -165,10 +172,11 @@ export const MasterClassSignUpPage = () => {
                                 />
                                 <Input
                                     className={cls.input}
+                                    type="number"
                                     label="Количество гостей"
                                     placeholder="Количество гостей"
                                     value={amount}
-                                    onChange={setAmount}
+                                    onChange={handleSetAmountOfGuests}
                                 />
                                 <Input
                                     mask="phone"

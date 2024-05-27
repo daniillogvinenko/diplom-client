@@ -77,7 +77,7 @@ export const CheckoutPage = () => {
                             <Text className={cls.modalText} tagType="p" textType="modalText">
                                 Ожидайте доставку в ближайшее время.{" "}
                             </Text>
-                            <Button onClick={handleCloseModal} variant="outlineDark">
+                            <Button fullWidth onClick={handleCloseModal}>
                                 Готово
                             </Button>
                         </div>
@@ -95,7 +95,7 @@ export const CheckoutPage = () => {
                             <Text className={cls.modalText} tagType="p" textType="modalText">
                                 Ожидайте доставку в ближайшее время.{" "}
                             </Text>
-                            <Button fullWidth onClick={handleCloseModal} variant="outlineDark">
+                            <Button fullWidth onClick={handleCloseModal}>
                                 Готово
                             </Button>
                         </div>
