@@ -30,7 +30,7 @@ export const Footer = ({ noMargin, className }: FooterProps) => {
                         </div>
                         <div>
                             <Text color="white" textType="text" tagType="p">
-                                +7 999 999 99 99
+                                +7 (981) 132-12-01
                             </Text>
                             <Text color="white" textType="text" tagType="p">
                                 наб. реки Мойки 84

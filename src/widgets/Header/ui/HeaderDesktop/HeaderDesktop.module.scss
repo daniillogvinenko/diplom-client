@@ -10,6 +10,23 @@
     line-height: 26px;
     box-shadow: 4px 0 15px 0 rgba(0, 0, 0, 0.226);
 
+    span {
+        transition-duration: .3s;
+
+        &:hover {
+            opacity: 0.65;
+        }
+    }
+
+    .authBtn {
+        transition-duration: .3s;
+
+        &:hover {
+            opacity: 0.65;
+        }
+    }
+
+
     @media screen and (max-width: 1150px) {
         display: none;
     }
@@ -53,6 +70,12 @@
         gap: 15px;
         font-size: 14px;
         line-height: 16px;
+
+        transition-duration: .3s;
+
+        &:hover {
+            opacity: 0.65;
+        }
 
         .cartSeparator {
             width: 1px;

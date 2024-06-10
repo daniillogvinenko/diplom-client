@@ -128,20 +128,20 @@ export const AboutPage = () => {
                             Адрес
                         </Text>
                         <Text className={cls.info} tagType="p" textType="text">
-                            Санкт-Петербург, Большая Морская ул., 18
+                            Санкт-Петербург, наб. реки Мойки 84
                         </Text>
 
                         <Text tagType="p" textType="text">
                             Телефон
                         </Text>
                         <Text className={cls.info} tagType="p" textType="text">
-                            +7 999 999-99-99
+                            +7 (981) 132-12-01
                         </Text>
                         <Text tagType="p" textType="text">
                             E-mail
                         </Text>
                         <Text className={cls.info} tagType="p" textType="text">
-                            addisflavours@mail.ru
+                            addisflavorsfeedback@gmail.com
                         </Text>
                     </motion.div>
                     <motion.div

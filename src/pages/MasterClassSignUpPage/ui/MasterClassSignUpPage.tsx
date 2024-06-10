@@ -45,7 +45,10 @@ export const MasterClassSignUpPage = () => {
     const handleConfirm = () => {
         if (nameValue === "" || phoneNumberValue === "" || amount === "") {
             setError("Заполните обязательные поля");
+        } else if (phoneNumberValue && phoneNumberValue.length < 18) {
+            setError("Введите корректный номер телефона");
         } else {
+            console.log(phoneNumberValue.length);
             setModalIsOpen(true);
         }
     };

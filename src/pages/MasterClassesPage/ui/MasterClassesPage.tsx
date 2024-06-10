@@ -25,7 +25,7 @@ export const MasterClassesPage = () => {
                         КУЛИНАРНЫЕ МАСТЕР КЛАССЫ <br /> В ADDIS FLAVORS
                     </Text>
                     <Text className={cls.h3} tagType="h3" textType="h3">
-                        Расписание на апрель-май
+                        Расписание на июнь-июль
                     </Text>
                     <div className={cls.itemsContainer}>
                         {MasterClassItems.map((masterClass) => (

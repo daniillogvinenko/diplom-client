@@ -46,7 +46,7 @@ export const MenuModal = ({ modalIsOpen, onClose }: MenuModalProps) => {
                             <Text tagType="p" textType="text">
                                 {item?.description}
                             </Text>
-                            <div>
+                            <div className={cls.tabsWrapper}>
                                 {item?.tabs.map((tab) => (
                                     <SmallTab>{mapFiltersToRussian[tab]}</SmallTab>
                                 ))}
@@ -112,7 +112,7 @@ export const MenuModal = ({ modalIsOpen, onClose }: MenuModalProps) => {
                             <Text tagType="p" textType="text">
                                 {item?.description}
                             </Text>
-                            <div>
+                            <div className={cls.tabsWrapper}>
                                 {item?.tabs.map((tab) => (
                                     <SmallTab>{mapFiltersToRussian[tab]}</SmallTab>
                                 ))}
