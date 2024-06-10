@@ -2,6 +2,7 @@ import { Text } from "@/shared/ui/Text";
 import cls from "./Footer.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { NavLink } from "react-router-dom";
+import logo from "@/shared/assets/images/footer/logoWhite.svg";
 
 interface FooterProps {
     noMargin?: boolean;
@@ -13,10 +14,7 @@ export const Footer = ({ noMargin, className }: FooterProps) => {
         <div className={classNames(cls.Footer, { [cls.noMargin]: noMargin }, [className])}>
             <div className="container">
                 <div className={cls.flex}>
-                    <Text color="white" tagType="h2" textType="h2">
-                        ADDIS <br />
-                        FLAVORS
-                    </Text>
+                    <img src={logo} alt="" />
                     <div className={cls.right}>
                         <div>
                             <NavLink to={"/delivery-info"}>

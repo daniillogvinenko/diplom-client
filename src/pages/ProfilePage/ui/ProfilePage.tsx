@@ -36,7 +36,7 @@ export const ProfilePage = () => {
                             <Text className={cls.historyTitle} tagType="h3" textType="h3">
                                 История заказов
                             </Text>
-                            {orders.map((order) => (
+                            {orders?.map((order) => (
                                 <OrderCard key={order.id} className={cls.orderCard} order={order} />
                             ))}
                         </div>

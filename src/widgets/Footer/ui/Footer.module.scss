@@ -7,6 +7,12 @@
         margin-top: 120px;
     }
 
+    @media screen and (max-width: 530px) {
+        * {
+            margin-bottom: 5px;
+        }
+    }
+
     a:hover {
         opacity: 0.7;
     }
@@ -25,18 +31,29 @@
         .right {
             display: flex;
             gap: 100px;
+            align-items: center;
 
             @media screen and (max-width: 980px) {
-                gap: 50px;
+                gap: 30px;
             }
 
             @media screen and (max-width: 767px) {
                 margin-top: 40px;
+                gap: unset;
+                justify-content: space-between;
             }
 
-            @media screen and (max-width: 450px) {
+            @media screen and (max-width: 530px) {
                 display: block;
             }
+        }
+    }
+
+    img {
+        width: 230px;
+
+        @media screen and (max-width: 980px) {
+            display: none;
         }
     }
 }

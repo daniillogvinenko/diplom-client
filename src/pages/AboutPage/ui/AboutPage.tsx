@@ -46,9 +46,11 @@ export const AboutPage = () => {
                     initial="initial"
                     whileInView="animate"
                 >
-                    <Text tagType="span" color="white" textType="pageTitle">
-                        О НАС
-                    </Text>
+                    <div className="container">
+                        <Text tagType="span" color="white" textType="h1">
+                            Погрузитесь в атмосферу восточной Африки с Addis Flavors!
+                        </Text>
+                    </div>
                 </motion.div>
             </div>
 

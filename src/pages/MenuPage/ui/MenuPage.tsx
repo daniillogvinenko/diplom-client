@@ -39,9 +39,11 @@ export const MenuPage = () => {
                     initial="initial"
                     whileInView="animate"
                 >
-                    <Text tagType="span" color="white" textType="pageTitle">
-                        МЕНЮ
-                    </Text>
+                    <div className="container">
+                        <Text tagType="span" color="white" textType="h1">
+                            Гастрономическое путешествие в мир ароматов с Addis Flavors!
+                        </Text>
+                    </div>
                 </motion.div>
             </div>
             <MyMarquee />
