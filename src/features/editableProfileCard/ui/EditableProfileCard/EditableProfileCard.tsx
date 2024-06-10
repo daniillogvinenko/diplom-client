@@ -15,6 +15,7 @@ import cls from "./EditableProfileCard.module.scss";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { SignOutButton } from "@/features/signOutButton";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { Text } from "@/shared/ui/Text";
 
 export const EditableProfileCard = () => {
     const readonly = useSelector(getProfileReadonly);
@@ -43,7 +44,9 @@ export const EditableProfileCard = () => {
 
     return (
         <div className={cls.EditableProfileCard}>
-            {error}
+            <Text tagType="p" textType="text" color="red">
+                {error}
+            </Text>
             <Input
                 className={cls.input}
                 readonly={readonly}

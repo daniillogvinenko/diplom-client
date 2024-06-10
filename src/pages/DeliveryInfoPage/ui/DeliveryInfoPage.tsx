@@ -4,8 +4,13 @@ import { Header } from "@/widgets/Header";
 import cls from "./DeliveryInfoPage.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Text } from "@/shared/ui/Text";
+import { useEffect } from "react";
 
 export const DeliveryInfoPage = () => {
+    useEffect(() => {
+        window.scrollTo({ top: 0 });
+    }, []);
+
     return (
         <div className={classNames(cls.DeliveryInfoPage, {}, [])}>
             <Header />
