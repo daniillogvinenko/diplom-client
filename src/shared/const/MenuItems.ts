@@ -49,7 +49,7 @@ export const MenuItems: MenuSection[] = [
                 carbs: "71",
                 fats: "6,6",
                 proteins: "12,3",
-                weight: "230",
+                weight: "230 г",
                 tabs: [],
             },
             {
@@ -62,7 +62,7 @@ export const MenuItems: MenuSection[] = [
                 carbs: "62",
                 fats: "6,6",
                 proteins: "10,8",
-                weight: "230",
+                weight: "230 г",
                 tabs: ["spicy", "hit"],
             },
             {
