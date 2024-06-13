@@ -26,7 +26,18 @@ export const EditableProfileCard = () => {
 
     const onEdit = () => dispatch(profileActions.setReadonly(false));
     const onCancel = () => dispatch(profileActions.cancelEdit());
-    const onSave = () => dispatch(updateProfileData({ ...form }));
+    const onSave = () => {
+        if (form.phoneNumber!.length < 18) {
+            dispatch(profileActions.setError("Введите корректный номер телефона"));
+        } else if (!form.firstname) {
+            dispatch(profileActions.setError("Введите корректное имя"));
+        } else if (!form.address) {
+            dispatch(profileActions.setError("Введите корректный адрес"));
+        } else {
+            dispatch(profileActions.setError(""));
+            dispatch(updateProfileData({ ...form }));
+        }
+    };
     const onChangeName = (value: string) => dispatch(profileActions.updateProfileForm({ firstname: value }));
     const onChangePhoneNumber = (value: string) => dispatch(profileActions.updateProfileForm({ phoneNumber: value }));
     const onChangeAddress = (value: string) => dispatch(profileActions.updateProfileForm({ address: value }));

@@ -106,6 +106,9 @@ export const CheckoutPage = () => {
                         <Text className={cls.h1} tagType="h1" textType="h1">
                             ОФОРМЛЕНИЕ ЗАКАЗА
                         </Text>
+                        <Text tagType="p" textType="text" color="red">
+                            {"error"}
+                        </Text>
                         <Text className={cls.h3} tagType="h3" textType="h3">
                             Контакты
                         </Text>
