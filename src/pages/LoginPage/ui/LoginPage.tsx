@@ -128,6 +128,9 @@ export const LoginPage = () => {
                                 label="Пароль"
                                 placeholder="Пароль"
                             />
+                            <Text className={cls.authData} tagType="p" textType="modalTextSecondary">
+                                *Вы можете авторизоваться используя следующие данные: логин - login пароль - password
+                            </Text>
                             <Button className={cls.button} onClick={onLogin} fullWidth>
                                 Продолжить
                             </Button>
